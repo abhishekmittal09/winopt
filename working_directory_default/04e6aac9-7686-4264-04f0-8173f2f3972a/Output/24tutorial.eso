@@ -1,0 +1,35 @@
+Program Version,EnergyPlus-Linux-64 8.1.0.009, YMD=2014.08.17 00:57
+1,5,Environment Title[],Latitude[deg],Longitude[deg],Time Zone[],Elevation[m]
+2,6,Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],Hour[],StartMinute[],EndMinute[],DayType
+3,3,Cumulative Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],DayType  ! When Daily Report Variables Requested
+4,2,Cumulative Days of Simulation[],Month[]  ! When Monthly Report Variables Requested
+5,1,Cumulative Days of Simulation[] ! When Run Period Report Variables Requested
+6,11,INTERNAL LIGHTING_LOAD,Lights Electric Energy [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+337,11,TESTZONE PTHP HEATING COIL,Heating Coil Electric Energy [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+351,11,TESTZONE PTHP SUPP HEATING COIL,Heating Coil Electric Energy [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+21,11,Electricity:Building [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+237,11,ElectricityNet:Facility [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+End of Data Dictionary
+1,WINTER DESIGN,  17.45,  78.47,   5.50, 545.00
+5,1
+6,7290000.,0.0, 1,21, 1,10,135000., 1,21,10,10
+337,140676046.009081,0.0, 1,21, 1,10,3039723.74643028, 1,21, 9,29
+351,1240528.42353425,0.0, 1,21, 1,10,1240528.42353425, 1,21, 9, 1
+21,21870000.,0.0, 1,21, 1,10,405000., 1,21,10,10
+237,167579515.071283,0.0, 1,21, 1,10,3973876.34382342, 1,21, 9,10
+1,SUMMER DESIGN,  17.45,  78.47,   5.50, 545.00
+5,1
+6,2187000.,0.0, 7,21, 1,10,40500., 7,21,10,10
+337,0.0,0.0, 7,21, 1,10,0.0, 7,21, 1,10
+351,0.0,0.0, 7,21, 1,10,0.0, 7,21, 1,10
+21,16767000.,0.0, 7,21, 1,10,310500., 7,21,10,10
+237,333408087.363305,0.0, 7,21, 1,10,6064371.08504649, 7,21,15,60
+1,ANNUALSIM,  17.45,  78.47,   5.50, 545.00
+5,365
+6,826885406.29274,0.0, 1, 1, 1,10,135000., 1, 1,18,50
+337,11517601.9287605,0.0, 1, 1, 1,10,440331.203494559,12,19, 9, 1
+351,0.0,0.0, 1, 1, 1,10,0.0, 1, 1, 1,10
+21,6148585406.29274,0.0, 1, 1, 1,10,405000., 1, 1,18,50
+237,58898195006.2258,0.0, 1, 1, 1,10,5766368.56635653, 6, 8,15,60
+End of Data
+ Number of Records Written=          15

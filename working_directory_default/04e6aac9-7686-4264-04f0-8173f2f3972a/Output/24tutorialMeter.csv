@@ -1,0 +1,4 @@
+Date/Time,Electricity:Building [J](RunPeriod),ElectricityNet:Facility [J](RunPeriod) 
+simdays=1,21870000.,167579515.071283 
+simdays=1,16767000.,333408087.363305 
+simdays=365,6148585406.29274,58898195006.2258 

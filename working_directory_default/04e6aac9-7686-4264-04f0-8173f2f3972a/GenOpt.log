@@ -1,0 +1,28 @@
+GenOpt(R) Optimization Version 3.1.0, December 8, 2011
+
+Lawrence Berkeley National Laboratory
+http://simulationresearch.lbl.gov
+Michael Wetter, MWetter@lbl.gov
+
+GenOpt Copyright (c) 1998-2011, The Regents of the
+University of California, through Lawrence Berkeley
+National Laboratory (subject to receipt of any 
+required approvals from the U.S. Dept. of Energy).
+All rights reserved.
+
+The development of GenOpt is supported by
+the U.S. Department of Energy (DOE),
+the Swiss Academy of Engineering Sciences (SATW),
+the Swiss National Energy Fund (NEFF), and
+the Swiss National Science Foundation (SNSF).
+_______________________________________________________________
+
+Configuration file : /var/www/html/wow/WinOpt_13-12-16/working_directory/04e6aac9-7686-4264-04f0-8173f2f3972a/optLinux.ini
+Command file       : /var/www/html/wow/WinOpt_13-12-16/working_directory/04e6aac9-7686-4264-04f0-8173f2f3972a/command.txt
+
+Optimization started  at : Thu May 22 02:26:43 IST 2014
+Optimization finished at : Thu May 22 02:44:47 IST 2014
+Execution time           :            00:18:04
+_______________________________________________________________
+
+Optimization completed successfully.

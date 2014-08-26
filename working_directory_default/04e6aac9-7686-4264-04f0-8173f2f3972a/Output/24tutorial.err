@@ -1,0 +1,41 @@
+Program Version,EnergyPlus-Linux-64 8.1.0.009, YMD=2014.08.17 00:57,IDD_Version 8.1.0.009
+   ** Warning ** Output:PreprocessorMessage="ExpandObjects" has the following Warning condition:
+   **   ~~~   ** Cannot find Energy+.idd as specified in Energy+.ini.
+   ** Warning ** Output:PreprocessorMessage="ExpandObjects" has the following Warning conditions:
+   **   ~~~   ** Since the Energy+.IDD file cannot be read no range or choice checking was
+   **   ~~~   ** performed.
+   ** Warning ** Version: in IDF="8.0" not the same as expected="8.1.0"
+   ************* Beginning Zone Sizing Calculations
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ************* No node connection errors were found.
+   ************* Beginning Simulation
+   ************* Simulation Error Summary *************
+   ** Warning ** The following Report Variables were requested but not generated
+   **   ~~~   ** because IDF did not contain these elements or misspelled variable name -- check .rdd file
+   ************* Key=*, VarName=ZONE PACKAGED TERMINAL AIR CONDITIONER SENSIBLE COOLING ENERGY, Frequency=Annual
+   ************* There are 1 unused schedules in input.
+   ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.
+   *************
+   ************* ===== Recurring Surface Error Summary =====
+   ************* The following surface error messages occurred.
+   *************
+   ************* Base Surface does not surround subsurface errors occuring...
+   ************* Check that the GlobalGeometryRules object is expressing the proper starting corner and direction [CounterClockwise/Clockwise]
+   *************
+   ** Warning ** Base surface does not surround subsurface (CHKSBS), Overlap Status=Partial-Overlap
+   **   ~~~   **   The base surround errors occurred 1 times.
+   **   ~~~   ** Surface "E_WALL" overlaps SubSurface "EAST_WINDOW"
+   ** Warning ** Base surface does not surround subsurface (CHKSBS), Overlap Status=Partial-Overlap
+   **   ~~~   **   The base surround errors occurred 1 times.
+   **   ~~~   ** Surface "W_WALL" overlaps SubSurface "WEST_WINDOW"
+   *************
+   **   ~~~   **   The base surround errors occurred 2 times (total).
+   *************
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 6 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  7.37sec
