@@ -186,7 +186,7 @@
          }
          for($i=0;$i<$count;$i++){
                  $str=$str."{'group':".(int)($i/$foldsize);
-                 $str=$str.",'Azimuth (degrees)':$azimuth1[$i]";
+                 $str=$str.",'Orientation (degrees)':$azimuth1[$i]";
                          $str=$str.",'WWR (%)':$wwr1[$i]";
                          $str=$str.",'Overhang Depth (m)':$depth1[$i]";
                          $str=$str.",'Aspect Ratio':$ratio1[$i]";
@@ -207,7 +207,7 @@
          fclose($fp1);
          ?>
       <div id="nav">
-         <h1>Prametric Optimization Results</h1>
+         <h1>Parametric Optimization Results</h1>
          <div class="widget right toggle">
             <input type="range" min="0" max="1" value="0.2" step="0.01" name="power" list="powers" id="line_opacity">
             <br>

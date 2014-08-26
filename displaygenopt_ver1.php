@@ -293,7 +293,7 @@
          for($i=0;$i<$count;$i++){
          	$str=$str."{'group':".(int)($i/$foldsize);
          	if($var_quantities[0]=='1'){
-         		$str=$str.",'Azimuth (degrees)':$item2[$i]";
+         		$str=$str.",'Orientation (degrees)':$item2[$i]";
          	}
          	 if($var_quantities[1]=='1'){
                                 $str=$str.",'WWR (%)':$item3[$i]";
