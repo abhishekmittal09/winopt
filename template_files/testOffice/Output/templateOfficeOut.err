@@ -1,0 +1,57 @@
+Program Version,EnergyPlus-Linux-64 8.1.0.009, YMD=2014.08.29 09:27,IDD_Version 8.1.0.009
+   ************* Beginning Zone Sizing Calculations
+   ** Warning ** Weather file location will be used rather than entered (IDF) Location object.
+   **   ~~~   ** ..Location object=USA CO-BOULDER
+   **   ~~~   ** ..Weather File Location=Hyderabad Andhra Pradesh IND ISHRAE WMO#=431280
+   **   ~~~   ** ..due to location differences, Latitude difference=[22.57] degrees, Longitude difference=[183.72] degrees.
+   **   ~~~   ** ..Time Zone difference=[12.5] hour(s), Elevation difference=[66.65] percent, [1089.00] meters.
+   ** Warning ** SetUpDesignDay: Entered DesignDay Barometric Pressure=83175 differs by more than 10% from Standard Barometric Pressure=94947.
+   **   ~~~   ** ...occurs in DesignDay=BOULDER ANN HTG 99.6% CONDNS DB, Standard Pressure (based on elevation) will be used.
+   ************* Note that the following warning(s) may/will occur if you have not enclosed your zone completely.
+   ** Warning ** Entered Zone Volumes differ from calculated zone volume(s).
+   **   ~~~   ** ...use Output:Diagnostics,DisplayExtraWarnings; to show more details on individual zones.
+   ** Warning ** CheckUsedConstructions: There are 20 nominally unused constructions in input.
+   **   ~~~   ** For explicit details on each unused construction, use Output:Diagnostics,DisplayExtraWarnings;
+   ** Warning ** Detailed daylighting will not be done for zone=ZN_1_FLR_1_SEC_5
+   **   ~~~   ** because it has no associated exterior windows.
+   ** Warning ** SetUpDesignDay: Entered DesignDay Barometric Pressure=83175 differs by more than 10% from Standard Barometric Pressure=94947.
+   **   ~~~   ** ...occurs in DesignDay=BOULDER ANN CLG .4% CONDNS DB=>MWB, Standard Pressure (based on elevation) will be used.
+   ** Warning ** SetUpDesignDay: Entered DesignDay Barometric Pressure=83175 differs by more than 10% from Standard Barometric Pressure=94947.
+   **   ~~~   ** ...occurs in DesignDay=BOULDER ANN CLG .4% CONDNS WB=>MDB, Standard Pressure (based on elevation) will be used.
+   ************* Beginning Plant Sizing Calculations
+   ** Warning ** Output:Meter: invalid Name="ELECTRICITYPRODUCED:FACILITY" - not found.
+   ** Warning ** Output:Meter: invalid Name="REFRIGERATION:ELECTRICITY" - not found.
+   ** Warning ** Output:Meter: invalid Name="ZONE EXHAUST FANS:FANS:ELECTRICITY" - not found.
+   ** Warning ** Output:Meter: invalid Name="EXTERIORLIGHTS:ELECTRICITY" - not found.
+   ** Warning ** Output:Meter: invalid Name="INTERIOREQUIPMENT:GAS" - not found.
+   ** Warning ** Output:Meter: invalid Name="WATER HEATER:WATERSYSTEMS:GAS" - not found.
+   ** Warning ** Output:Meter: invalid Name="WATER:FACILITY" - not found.
+   ** Warning ** Output:Meter:MeterFileOnly: invalid Name="ELECTRICITYPRODUCED:FACILITY" - not found.
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ************* No node connection errors were found.
+   ************* Beginning Simulation
+   ** Warning ** GetInputEconomicsTariff: UtilityCost:Tariff="PUBSERVCOLORADO_SG_SECONDARYGENERAL" atypical meter
+   **   ~~~   ** The meter chosen "ELECTRICITYNET:FACILITY is not typically used with the buyFromUtility option.
+   **   ~~~   ** Usually the Electricity:Facility meter or the ElectricityPurchased:Facility is selected when the buyFromUtility option is used.
+   ** Warning ** GetInputEconomicsTariff: UtilityCost:Tariff="PUBSERVCOLORADO_C_COMMERCIALSERVICE" atypical meter
+   **   ~~~   ** The meter chosen "ELECTRICITYNET:FACILITY is not typically used with the buyFromUtility option.
+   **   ~~~   ** Usually the Electricity:Facility meter or the ElectricityPurchased:Facility is selected when the buyFromUtility option is used.
+   ************* Simulation Error Summary *************
+   ************* There are 18 unused schedules in input.
+   ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.
+   *************
+   ************* ===== Final Error Summary =====
+   ************* The following error categories occurred.  Consider correcting or noting.
+   ************* Nominally Unused Constructions
+   ************* ..The nominally unused constructions warning is provided to alert you to potential conditions that can cause
+   ************* ..extra time during simulation. Each construction is calculated by the algorithm indicated in the HeatBalanceAlgorithm
+   ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).
+   *************
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 7 Warning; 0 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 17 Warning; 0 Severe Errors; Elapsed Time=00hr 00min 14.31sec

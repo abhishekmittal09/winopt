@@ -228,8 +228,15 @@ order is azi,wwr,od,ratio,shgc
          function getcolor($i,$j,$k,$l,$m,&$energy1,$minenergy,$maxenergy,&$colorindex,&$mult,&$order){
          	//echo $i+4*$j+12*$k+36*$l+108*$m;
          	//echo $energy1[$i+4*$j+12*$k+36*$l+108*$m]."<br>";
+            $requiredIndex = findmult($order["1"],$mult)*$i+findmult($order["2"],$mult)*$j+findmult($order["3"],$mult)*$k+findmult($order["4"],$mult)*$l+findmult($order["5"],$mult)*$m;
+            if($energy1[$requiredIndex]===$minenergy){
+               return "black";
+            }
+            if($energy1[$requiredIndex]<=$minenergy + $minenergy*0.05){
+               return "7FFF00";
+            }
          	$index=intval(($energy1[findmult($order["1"],$mult)*$i+findmult($order["2"],$mult)*$j+findmult($order["3"],$mult)*$k+findmult($order["4"],$mult)*$l+findmult($order["5"],$mult)*$m]-$minenergy)/($maxenergy-$minenergy)*255);
-         	//echo $index;
+
          	return $colorindex[$index];
          }
 
@@ -246,7 +253,7 @@ order is azi,wwr,od,ratio,shgc
                return "Overhang Depth";
             }
             if($name=="azi"){
-               return "Azimuth";
+               return "Orientation";
             }
             if($name=="wwr"){
                return "WWR";
