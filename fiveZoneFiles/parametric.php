@@ -1,26 +1,45 @@
 <?php
 
+//----------------------CONFIGURATION PARAMETERS---------------------------------
+
+$php_file_location = "./fiveZoneFiles/";
+$template_file_location = "./templateOffice.idf";
+$template_file_write_location = "./templateOfficeOut.idf";
+$working_directory_location_parametric = "./working_directory/parametric/";
+
+//-----------------------CONSTANTS NEEDED FOR CALCULATIONS-------------------------
+$l=50;
+$b=30;
+$ptotal_area = $l*$b;
+$t=6;
+$h=4;
+$t_root=$t/(sqrt(2));
+$unique_counter="12345";
+$working_dir = $working_directory_location_parametric.$unique_counter;
+
+
 //value of wwr and aspect ratio has been used directly to make the idf files and hence no changes to wwr and aspect ratio are reqd to be made in displayparametric
 
 $au_factor= array(1.5,1.5,3.72,5.7,3.3);
 $ashgc= array(0.20,0.25,0.28,0.67,0.85);
 $avlt= array(0.35,0.50,0.27,0.67,0.85);
-$unique_counter="12345";
+
 $azi=array(90,0,180,45,135);
 $wwr=array(40,20,50,60,80);
 $depth=array(0.3,0.5,0.8,1.2,1.5);
 $lbybratio=array(0.6,1.0,1.3,1.5,1.8);
 
 $hvactype2=6;
-$ptotal_area=50;
 $location2=2;
+
 extract($_POST);
 extract($_GET);
 
 echo $unique_counter;
 
 $old = umask(0);
-mkdir("./working_directory/parametric/$unique_counter", 0777  ) or print "<br>Can not create working directory";//a working directory is made for every user where data related to him would be stored
+$working_dir = $working_directory_location_parametric.$unique_counter;
+mkdir( $working_dir, 0777  ) or die("Can not create working directory");//a working directory is made for every user where data related to him would be stored
 umask($old);
 
 
@@ -40,33 +59,7 @@ print_r($adepth);
 print_r($aratio);
 
 
-/*---------------------- make a copy of ini file for every user--------------------*/
-$fileno=1;
-$working_dir="./working_directory/parametric/".$unique_counter;
-
-$file="./optLinux_template.ini";
-$file1 = fopen($file, "r") or die("can't open template file for reading");
-$theData = fread($file1, filesize($file));
-fclose($file1);
-$file="optLinux.ini";
-$file1 = fopen("$working_dir/$file", "w") or die("can't open template for reading");
-fwrite($file1,$theData);
-fclose($file1);
-
-/*---------------------- make a copy of cfg file for every user--------------------*/
-
-$file="./EnergyPlusLinux.cfg";
-$file1 = fopen($file, "r") or die("can't open template file for reading");
-$theData = fread($file1, filesize($file));
-fclose($file1);
-
-$file="EnergyPlusLinux.cfg";
-$file1 = fopen("$working_dir/$file", "w") or die("can't open template for reading");
-fwrite($file1,$theData);
-fclose($file1);
-
-
-	/* Putting the required HAVC into the building */
+/* Putting the required HAVC into the building */
 
 
 function addhvac($template_file_data,$hvactype2){
@@ -167,8 +160,15 @@ HVACTemplate:Zone:PTHP,
 
 echo "sizeof ".sizeof($aazimuth).sizeof($awwr).sizeof($adepth).sizeof($aratio).sizeof($ashgc);
 
+$file=$template_file_location;
+$file1 = fopen($file, "r") or die("can't open template file for reading");
+$temp_template_file_data = fread($file1, filesize($file));//stores the data of template file in a variable
+fclose($file1);
+
 $filesave=fopen($working_dir."/parametricvalues.txt",'w');
 $filecontent="";
+$fileno=1;
+
 for($x=0;$x<sizeof($aazimuth);$x++)
 {
 	for($y=0;$y<sizeof($awwr);$y++)
@@ -190,57 +190,71 @@ for($x=0;$x<sizeof($aazimuth);$x++)
 					$filecontent=$filecontent." \n"	;
 					/*---------------------- store data of template file for every user in a variable--------------------*/
 
-					$file="./tutorial_template.idf";
-					$file1 = fopen($file, "r") or die("can't open template file for reading");
-					$template_file_data = fread($file1, filesize($file));//stores the data of template file in a variable
-					fclose($file1);
+					$template_file_data = $temp_template_file_data;
 
-					$template_file_data=addhvac($template_file_data,$hvactype2);
+					//$template_file_data=addhvac($template_file_data,$hvactype2);
 					
-					/*---------------------- make a copy of idf file for every user--------------------*/
+					$template_file_data = str_replace(array('%azimuthAngle%'),array($aazimuth[$x]),$template_file_data);
 
-					/*$file="./tutorial.idf";
-					$file1 = fopen($file, "r") or die("can't open template file for reading");
-					$theData = fread($file1, filesize($file));
-					fclose($file1);
-					$file="tutorial.idf";
-					$file1 = fopen("$working_dir/$file", "w") or die("can't open template for writing");
-					fwrite($file1,$theData);
-					fclose($file1);
-					*/
+					//aspect ratio start
+					$l=sqrt($aratio[$w]*$ptotal_area);
+					$b=$ptotal_area/$l;
 
-					$template_file_data = str_replace(array('%azimuth_angle%'),array($aazimuth[$x]),$template_file_data);
-					$height_of_window=3;//fixing the height of the window to 3; according the given model
+					$template_file_data = str_replace(array('%l%', '%b%', '%h%', '%root%', '%lminusroot%', '%bminusroot%', '%lminustworoot%', '%bminustworoot%'),
+						array($l, $b, $h, $t_root, $l-$t_root, $b-$t_root, $l-2*$t_root, $b-2*$t_root),
+						$template_file_data);
+					//aspect ratio end
 
-					$wwr_height=$awwr[$y]/100*$height_of_window;
-					$wwr_startz=$height_of_window/2-$wwr_height/2;
+					//wwr start
+					$wwr1 = $awwr[$y];
+					$winheightstart_1 = $h/2.0 - $wwr1*$h/200.0;
+					$winheightend_1 = $h/2.0 + $wwr1*$h/200.0;
+					$lminuspointzerofive = $l-0.05;
+					$bminuspointzerofive = $b-0.05;
 
-					$template_file_data = str_replace(array('%wwr_height%','%wwr_startz%'),array($wwr_height,$wwr_startz),$template_file_data);
-					$template_file_data = str_replace(array('%wwr_height1%','%wwr_startz1%'),array($wwr_height,$wwr_startz),$template_file_data);
-					$template_file_data = str_replace(array('%wwr_height2%','%wwr_startz2%'),array($wwr_height,$wwr_startz),$template_file_data);
-					$template_file_data = str_replace(array('%wwr_height3%','%wwr_startz3%'),array($wwr_height,$wwr_startz),$template_file_data);
-					$template_file_data = str_replace(array('%wwr_height4%','%wwr_startz4%'),array($wwr_height,$wwr_startz),$template_file_data);
-					$template_file_data = str_replace(array("%depth%"),array($adepth[$z]),$template_file_data);
+					$template_file_data = str_replace(
+						array('%lminuspointzerofive%', '%winheightstart_1%', '%winheightend_1%'),
+						array($lminuspointzerofive, $winheightstart_1, $winheightend_1),
+						$template_file_data);
 
-					$lbybratio_length_value=sqrt($aratio[$w]*$ptotal_area);
-					$lbybratio_breadth_value=$ptotal_area/$lbybratio_length_value;
-					$template_file_data = str_replace(array("%lbybratio_length%","%lbybratio_breadth%"),array($lbybratio_length_value,$lbybratio_breadth_value),$template_file_data);
-					
-					
+					$template_file_data = str_replace(
+						array('%bminuspointzerofive%', '%winheightstart_2%', '%winheightend_2%'),
+						array($bminuspointzerofive, $winheightstart_1, $winheightend_1),
+						$template_file_data);
+
+					$template_file_data = str_replace(
+						array('%winheightstart_3%', '%winheightend_3%'),
+						array($winheightstart_1, $winheightend_1),
+						$template_file_data);
+
+					$template_file_data = str_replace(
+						array('%winheightstart_4%', '%winheightend_4%'),
+						array($winheightstart_1, $winheightend_1),
+						$template_file_data);
+					//wwr end
+
+					//overhang start
+					$overhangHeight = $adepth[$z];
+					$overhangPlusRoot = $overhangHeight + $t_root;
+					$template_file_data = str_replace(
+						array('%overhangHeight%', '%overhangPlusRoot%'),
+						array($overhangHeight, $overhangPlusRoot),
+						$template_file_data);
+					//overhang end
+
+					//ufactor start
 					$template_file_data=str_replace(array("%u_factor%"), array($au_factor[$v]),$template_file_data);
 					$template_file_data=str_replace(array("%shgc%"), array($ashgc[$v]),$template_file_data);
 					$template_file_data=str_replace(array("%vlt%"), array($avlt[$v]),$template_file_data);
-
-
+					//ufactor end
 
 
 					$file=$fileno.".idf";
-					$file1 = fopen("$working_dir/$file", "w") or die("can't open abcde  model template for writing");
+					$file1 = fopen("$working_dir/$file", "w") or die("can't open abcde model template for writing");
 
 					fwrite($file1,$template_file_data);
 					fclose($file1);
 					$fileno=$fileno+1;
-
 
 				}
 
@@ -252,6 +266,7 @@ for($x=0;$x<sizeof($aazimuth);$x++)
 
 fwrite($filesave,$filecontent);
 fclose($filesave);
+
 
 $cityname="Hyderabad.epw";
 if($location2==1){
@@ -282,7 +297,7 @@ if (!$fp)
 }
 else
 {
-	$str="p"."./working_directory/parametric/".$unique_counter." ".$cityname;
+	$str="p".$php_file_location.$working_dir." ".$cityname;
         fputs ($fp, $str);
         $msg="";
         $msg=fgets($fp,17);
@@ -295,6 +310,7 @@ else
 
         close($fp);
 }
+
 
 ?>
 

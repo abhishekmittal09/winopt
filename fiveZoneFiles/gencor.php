@@ -1,10 +1,6 @@
 <?php
 
-//extract($_POST);
-/*echo $length."<br>";
-echo $breadth."<br>";
-echo $thick."<br>";
-*/
+
 $l=50;
 $b=30;
 $t=6;
@@ -231,7 +227,23 @@ $zones[4][5][2]=array($l-2*$t_root, 0, 0);
 $zones[4][5][3]=array(0,0,0);
 
 
-$file="./templateOffice.idf";
+
+$l=50;
+$b=30;
+$t=6;
+$h=4;
+$t_root=$t/(sqrt(2));
+
+echo $l."<br>";
+echo $b."<br>";
+echo $t."<br>";
+echo $h."<br>";
+echo $t_root."<br>";
+echo "<br> <br>";
+
+
+
+$file=$template_file_location;
 $file1 = fopen($file, "r") or die("can't open template file for reading");
 $theData = fread($file1, filesize($file));
 fclose($file1);
@@ -307,7 +319,7 @@ $theData = str_replace(
 
 echo "************read<br>";
 
-$file="./templateOfficeOut.idf";
+$file=$template_file_write_location;
 $file1 = fopen($file, "w") or die("can't open template for writing");
 fwrite($file1,$theData);
 fclose($file1);
@@ -327,6 +339,7 @@ for ($i=0; $i < 5; $i++) {//5 zone
 	echo "<br>";
 	echo "<br>";
 }
+
 
 
 ?>

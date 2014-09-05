@@ -57,16 +57,16 @@
 
         <div id="parainput" class="content">
 
-        	<form id="container" class="pure-form pure-form-stacked" action="./template_files/testOffice/gencor.php">
+        	<form id="parametricform" class="pure-form pure-form-stacked" action="" method="POST">
 				<div class="item">
 					<h3 class="">Azimuth</h3>
 					<label>
 						First Value
-						<input name="azi[]" value="90" min="0.0" max="360.0" step="any" type="number">
+						<input name="azi[]" value="0" min="0.0" max="360.0" step="any" type="number">
 					</label>
 					<label>
 						Second Value
-						<input name="azi[]" value="90" min="0.0" max="360.0" step="any" type="number">
+						<input name="azi[]" value="45" min="0.0" max="360.0" step="any" type="number">
 					</label>
 					<label>
 						Third Value
@@ -74,11 +74,11 @@
 					</label>
 					<label>
 						Fourth Value
-						<input name="azi[]" value="90" min="0.0" max="360.0" step="any" type="number">
+						<input name="azi[]" value="135" min="0.0" max="360.0" step="any" type="number">
 					</label>
 					<label>
 						Fifth Value
-						<input name="azi[]" value="90" min="0.0" max="360.0" step="any" type="number">
+						<input name="azi[]" value="180" min="0.0" max="360.0" step="any" type="number">
 					</label>
 				</div>
 				
@@ -86,7 +86,7 @@
 					<h3 class="">WWR</h3>
 					<label>
 						First Value
-						<input name="wwr[]" value="40" min="10.0" max="90.0" step="any" type="number">
+						<input name="wwr[]" value="20" min="10.0" max="90.0" step="any" type="number">
 					</label>
 					<label>
 						Second Value
@@ -94,15 +94,15 @@
 					</label>
 					<label>
 						Third Value
-						<input name="wwr[]" value="40" min="10.0" max="90.0" step="any" type="number">
+						<input name="wwr[]" value="60" min="10.0" max="90.0" step="any" type="number">
 					</label>
 					<label>
 						Fourth Value
-						<input name="wwr[]" value="40" min="10.0" max="90.0" step="any" type="number">
+						<input name="wwr[]" value="80" min="10.0" max="90.0" step="any" type="number">
 					</label>
 					<label>
 						Fifth Value
-						<input name="wwr[]" value="40" min="10.0" max="90.0" step="any" type="number">
+						<input name="wwr[]" value="15" min="10.0" max="90.0" step="any" type="number">
 					</label>
 				</div>
 				
@@ -114,19 +114,19 @@
 					</label>
 					<label>
 						Second Value
-						<input name="depth[]" value="0.5" min="0.1" max="3.0" step="any" type="number">
+						<input name="depth[]" value="0.8" min="0.1" max="3.0" step="any" type="number">
 					</label>
 					<label>
 						Third Value
-						<input name="depth[]" value="0.5" min="0.1" max="3.0" step="any" type="number">
+						<input name="depth[]" value="1.5" min="0.1" max="3.0" step="any" type="number">
 					</label>
 					<label>
 						Fourth Value
-						<input name="depth[]" value="0.5" min="0.1" max="3.0" step="any" type="number">
+						<input name="depth[]" value="2.0" min="0.1" max="3.0" step="any" type="number">
 					</label>
 					<label>
 						Fifth Value
-						<input name="depth[]" value="0.5" min="0.1" max="3.0" step="any" type="number">
+						<input name="depth[]" value="2.5" min="0.1" max="3.0" step="any" type="number">
 					</label>
 				</div>
 
@@ -134,23 +134,23 @@
 					<h3 class="">Aspect Ratio</h3>
 					<label>
 						First Value
-						<input name="lbybratio[]" value="0.6" step="any" type="number">
+						<input name="lbybratio[]" value="0.5" min="0.5" max="2.0" step="any" type="number">
 					</label>
 					<label>
 						Second Value
-						<input name="lbybratio[]" value="0.6" step="any" type="number">
+						<input name="lbybratio[]" value="1.0" min="0.1" max="2.0" step="any" type="number">
 					</label>
 					<label>
 						Third Value
-						<input name="lbybratio[]" value="0.6" step="any" type="number">
+						<input name="lbybratio[]" value="1.5" min="0.1" max="2.0" step="any" type="number">
 					</label>
 					<label>
 						Fourth Value
-						<input name="lbybratio[]" value="0.6" step="any" type="number">
+						<input name="lbybratio[]" value="2.0" min="0.1" max="2.0" step="any" type="number">
 					</label>
 					<label>
 						Fifth Value
-						<input name="lbybratio[]" value="0.6" step="any" type="number">
+						<input name="lbybratio[]" value="1.2" min="0.1" max="2.0" step="any" type="number">
 					</label>
 				</div>
 				<div class="item" style="width:95%;text-align:center">
@@ -171,14 +171,15 @@
 </body>
 
 <script type="text/javascript" src="./graph/jquery.js"></script>
+<script type="text/javascript" src="./graph/fivezone.js"></script>
 <script src="./graph/ui.js"></script>
 <script src="./graph/isotope.min.js"></script>
 
 <script type="text/javascript">
 
-	var $container = $('#container');
+	var $parametricform = $('#parametricform');
 	// init
-	$container.isotope({
+	$parametricform.isotope({
 	  // options
 	  itemSelector: '.item',
 	  layoutMode: 'fitRows'
