@@ -1,9 +1,22 @@
+<?php 
+
+$unique_counter = "a6f0eb35-00a0-de35-e541-2295ad61a265";
+
+extract($_GET);
+extract($_POST);
+
+$working_directory_location_parametric = "./working_directory/parametric/$unique_counter/";
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
    <head>
       <meta content="text/html; charset=UTF-8" http-equiv="content-type">
       <title>Window OptimiZation Tool</title>
-      <script type="text/javascript" src="./results250_2.js"></script>
+      <script type="text/javascript" src="<?php echo $working_directory_location_parametric; ?>results250_2.js"></script>
 
       <script type="text/javascript" src="./graph/d3.js"></script><style type="text/css"></style>
       <script type="text/javascript" src="./graph/d3.csv.js"></script>
@@ -69,7 +82,7 @@
       <?php
          extract($_GET);
          
-         $filename = "./working_directory/parametric/$unique_counter/flagfile.txt";
+         $filename = $working_directory_location_parametric."flagfile.txt";
          
          if (file_exists($filename))
          {
@@ -93,7 +106,7 @@
          $u_factor1=array();
          $vlt1=array();
          $count=0;
-         $file=fopen("./working_directory/parametric/$unique_counter/finalvalues.txt","r");
+         $file=fopen($working_directory_location_parametric."finalvalues.txt","r");
          $flag=0;
          if($file == NULL){
          
@@ -171,7 +184,7 @@
          
          ?>
       <?php
-         $fp1=fopen("./results250_2.js","w");
+         $fp1=fopen($working_directory_location_parametric."results250_2.js","w");
          if(!$fp1){
           
                  echo "unable to open file";
@@ -388,7 +401,7 @@
          </script>
       </div>
       <?php
-         $filename = "./working_directory/parametric/$unique_counter/flagfile.txt";
+         $filename = $working_directory_location_parametric."flagfile.txt";
          
          if (file_exists($filename)) 
          {

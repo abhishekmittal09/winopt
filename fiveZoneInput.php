@@ -10,14 +10,28 @@
         <link rel="stylesheet" href="./css/side-menu.css">
     <!--<![endif]-->
 
+
+<?php 
+
+	include_once("./requiredGraphFiles.php");
+
+?>
+
+
 <style type="text/css">
 	
 	.item {
-		min-width: 200px;
-		border: 1px solid; 
-		width: 45%;
+		border: 1px solid;
 		border-radius: 10px;
 		margin: 2%;
+	}
+
+	#parametricform label{
+		float: right;
+	}
+
+	.center {
+		text-align: center;
 	}
 
 </style>
@@ -50,32 +64,31 @@
     </div>
 
     <div id="main">
-        <div class="header">
+        <div class="header" style="font-size:0.8em">
             <h1>Winopt</h1>
-            <h2>Window Optimization Tool</h2>
         </div>
 
-        <div id="parainput" class="content">
+        <div id="parainput" class="" style="font-size:0.9em">
 
-        	<form id="parametricform" class="pure-form pure-form-stacked" action="" method="POST">
+        	<form id="parametricform" class="pure-form" action="" method="POST">
 				<div class="item">
-					<h3 class="">Azimuth</h3>
+					<h3 class="center">Azimuth</h3>
 					<label>
 						First Value
 						<input name="azi[]" value="0" min="0.0" max="360.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Second Value
 						<input name="azi[]" value="45" min="0.0" max="360.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Third Value
 						<input name="azi[]" value="90" min="0.0" max="360.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Fourth Value
 						<input name="azi[]" value="135" min="0.0" max="360.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Fifth Value
 						<input name="azi[]" value="180" min="0.0" max="360.0" step="any" type="number">
@@ -83,85 +96,91 @@
 				</div>
 				
 				<div class="item">
-					<h3 class="">WWR</h3>
+					<h3 class="center">WWR</h3>
 					<label>
 						First Value
 						<input name="wwr[]" value="20" min="10.0" max="90.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Second Value
 						<input name="wwr[]" value="40" min="10.0" max="90.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Third Value
 						<input name="wwr[]" value="60" min="10.0" max="90.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Fourth Value
 						<input name="wwr[]" value="80" min="10.0" max="90.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Fifth Value
 						<input name="wwr[]" value="15" min="10.0" max="90.0" step="any" type="number">
-					</label>
+					</label><br>
 				</div>
 				
 				<div class="item">
-					<h3 class="">Depth</h3>				
+					<h3 class="center">Depth</h3>				
 					<label>
 						First Value
 						<input name="depth[]" value="0.5" min="0.1" max="3.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Second Value
 						<input name="depth[]" value="0.8" min="0.1" max="3.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Third Value
 						<input name="depth[]" value="1.5" min="0.1" max="3.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Fourth Value
 						<input name="depth[]" value="2.0" min="0.1" max="3.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Fifth Value
 						<input name="depth[]" value="2.5" min="0.1" max="3.0" step="any" type="number">
-					</label>
+					</label><br>
 				</div>
 
 				<div class="item">
-					<h3 class="">Aspect Ratio</h3>
+					<h3 class="center">Aspect Ratio</h3>
 					<label>
 						First Value
 						<input name="lbybratio[]" value="0.5" min="0.5" max="2.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Second Value
 						<input name="lbybratio[]" value="1.0" min="0.1" max="2.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Third Value
 						<input name="lbybratio[]" value="1.5" min="0.1" max="2.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Fourth Value
 						<input name="lbybratio[]" value="2.0" min="0.1" max="2.0" step="any" type="number">
-					</label>
+					</label><br>
 					<label>
 						Fifth Value
 						<input name="lbybratio[]" value="1.2" min="0.1" max="2.0" step="any" type="number">
-					</label>
+					</label><br>
 				</div>
 				<div class="item" style="width:95%;text-align:center">
 					<input type="submit">
 				</div>
 			</form>
 
-            <h2 id="paravisualization" class="content-subhead">How to use this layout</h2>
-            <p>
-                To use this layout, you can just copy paste the HTML, along with the CSS in <a href="/css/layouts/side-menu.css" alt="Side Menu CSS">side-menu.css</a>, and the JavaScript in <a href="/js/ui.js">ui.js</a>. The JS file uses vanilla JavaScript to simply toggle an <code>active</code> class that makes the menu responsive.
-            </p>
+            <h2 id="paravisualization" class="content-subhead"></h2>
+            <div class="pure-g">
+
+	            <div class="pure-u-1-1">
+	            	
+
+	            </div>
+
+
+            </div>
 
         </div>
     </div>

@@ -16,6 +16,5 @@ var unique_counter=guid();
 $("#parametricform").submit(function(event){
 	var unique_counter=guid();
 	var address=parametricRequestProcessForm+unique_counter;
-	alert(address);
 	$(this).attr("action", address);
 });

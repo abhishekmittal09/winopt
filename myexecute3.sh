@@ -1,5 +1,5 @@
 START=1
-END=3025
+END=3
 i=$START
 #while [ $i -le $END ]
 for i in $(seq $START $END)
