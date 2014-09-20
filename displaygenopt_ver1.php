@@ -60,7 +60,18 @@
    <body>
       <?php
          extract($_GET);
-         
+	 /*------------------------------- Set up database --------------------------------------------------*/
+	 include ('configdb.php');
+	 $out_uuid=$unique_counter;	
+	 $query="SELECT * FROM Output_Reference WHERE input_uuid=\"$unique_counter\";";
+         $sql_result = mysqli_query($con,$query);
+    	 $row = mysqli_fetch_array($sql_result);  
+		
+	 if ($row) // Simulation match found
+   	 {
+        	$out_uuid=$row['output_uuid'];
+	 }
+
          $sumofvarq=2;
          if($var_quantities[0]=='1'){
             $sumofvarq=$sumofvarq+1;
@@ -81,7 +92,7 @@
             $sumofvarq=$sumofvarq+1;
          }
 
-         $filename = "./working_directory/$unique_counter/flagfile.txt";
+         $filename = "./working_directory/$out_uuid/flagfile.txt";
          
          if (file_exists($filename)) 
          {
@@ -105,7 +116,7 @@
          $itme33=array();
          $itme34=array();         
 	     $count=0;
-         $file=fopen("./working_directory/$unique_counter/OutputListingAll.txt","r");
+         $file=fopen("./working_directory/$out_uuid/OutputListingAll.txt","r");
          $flag=0;
          if($file == NULL){
          	echo "null file found";
@@ -521,7 +532,7 @@
       </div>
       <?php
          //checking whether all updates have been performed or not or do we need to still update the graph page
-         $filename = "./working_directory/$unique_counter/flagfile.txt";
+         $filename = "./working_directory/$out_uuid/flagfile.txt";
          
          if (file_exists($filename)) 
          {
