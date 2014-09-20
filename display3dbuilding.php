@@ -189,7 +189,6 @@ fclose($fp1);
 	<script type="text/javascript">
 
   //$("canvas").css($(td).width());
-  alert($("#canvasTable").height());
 	$("#slider-vertical").css("height", $("#canvasTable").height()-50);
 
 	var initval=Math.floor(data.length/2);
