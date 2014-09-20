@@ -3,9 +3,22 @@
 $unique_counter = "a6f0eb35-00a0-de35-e541-2295ad61a265";
 
 extract($_GET);
+/*------------------------------- Set up database --------------------------------------------------*/
+include ('configdb.php');
+$out_uuid=$unique_counter;	
+$query="SELECT * FROM Output_Reference WHERE input_uuid=\"$unique_counter\";";
+$sql_result = mysqli_query($con,$query);
+$row = mysqli_fetch_array($sql_result);  
+	
+if ($row) // Simulation match found
+{
+   	$out_uuid=$row['output_uuid'];
+}
+
+extract($_GET);
 extract($_POST);
 
-$working_directory = "./working_directory/$unique_counter/";
+$working_directory = "./working_directory/$out_uuid/";
 
 ?>
 
@@ -71,8 +84,7 @@ $working_directory = "./working_directory/$unique_counter/";
    </head>
    <body>
       <?php
-         extract($_GET);
-         
+
          $sumofvarq=2;
          if($var_quantities[0]=='1'){
             $sumofvarq=$sumofvarq+1;
