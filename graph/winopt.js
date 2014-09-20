@@ -10,16 +10,18 @@
 			}
 			
 			
+				var noofids=5;
 				var idis=1;//tells the id.
 				
 				$(document).ready(function() {
 					var windowWidth = (parseInt($(window).width()));
-					var windowwidth_4times=windowWidth*4+210;
+					var windowwidth_4times=windowWidth*5+210;
 					$('#id0').css({'width':windowwidth_4times});
 					$('#id1').css({'width':windowWidth});
 					$('#id2').css({'width':windowWidth});
 					$('#id3').css({'width':windowWidth});
 					$('#id4').css({'width':windowWidth});
+					$('#id5').css({'width':windowWidth});
 					
 					location.hash="#id1";
 					function filterPath(string) {
@@ -55,6 +57,9 @@
 									else if(target=="#id4"){
 										idis=4;
 									}
+									else if(target=="#id5"){
+										idis=5;
+									}
 								});
 							});
 						}
@@ -83,8 +88,8 @@
 							return el;//this was initially empty
 							
 						}
+
 						var idsoff=new Array();;
-						var noofids=4;
 						for (var i = 0; i < noofids; i++) {
 							idsoff[i]=$(document.getElementById('id'+(i+1))).offset().left;
 						};

@@ -114,23 +114,23 @@ $working_directory_location_parametric = "./working_directory/parametric/$unique
          else{
                  while(!feof($file))
                  {
-                         $no=0;
-                         $a= fgets($file);
-                         $len=strlen($a);
-                         if($len==0 or $len==1)
-                         {
-                                 break;
-                         }
-                         $piece=explode(" ",$a);
-                         $energy1[$count]=$piece[0];
-                         $azimuth1[$count]=$piece[1];
-                         $wwr1[$count]=$piece[2];
-                         $depth1[$count]=$piece[3];
-                         $ratio1[$count]=$piece[4];
-                         $shgc1[$count]=$piece[5];
-                         $u_factor1[$count]=$piece[6];
-                         $vlt1[$count]=$piece[7];
-                         $count=$count+1;
+                     $no=0;
+                     $a= fgets($file);
+                     $len=strlen($a);
+                     if($len==0 or $len==1)
+                     {
+                        break;
+                     }
+                     $piece=explode(" ",$a);
+                     $energy1[$count]=$piece[0];
+                     $azimuth1[$count]=$piece[1];
+                     $wwr1[$count]=$piece[2];
+                     $depth1[$count]=$piece[3];
+                     $ratio1[$count]=$piece[4];
+                     $shgc1[$count]=$piece[5];
+                     $u_factor1[$count]=$piece[6];
+                     $vlt1[$count]=$piece[7];
+                     $count=$count+1;
                   }
 
                   $x1=0;
