@@ -1,9 +1,21 @@
+<?php 
+
+$unique_counter = "a6f0eb35-00a0-de35-e541-2295ad61a265";
+
+extract($_GET);
+extract($_POST);
+
+$working_directory = "./working_directory/$unique_counter/";
+
+?>
+
+
 <!DOCTYPE html>
 <html>
    <head>
       <meta content="text/html; charset=UTF-8" http-equiv="content-type">
       <title>Window OptimiZation Tool</title>
-      <script type="text/javascript" src="./results250.js"></script>
+      <script type="text/javascript" src="<?php echo $working_directory; ?>results250.js"></script>
       <script type="text/javascript" src="./graph/d3.js"></script>
       <style type="text/css"></style>
       <script type="text/javascript" src="./graph/d3.csv.js"></script>
@@ -81,7 +93,7 @@
             $sumofvarq=$sumofvarq+1;
          }
 
-         $filename = "./working_directory/$unique_counter/flagfile.txt";
+         $filename = $working_directory."flagfile.txt";
          
          if (file_exists($filename)) 
          {
@@ -105,7 +117,7 @@
          $itme33=array();
          $itme34=array();         
 	     $count=0;
-         $file=fopen("./working_directory/$unique_counter/OutputListingAll.txt","r");
+         $file=fopen($working_directory."OutputListingAll.txt","r");
          $flag=0;
          if($file == NULL){
          	echo "null file found";
@@ -279,7 +291,7 @@
          displaying the graph from here.... -->
       <div id="center">
       <?php
-         $fp1=fopen("./results250.js","w");
+         $fp1=fopen($working_directory."results250.js","w");
          if(!$fp1){
          	echo "unable to open file";
          }
@@ -521,7 +533,7 @@
       </div>
       <?php
          //checking whether all updates have been performed or not or do we need to still update the graph page
-         $filename = "./working_directory/$unique_counter/flagfile.txt";
+         $filename = $working_directory."flagfile.txt";
          
          if (file_exists($filename)) 
          {

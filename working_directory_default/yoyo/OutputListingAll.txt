@@ -1,0 +1,331 @@
+GenOpt(R) Version 3.1.0, December 8, 2011
+
+Lawrence Berkeley National Laboratory
+http://simulationresearch.lbl.gov
+Michael Wetter, MWetter@lbl.gov
+
+GenOpt Copyright (c) 1998-2011, The Regents of the
+University of California, through Lawrence Berkeley
+National Laboratory (subject to receipt of any 
+required approvals from the U.S. Dept. of Energy).
+All rights reserved.
+_______________________________________________________________
+
+Results of GPSPSOCCHJ algorithm
+Start time: Mon Jun 02 23:09:46 IST 2014
+
+All Iterations
+
+
+Simulation Number	Main Iteration	Sub Iteration	Step Number	Es_tot	azimuth_angle	wwr_height1	depth	lbybratio_length	shgc
+1	1	1	1	4.94213704474467E10	90.0	1.2	0.5	5.0	0.25	Generation 1.
+2	2	1	1	5.94128079331971E10	130.0	1.2	0.8	6.7	0.67	Generation 1.
+3	3	1	1	5.62450355936323E10	130.0	0.9	0.6	7.8	0.67	Generation 1.
+4	4	1	1	5.05265283207021E10	170.0	1.2	1.2	6.5	0.2	Generation 1.
+5	5	1	1	6.51377682616951E10	160.0	1.5	1.8	5.2	0.67	Generation 1.
+6	6	1	1	4.95291342033108E10	70.0	0.9	2.1	9.0	0.25	Generation 1.
+7	7	1	1	4.77627327899148E10	150.0	0.6	2.2	6.4	0.25	Generation 1.
+8	8	1	1	5.41828344452238E10	100.0	1.5	0.8	8.1	0.25	Generation 1.
+9	9	1	1	5.23917436816856E10	0.0	1.8	1.6	7.4	0.25	Generation 1.
+10	10	1	1	5.06363214552371E10	180.0	0.9	1.3	6.1	0.28	Generation 1.
+11	11	1	1	5.32243547221077E10	170.0	1.5	1.3	6.4	0.25	Generation 1.
+12	12	1	1	5.0715719292742E10	120.0	0.9	2.0	9.9	0.25	Generation 1.
+13	13	1	1	4.94679110742584E10	50.0	1.2	2.7	6.5	0.25	Generation 1.
+14	14	1	1	5.97520990448355E10	90.0	2.4	2.0	9.5	0.2	Generation 1.
+15	15	1	1	4.99491084861961E10	50.0	0.9	0.6	7.7	0.28	Generation 1.
+16	16	1	1	4.91547568575867E10	170.0	0.9	0.7	7.7	0.2	Generation 1.
+17	17	1	1	5.13556444897996E10	90.0	1.2	0.5	5.0	0.28	Generation 2.
+18	18	1	1	5.06115205994928E10	120.0	1.2	0.7	6.3	0.25	Generation 2.
+19	19	1	1	5.56277718014551E10	130.0	0.9	1.0	7.5	0.67	Generation 2.
+20	20	1	1	5.14986234367895E10	170.0	1.2	1.1	6.8	0.25	Generation 2.
+21	21	1	1	5.0677347855034E10	140.0	1.5	1.5	5.2	0.2	Generation 2.
+22	22	1	1	5.33051087533996E10	90.0	0.9	2.1	8.4	0.67	Generation 2.
+23	23	1	1	5.26979396085962E10	150.0	0.6	2.2	6.4	0.67	Generation 2.
+24	24	1	1	5.72686694164883E10	110.0	1.2	1.1	7.7	0.67	Generation 2.
+25	25	1	1	4.98000078574838E10	10.0	1.8	1.9	7.2	0.2	Generation 2.
+26	26	1	1	5.61923956112018E10	150.0	0.9	1.5	6.8	0.67	Generation 2.
+27	27	1	1	5.14924189765238E10	170.0	1.2	1.5	6.4	0.25	Generation 2.
+28	28	1	1	5.45252882549318E10	130.0	0.9	1.7	9.4	0.67	Generation 2.
+29	29	1	1	4.95146560616362E10	80.0	1.2	2.2	6.8	0.2	Generation 2.
+30	30	1	1	5.73828989333816E10	80.0	2.1	2.2	8.8	0.28	Generation 2.
+31	31	1	1	4.85307528881657E10	80.0	0.9	0.6	7.7	0.2	Generation 2.
+32	32	1	1	5.62583670290306E10	170.0	0.9	0.7	7.7	0.67	Generation 2.
+33	33	1	1	5.93703694051213E10	90.0	1.2	0.5	5.0	0.67	Generation 3.
+34	34	1	1	4.95355402140005E10	110.0	1.2	0.7	6.1	0.2	Generation 3.
+35	35	1	1	4.84482718222385E10	130.0	0.9	1.2	7.3	0.25	Generation 3.
+36	36	1	1	5.99622763538877E10	170.0	1.2	1.1	6.9	0.67	Generation 3.
+37	37	1	1	5.22331020487656E10	130.0	1.5	1.3	5.2	0.25	Generation 3.
+38	38	1	1	4.94117465647713E10	90.0	0.9	2.1	8.2	0.28	Generation 3.
+39	39	1	1	4.83682417508215E10	150.0	0.6	2.2	6.4	0.28	Generation 3.
+40	40	1	1	5.71731292557588E10	110.0	1.2	1.2	7.6	0.67	Generation 3.
+41	41	1	1	6.32881292029792E10	20.0	1.8	2.1	7.1	0.67	Generation 3.
+42	42	1	1	4.96447313655821E10	150.0	0.9	1.5	7.0	0.25	Generation 3.
+43	43	1	1	5.14885684698605E10	170.0	1.2	1.6	6.4	0.25	Generation 3.
+44	44	1	1	5.45072402614259E10	130.0	0.9	1.6	9.3	0.67	Generation 3.
+45	45	1	1	5.03600647352892E10	90.0	1.2	2.1	6.9	0.25	Generation 3.
+46	46	1	1	5.55730817625702E10	80.0	1.8	2.1	8.4	0.25	Generation 3.
+47	47	1	1	5.54924834449964E10	90.0	0.9	0.6	7.7	0.67	Generation 3.
+48	48	1	1	5.05795579525785E10	160.0	0.9	0.7	7.7	0.28	Generation 3.
+48	49	1	1	5.93703694051213E10	90.0	1.2	0.5	5.0	0.67	Generation 4.
+49	50	1	1	5.04257924722059E10	110.0	1.2	0.7	6.1	0.25	Generation 4.
+50	51	1	1	4.83860834563044E10	130.0	0.9	1.3	7.2	0.25	Generation 4.
+51	52	1	1	5.05422143944614E10	170.0	1.2	1.2	6.7	0.2	Generation 4.
+52	53	1	1	5.25965902217578E10	130.0	1.5	1.4	5.4	0.28	Generation 4.
+53	54	1	1	4.91554332095171E10	100.0	0.9	2.1	8.0	0.25	Generation 4.
+53	55	1	1	4.77627327899148E10	150.0	0.6	2.2	6.4	0.25	Generation 4.
+54	56	1	1	5.17907336317962E10	110.0	1.2	1.1	7.8	0.28	Generation 4.
+55	57	1	1	5.34183732360601E10	20.0	1.8	2.1	7.1	0.28	Generation 4.
+56	58	1	1	5.02129479896639E10	140.0	0.9	1.6	7.1	0.28	Generation 4.
+57	59	1	1	5.14851199743239E10	170.0	1.2	1.7	6.4	0.25	Generation 4.
+58	60	1	1	4.99194039085776E10	130.0	0.9	1.7	9.5	0.25	Generation 4.
+59	61	1	1	4.98461102501573E10	70.0	1.2	2.3	6.7	0.25	Generation 4.
+60	62	1	1	6.27383606573634E10	80.0	1.8	2.0	8.2	0.67	Generation 4.
+61	63	1	1	4.86439912161418E10	90.0	0.9	0.6	7.7	0.2	Generation 4.
+62	64	1	1	4.98950670202067E10	160.0	0.9	0.7	7.7	0.25	Generation 4.
+62	65	1	1	4.94213704474467E10	90.0	1.2	0.5	5.0	0.25	Generation 5.
+63	66	1	1	5.06294250152653E10	110.0	1.2	0.7	6.1	0.28	Generation 5.
+64	67	1	1	5.53150837050412E10	130.0	0.9	1.4	7.1	0.67	Generation 5.
+65	68	1	1	6.02072861920985E10	170.0	1.2	1.2	6.6	0.67	Generation 5.
+66	69	1	1	5.25797965224599E10	130.0	1.5	1.5	5.5	0.28	Generation 5.
+67	70	1	1	4.90689317602947E10	100.0	0.9	2.1	7.9	0.25	Generation 5.
+67	71	1	1	4.77627327899148E10	150.0	0.6	2.2	6.4	0.25	Generation 5.
+67	72	1	1	5.17907336317962E10	110.0	1.2	1.1	7.8	0.28	Generation 5.
+68	73	1	1	5.05949367928103E10	20.0	1.8	2.1	7.1	0.2	Generation 5.
+69	74	1	1	5.02377853133449E10	140.0	0.9	1.6	7.2	0.28	Generation 5.
+69	75	1	1	5.14851199743239E10	170.0	1.2	1.7	6.4	0.25	Generation 5.
+70	76	1	1	5.02239146735481E10	130.0	0.9	1.7	9.5	0.28	Generation 5.
+71	77	1	1	5.73403132642454E10	70.0	1.2	2.4	6.7	0.67	Generation 5.
+72	78	1	1	5.53695386959432E10	80.0	1.8	1.9	8.1	0.25	Generation 5.
+72	79	1	1	4.86439912161418E10	90.0	0.9	0.6	7.7	0.2	Generation 5.
+73	80	1	1	4.92443622134492E10	160.0	0.9	0.7	7.7	0.2	Generation 5.
+74	81	1	1	4.85733391360706E10	90.0	1.2	0.5	5.0	0.2	Generation 6.
+75	82	1	1	5.06822717767266E10	110.0	1.2	0.7	6.2	0.28	Generation 6.
+76	83	1	1	5.00285676683034E10	130.0	0.9	1.4	7.1	0.28	Generation 6.
+77	84	1	1	5.14927507849278E10	170.0	1.2	1.2	6.6	0.25	Generation 6.
+78	85	1	1	6.09230113504343E10	130.0	1.5	1.6	5.6	0.67	Generation 6.
+79	86	1	1	4.89833894658798E10	100.0	0.9	2.1	7.8	0.25	Generation 6.
+79	87	1	1	5.26979396085962E10	150.0	0.6	2.2	6.4	0.67	Generation 6.
+80	88	1	1	5.1674459969252E10	110.0	1.2	1.2	7.7	0.28	Generation 6.
+80	89	1	1	5.34183732360601E10	20.0	1.8	2.1	7.1	0.28	Generation 6.
+81	90	1	1	4.96058014148844E10	140.0	0.9	1.6	7.2	0.25	Generation 6.
+82	91	1	1	6.03496009791583E10	170.0	1.2	1.7	6.4	0.67	Generation 6.
+83	92	1	1	4.98489830711766E10	130.0	0.9	1.6	9.4	0.25	Generation 6.
+83	93	1	1	5.73403132642454E10	70.0	1.2	2.4	6.7	0.67	Generation 6.
+84	94	1	1	5.51966599284663E10	80.0	1.8	1.8	8.0	0.28	Generation 6.
+85	95	1	1	4.86092196275851E10	90.0	0.9	0.7	7.7	0.2	Generation 6.
+85	96	1	1	5.05795579525785E10	160.0	0.9	0.7	7.7	0.28	Generation 6.
+85	97	1	1	5.13556444897996E10	90.0	1.2	0.5	5.0	0.28	Generation 7.
+86	98	1	1	5.07225132382654E10	110.0	1.2	0.8	6.3	0.28	Generation 7.
+87	99	1	1	4.83275223028519E10	130.0	0.9	1.4	7.1	0.25	Generation 7.
+88	100	1	1	5.0532885525967E10	170.0	1.2	1.2	6.6	0.2	Generation 7.
+89	101	1	1	5.09669387038753E10	130.0	1.5	1.5	5.4	0.2	Generation 7.
+90	102	1	1	4.91284277695996E10	110.0	0.9	2.1	7.6	0.28	Generation 7.
+90	103	1	1	4.77627327899148E10	150.0	0.6	2.2	6.4	0.25	Generation 7.
+91	104	1	1	5.15622977421007E10	110.0	1.2	1.3	7.6	0.28	Generation 7.
+92	105	1	1	5.34308084014458E10	20.0	1.8	2.0	7.1	0.28	Generation 7.
+93	106	1	1	4.96374484328995E10	140.0	0.9	1.6	7.3	0.25	Generation 7.
+94	107	1	1	5.05054518044463E10	170.0	1.2	1.8	6.4	0.2	Generation 7.
+95	108	1	1	4.90893206504622E10	130.0	0.9	1.5	9.2	0.2	Generation 7.
+96	109	1	1	4.9519469891047E10	60.0	1.2	2.4	6.4	0.25	Generation 7.
+97	110	1	1	6.30470631719039E10	80.0	1.8	1.7	8.0	0.67	Generation 7.
+98	111	1	1	5.52356896694183E10	90.0	0.9	0.7	7.6	0.67	Generation 7.
+98	112	1	1	4.92443622134492E10	160.0	0.9	0.7	7.7	0.2	Generation 7.
+98	113	1	1	4.94213704474467E10	90.0	1.2	0.5	5.0	0.25	Generation 8.
+99	114	1	1	5.86342119105671E10	120.0	1.2	1.0	6.5	0.67	Generation 8.
+100	115	1	1	4.95245208912195E10	140.0	0.9	1.6	6.9	0.25	Generation 8.
+101	116	1	1	5.05343452671654E10	160.0	1.2	1.3	6.7	0.2	Generation 8.
+102	117	1	1	5.24423541232899E10	120.0	1.5	1.2	5.2	0.28	Generation 8.
+103	118	1	1	4.86119401408577E10	120.0	0.9	2.1	7.3	0.25	Generation 8.
+103	119	1	1	4.77627327899148E10	150.0	0.6	2.2	6.4	0.25	Generation 8.
+104	120	1	1	4.85916192538125E10	120.0	0.9	1.6	7.2	0.25	Generation 8.
+105	121	1	1	6.0507337029941E10	50.0	1.5	1.8	7.7	0.67	Generation 8.
+106	122	1	1	5.01112341517191E10	130.0	0.9	1.7	7.4	0.28	Generation 8.
+107	123	1	1	4.96514627591367E10	160.0	0.9	1.9	6.4	0.25	Generation 8.
+108	124	1	1	4.9010196910978E10	130.0	0.9	1.5	9.1	0.2	Generation 8.
+109	125	1	1	4.93435295268885E10	60.0	1.2	2.0	6.0	0.25	Generation 8.
+110	126	1	1	5.34052216132131E10	80.0	1.5	1.4	7.9	0.28	Generation 8.
+111	127	1	1	4.91263409166982E10	100.0	0.9	0.9	7.5	0.28	Generation 8.
+112	128	1	1	4.94763483097865E10	140.0	0.9	0.7	7.7	0.2	Generation 8.
+112	129	1	1	4.94213704474467E10	90.0	1.2	0.5	5.0	0.25	Generation 9.
+113	130	1	1	5.06934505536139E10	110.0	1.2	0.9	6.3	0.28	Generation 9.
+114	131	1	1	4.82207263387357E10	130.0	0.9	1.6	6.9	0.25	Generation 9.
+115	132	1	1	5.05254938602621E10	160.0	1.2	1.2	6.6	0.2	Generation 9.
+116	133	1	1	5.09616847592022E10	130.0	1.5	1.2	5.1	0.2	Generation 9.
+117	134	1	1	5.52214220989163E10	130.0	0.9	2.1	7.0	0.67	Generation 9.
+117	135	1	1	4.77627327899148E10	150.0	0.6	2.2	6.4	0.25	Generation 9.
+118	136	1	1	4.82055339134472E10	130.0	0.9	1.8	6.9	0.25	Generation 9.
+119	137	1	1	5.06934489105106E10	40.0	1.5	1.8	7.7	0.2	Generation 9.
+120	138	1	1	4.83488094289022E10	130.0	0.9	1.7	7.2	0.25	Generation 9.
+121	139	1	1	5.04232310156672E10	160.0	0.9	2.0	6.4	0.28	Generation 9.
+122	140	1	1	4.93147815812691E10	130.0	0.9	1.5	8.7	0.25	Generation 9.
+123	141	1	1	5.09502396377177E10	70.0	1.2	1.5	5.6	0.28	Generation 9.
+124	142	1	1	5.06455227108665E10	80.0	1.2	1.1	7.8	0.2	Generation 9.
+125	143	1	1	4.84806341972372E10	90.0	0.9	0.8	7.6	0.2	Generation 9.
+126	144	1	1	4.93897375202593E10	150.0	0.9	0.7	7.7	0.2	Generation 9.
+126	145	1	1	4.85733391360706E10	90.0	1.2	0.5	5.0	0.2	Generation 10.
+127	146	1	1	4.74817581062585E10	120.0	0.9	1.0	6.3	0.2	Generation 10.
+128	147	1	1	4.76614831296223E10	140.0	0.6	1.8	6.7	0.25	Generation 10.
+129	148	1	1	4.89407438742964E10	150.0	0.9	1.4	6.7	0.2	Generation 10.
+130	149	1	1	5.01969937068757E10	140.0	1.2	1.7	5.8	0.2	Generation 10.
+131	150	1	1	4.80313271031626E10	130.0	0.6	2.2	6.9	0.28	Generation 10.
+131	151	1	1	5.26979396085962E10	150.0	0.6	2.2	6.4	0.67	Generation 10.
+132	152	1	1	4.76502063145766E10	140.0	0.6	2.0	6.6	0.25	Generation 10.
+133	153	1	1	5.07238125413401E10	50.0	1.5	1.8	7.1	0.2	Generation 10.
+134	154	1	1	5.52552505664257E10	130.0	0.9	1.7	7.1	0.67	Generation 10.
+135	155	1	1	4.7766048920643E10	150.0	0.6	2.0	6.4	0.25	Generation 10.
+136	156	1	1	5.0440045186818E10	130.0	0.9	1.6	8.1	0.28	Generation 10.
+137	157	1	1	4.8490063378199E10	70.0	1.2	1.3	5.5	0.2	Generation 10.
+138	158	1	1	4.88601301092438E10	100.0	0.9	1.2	7.5	0.25	Generation 10.
+139	159	1	1	4.8910748376243E10	100.0	0.9	1.1	7.3	0.28	Generation 10.
+139	160	1	1	4.94763483097865E10	140.0	0.9	0.7	7.7	0.2	Generation 10.
+127	146	2	1	4.74817581062585E10	120.0	0.9	1.0	6.3	0.2	Minimum point.
+127	161	1	1	4.74817581062585E10	120.0	0.9	1.0	6.3	0.2	Minimum point of initialization.
+140	162	1	1	4.74817581062585E10	120.0	0.9	1.0	6.3	0.2	Initial point.
+141	163	1	1	4.86913997025089E10	130.0	0.9	1.0	6.3	0.2	Cost not reduced at azimuth_angle+dazimuth_angle.
+142	163	2	1	4.74968501338964E10	110.0	0.9	1.0	6.3	0.2	Cost not reduced at azimuth_angle-dazimuth_angle.
+143	163	3	1	4.95837825968011E10	120.0	1.2	1.0	6.3	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+144	163	4	1	4.69285009613702E10	120.0	0.6	1.0	6.3	0.2	Cost reduced     at wwr_height1-dwwr_height1.
+145	163	5	1	4.6932731395962E10	120.0	0.6	1.1	6.3	0.2	Cost not reduced at depth+ddepth.
+146	163	6	1	4.69460218270025E10	120.0	0.6	0.9	6.3	0.2	Cost not reduced at depth-ddepth.
+147	163	7	1	4.69483719640489E10	120.0	0.6	1.0	6.4	0.2	Cost not reduced at lbybratio_length+dlbybratio_length.
+148	163	8	1	4.6911164253346E10	120.0	0.6	1.0	6.2	0.2	Cost reduced     at lbybratio_length-dlbybratio_length.
+148	163	9	1	4.6911164253346E10	120.0	0.6	1.0	6.2	0.2	Global search reduced cost.
+149	164	1	1	4.68966963079899E10	120.0	0.6	1.0	6.1	0.2	Cost reduced     at wwr_height1+dwwr_height1.
+150	164	2	1	4.69003327219109E10	120.0	0.6	1.1	6.1	0.2	Cost not reduced at depth+ddepth.
+151	164	3	1	4.69133171340414E10	120.0	0.6	0.9	6.1	0.2	Cost not reduced at depth-ddepth.
+152	164	4	1	4.68849215653226E10	120.0	0.6	1.0	6.0	0.2	Cost reduced     at lbybratio_length-dlbybratio_length.
+152	164	5	1	4.68849215653226E10	120.0	0.6	1.0	6.0	0.2	Global search reduced cost.
+153	165	1	1	4.68689870956739E10	120.0	0.6	1.0	5.8	0.2	Exploration base, Delta = 1.0.
+154	165	2	1	4.70539263731592E10	130.0	0.6	1.0	5.8	0.2	Cost not reduced at azimuth_angle+dazimuth_angle.
+155	165	3	1	4.67098280325808E10	110.0	0.6	1.0	5.8	0.2	Cost reduced     at azimuth_angle-dazimuth_angle.
+156	165	4	1	4.72191108939036E10	110.0	0.9	1.0	5.8	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+157	165	5	1	4.67121119592264E10	110.0	0.6	1.1	5.8	0.2	Cost not reduced at depth+ddepth.
+158	165	6	1	4.67266318279958E10	110.0	0.6	0.9	5.8	0.2	Cost not reduced at depth-ddepth.
+159	165	7	1	4.67019853309351E10	110.0	0.6	1.0	5.7	0.2	Cost reduced     at lbybratio_length-dlbybratio_length.
+159	165	8	1	4.67019853309351E10	110.0	0.6	1.0	5.7	0.2	Global search reduced cost.
+160	166	1	1	4.65567161559147E10	100.0	0.6	1.0	5.4	0.2	Exploration base, Delta = 1.0.
+161	166	2	1	4.65261857881241E10	90.0	0.6	1.0	5.4	0.2	Cost reduced     at azimuth_angle-dazimuth_angle.
+162	166	3	1	4.6762545037172E10	90.0	0.9	1.0	5.4	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+163	166	4	1	4.65294042254109E10	90.0	0.6	1.1	5.4	0.2	Cost not reduced at depth+ddepth.
+164	166	5	1	4.65473482103063E10	90.0	0.6	0.9	5.4	0.2	Cost not reduced at depth-ddepth.
+165	166	6	1	4.65324340964E10	90.0	0.6	1.0	5.3	0.2	Cost not reduced at lbybratio_length-dlbybratio_length.
+166	166	7	1	4.6523858075613E10	90.0	0.6	1.0	5.5	0.2	Cost reduced     at lbybratio_length+dlbybratio_length.
+166	166	8	1	4.6523858075613E10	90.0	0.6	1.0	5.5	0.2	Global search reduced cost.
+167	167	1	1	4.67332459123771E10	70.0	0.6	1.0	5.3	0.2	Exploration base, Delta = 1.0.
+168	167	2	1	4.68886152026646E10	60.0	0.6	1.0	5.3	0.2	Cost not reduced at azimuth_angle-dazimuth_angle.
+169	167	3	1	4.65691253802677E10	80.0	0.6	1.0	5.3	0.2	Cost reduced     at azimuth_angle+dazimuth_angle.
+170	167	4	1	4.79678363999511E10	80.0	0.9	1.0	5.3	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+171	167	5	1	4.65659966248808E10	80.0	0.6	1.1	5.3	0.2	Cost reduced     at depth+ddepth.
+172	167	6	1	4.65550726943829E10	80.0	0.6	1.1	5.4	0.2	Cost reduced     at lbybratio_length+dlbybratio_length.
+173	167	7	1	4.65558931286806E10	100.0	0.6	1.0	5.5	0.2	Cost not reduced at azimuth_angle+dazimuth_angle.
+174	167	8	1	4.65504181073953E10	80.0	0.6	1.0	5.5	0.2	Cost not reduced at azimuth_angle-dazimuth_angle.
+175	167	9	1	4.68136650826931E10	90.0	0.9	1.0	5.5	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+176	167	10	1	4.65275311334605E10	90.0	0.6	1.1	5.5	0.2	Cost not reduced at depth+ddepth.
+177	167	11	1	4.6545422011401E10	90.0	0.6	0.9	5.5	0.2	Cost not reduced at depth-ddepth.
+178	167	12	1	4.65258291586728E10	90.0	0.6	1.0	5.6	0.2	Cost not reduced at lbybratio_length+dlbybratio_length.
+178	167	13	1	4.65261857881241E10	90.0	0.6	1.0	5.4	0.2	Cost not reduced at lbybratio_length-dlbybratio_length.
+166	167	14	1	4.6523858075613E10	90.0	0.6	1.0	5.5	0.2	Iteration step did not reduce cost. Reduce step size to '0.5'.
+178	168	1	1	4.6523858075613E10	90.0	0.6	1.0	5.5	0.2	Exploration base, Delta = 0.5.
+179	168	2	1	4.65367768785172E10	95.0	0.6	1.0	5.5	0.2	Cost not reduced at azimuth_angle+dazimuth_angle.
+180	168	3	1	4.65237641210455E10	85.0	0.6	1.0	5.5	0.2	Cost reduced     at azimuth_angle-dazimuth_angle.
+181	168	4	1	4.72320549555999E10	85.0	0.75	1.0	5.5	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+182	168	5	1	4.65146870641697E10	85.0	0.6	1.05	5.5	0.2	Cost reduced     at depth+ddepth.
+183	168	6	1	4.65139547877697E10	85.0	0.6	1.05	5.55	0.2	Cost reduced     at lbybratio_length+dlbybratio_length.
+183	168	7	1	4.65139547877697E10	85.0	0.6	1.05	5.55	0.2	Global search reduced cost.
+184	169	1	1	4.65441678945997E10	80.0	0.6	1.1	5.6	0.2	Exploration base, Delta = 0.5.
+185	169	2	1	4.65989193300503E10	75.0	0.6	1.1	5.6	0.2	Cost not reduced at azimuth_angle-dazimuth_angle.
+186	169	3	1	4.65263036530482E10	85.0	0.6	1.1	5.6	0.2	Cost reduced     at azimuth_angle+dazimuth_angle.
+187	169	4	1	4.71997309572508E10	85.0	0.75	1.1	5.6	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+188	169	5	1	4.65185237652433E10	85.0	0.6	1.15	5.6	0.2	Cost reduced     at depth+ddepth.
+189	169	6	1	4.65186185038082E10	85.0	0.6	1.15	5.65	0.2	Cost not reduced at lbybratio_length+dlbybratio_length.
+190	169	7	1	4.65180161310921E10	85.0	0.6	1.15	5.55	0.2	Cost reduced     at lbybratio_length-dlbybratio_length.
+191	169	8	1	4.65159153365536E10	90.0	0.6	1.05	5.55	0.2	Cost not reduced at azimuth_angle+dazimuth_angle.
+192	169	9	1	4.65358455202257E10	80.0	0.6	1.05	5.55	0.2	Cost not reduced at azimuth_angle-dazimuth_angle.
+193	169	10	1	4.72132027789221E10	85.0	0.75	1.05	5.55	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+194	169	11	1	4.6525708233265E10	85.0	0.6	1.1	5.55	0.2	Cost not reduced at depth+ddepth.
+195	169	12	1	4.65231068341629E10	85.0	0.6	1.0	5.55	0.2	Cost not reduced at depth-ddepth.
+195	169	13	1	4.65146870641697E10	85.0	0.6	1.05	5.5	0.2	Cost not reduced at lbybratio_length-dlbybratio_length.
+196	169	14	1	4.65144374836054E10	85.0	0.6	1.05	5.6	0.2	Cost not reduced at lbybratio_length+dlbybratio_length.
+183	169	15	1	4.65139547877697E10	85.0	0.6	1.05	5.55	0.2	Iteration step did not reduce cost. Reduce step size to '0.25'.
+196	170	1	1	4.65139547877697E10	85.0	0.6	1.05	5.55	0.2	Exploration base, Delta = 0.25.
+197	170	2	1	4.65131935282009E10	87.5	0.6	1.05	5.55	0.2	Cost reduced     at azimuth_angle+dazimuth_angle.
+198	170	3	1	4.68628570764552E10	87.5	0.675	1.05	5.55	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+199	170	4	1	4.65283558750438E10	87.5	0.6	1.075	5.55	0.2	Cost not reduced at depth+ddepth.
+200	170	5	1	4.6517277392007E10	87.5	0.6	1.025	5.55	0.2	Cost not reduced at depth-ddepth.
+201	170	6	1	4.65127874374692E10	87.5	0.6	1.05	5.525	0.2	Cost reduced     at lbybratio_length-dlbybratio_length.
+201	170	7	1	4.65127874374692E10	87.5	0.6	1.05	5.525	0.2	Global search reduced cost.
+202	171	1	1	4.65155051067714E10	90.0	0.6	1.05	5.5	0.2	Exploration base, Delta = 0.25.
+203	171	2	1	4.6521617593754E10	92.5	0.6	1.05	5.5	0.2	Cost not reduced at azimuth_angle+dazimuth_angle.
+204	171	3	1	4.65129370951488E10	87.5	0.6	1.05	5.5	0.2	Cost reduced     at azimuth_angle-dazimuth_angle.
+205	171	4	1	4.6861644389448E10	87.5	0.675	1.05	5.5	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+206	171	5	1	4.6527948607929E10	87.5	0.6	1.075	5.5	0.2	Cost not reduced at depth+ddepth.
+207	171	6	1	4.6517007142317E10	87.5	0.6	1.025	5.5	0.2	Cost not reduced at depth-ddepth.
+208	171	7	1	4.6513468860788E10	87.5	0.6	1.05	5.475	0.2	Cost not reduced at lbybratio_length-dlbybratio_length.
+208	171	8	1	4.65127874374692E10	87.5	0.6	1.05	5.525	0.2	Cost reduced     at lbybratio_length+dlbybratio_length.
+209	171	9	1	4.65142089025836E10	85.0	0.6	1.05	5.525	0.2	Cost not reduced at azimuth_angle-dazimuth_angle.
+210	171	10	1	4.65152642679926E10	90.0	0.6	1.05	5.525	0.2	Cost not reduced at azimuth_angle+dazimuth_angle.
+211	171	11	1	4.68621075667982E10	87.5	0.675	1.05	5.525	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+212	171	12	1	4.65278764356322E10	87.5	0.6	1.075	5.525	0.2	Cost not reduced at depth+ddepth.
+213	171	13	1	4.65168633298427E10	87.5	0.6	1.025	5.525	0.2	Cost not reduced at depth-ddepth.
+213	171	14	1	4.65131935282009E10	87.5	0.6	1.05	5.55	0.2	Cost not reduced at lbybratio_length+dlbybratio_length.
+213	171	15	1	4.65129370951488E10	87.5	0.6	1.05	5.5	0.2	Cost not reduced at lbybratio_length-dlbybratio_length.
+201	171	16	1	4.65127874374692E10	87.5	0.6	1.05	5.525	0.2	Iteration step did not reduce cost. Reduce step size to '0.125'.
+213	172	1	1	4.65127874374692E10	87.5	0.6	1.05	5.525	0.2	Exploration base, Delta = 0.125.
+214	172	2	1	4.6512663176675E10	86.25	0.6	1.05	5.525	0.2	Cost reduced     at azimuth_angle-dazimuth_angle.
+215	172	3	1	4.66919251987855E10	86.25	0.6375	1.05	5.525	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+216	172	4	1	4.65106039099436E10	86.25	0.6	1.0625	5.525	0.2	Cost reduced     at depth+ddepth.
+217	172	5	1	4.65104874069325E10	86.25	0.6	1.0625	5.5375	0.2	Cost reduced     at lbybratio_length+dlbybratio_length.
+217	172	6	1	4.65104874069325E10	86.25	0.6	1.0625	5.5375	0.2	Global search reduced cost.
+218	173	1	1	4.65280302434544E10	85.0	0.6	1.075	5.55	0.2	Exploration base, Delta = 0.125.
+219	173	2	1	4.65311020171813E10	83.75	0.6	1.075	5.55	0.2	Cost not reduced at azimuth_angle-dazimuth_angle.
+220	173	3	1	4.65277251082793E10	86.25	0.6	1.075	5.55	0.2	Cost reduced     at azimuth_angle+dazimuth_angle.
+221	173	4	1	4.66879067074026E10	86.25	0.6375	1.075	5.55	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+222	173	5	1	4.65257018431053E10	86.25	0.6	1.0875	5.55	0.2	Cost reduced     at depth+ddepth.
+223	173	6	1	4.65259694100702E10	86.25	0.6	1.0875	5.5625	0.2	Cost not reduced at lbybratio_length+dlbybratio_length.
+224	173	7	1	4.6525721258522E10	86.25	0.6	1.0875	5.5375	0.2	Cost not reduced at lbybratio_length-dlbybratio_length.
+225	173	8	1	4.65107006691992E10	87.5	0.6	1.0625	5.5375	0.2	Cost not reduced at azimuth_angle+dazimuth_angle.
+226	173	9	1	4.65119232064863E10	85.0	0.6	1.0625	5.5375	0.2	Cost not reduced at azimuth_angle-dazimuth_angle.
+227	173	10	1	4.66899045478176E10	86.25	0.6375	1.0625	5.5375	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+228	173	11	1	4.65277381619928E10	86.25	0.6	1.075	5.5375	0.2	Cost not reduced at depth+ddepth.
+229	173	12	1	4.65125534617572E10	86.25	0.6	1.05	5.5375	0.2	Cost not reduced at depth-ddepth.
+230	173	13	1	4.65104261948956E10	86.25	0.6	1.0625	5.55	0.2	Cost reduced     at lbybratio_length+dlbybratio_length.
+230	173	14	1	4.65104261948956E10	86.25	0.6	1.0625	5.55	0.2	Local search reduced cost.
+231	174	1	1	4.65106478546118E10	86.25	0.6	1.0625	5.5625	0.2	Exploration base, Delta = 0.125.
+232	174	2	1	4.65111888318621E10	87.5	0.6	1.0625	5.5625	0.2	Cost not reduced at azimuth_angle+dazimuth_angle.
+233	174	3	1	4.65117079120462E10	85.0	0.6	1.0625	5.5625	0.2	Cost not reduced at azimuth_angle-dazimuth_angle.
+234	174	4	1	4.66902840793276E10	86.25	0.6375	1.0625	5.5625	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+235	174	5	1	4.65279985402263E10	86.25	0.6	1.075	5.5625	0.2	Cost not reduced at depth+ddepth.
+236	174	6	1	4.65127236945708E10	86.25	0.6	1.05	5.5625	0.2	Cost not reduced at depth-ddepth.
+237	174	7	1	4.6511011354671E10	86.25	0.6	1.0625	5.575	0.2	Cost not reduced at lbybratio_length+dlbybratio_length.
+237	174	8	1	4.65104261948956E10	86.25	0.6	1.0625	5.55	0.2	Cost reduced     at lbybratio_length-dlbybratio_length.
+238	174	9	1	4.6511153202685E10	87.5	0.6	1.0625	5.55	0.2	Cost not reduced at azimuth_angle+dazimuth_angle.
+239	174	10	1	4.65117948834754E10	85.0	0.6	1.0625	5.55	0.2	Cost not reduced at azimuth_angle-dazimuth_angle.
+240	174	11	1	4.6690044153601E10	86.25	0.6375	1.0625	5.55	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+240	174	12	1	4.65277251082793E10	86.25	0.6	1.075	5.55	0.2	Cost not reduced at depth+ddepth.
+241	174	13	1	4.65124995252538E10	86.25	0.6	1.05	5.55	0.2	Cost not reduced at depth-ddepth.
+241	174	14	1	4.65104874069325E10	86.25	0.6	1.0625	5.5375	0.2	Cost not reduced at lbybratio_length-dlbybratio_length.
+241	174	15	1	4.65106478546118E10	86.25	0.6	1.0625	5.5625	0.2	Cost not reduced at lbybratio_length+dlbybratio_length.
+230	174	16	1	4.65104261948956E10	86.25	0.6	1.0625	5.55	0.2	Iteration step did not reduce cost. Reduce step size to '0.0625'.
+241	175	1	1	4.65104261948956E10	86.25	0.6	1.0625	5.55	0.2	Exploration base, Delta = 0.0625.
+242	175	2	1	4.65103730877818E10	86.875	0.6	1.0625	5.55	0.2	Cost reduced     at azimuth_angle+dazimuth_angle.
+243	175	3	1	4.65967636902439E10	86.875	0.61875	1.0625	5.55	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+244	175	4	1	4.65093443124492E10	86.875	0.6	1.06875	5.55	0.2	Cost reduced     at depth+ddepth.
+245	175	5	1	4.65095062720338E10	86.875	0.6	1.06875	5.54375	0.2	Cost not reduced at lbybratio_length-dlbybratio_length.
+246	175	6	1	4.65099502414513E10	86.875	0.6	1.06875	5.55625	0.2	Cost not reduced at lbybratio_length+dlbybratio_length.
+244	175	7	1	4.65093443124492E10	86.875	0.6	1.06875	5.55	0.2	Global search reduced cost.
+246	176	1	1	4.65283558750438E10	87.5	0.6	1.075	5.55	0.2	Exploration base, Delta = 0.0625.
+247	176	2	1	4.65287783187331E10	88.125	0.6	1.075	5.55	0.2	Cost not reduced at azimuth_angle+dazimuth_angle.
+248	176	3	1	4.65275418664143E10	86.875	0.6	1.075	5.55	0.2	Cost reduced     at azimuth_angle-dazimuth_angle.
+249	176	4	1	4.65946873933548E10	86.875	0.61875	1.075	5.55	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+250	176	5	1	4.65266739636577E10	86.875	0.6	1.08125	5.55	0.2	Cost reduced     at depth+ddepth.
+251	176	6	1	4.65266783153797E10	86.875	0.6	1.08125	5.54375	0.2	Cost not reduced at lbybratio_length-dlbybratio_length.
+252	176	7	1	4.65271625997481E10	86.875	0.6	1.08125	5.55625	0.2	Cost not reduced at lbybratio_length+dlbybratio_length.
+253	176	8	1	4.65095050964239E10	86.25	0.6	1.06875	5.55	0.2	Cost not reduced at azimuth_angle-dazimuth_angle.
+254	176	9	1	4.65101340868135E10	87.5	0.6	1.06875	5.55	0.2	Cost not reduced at azimuth_angle+dazimuth_angle.
+255	176	10	1	4.65957076973067E10	86.875	0.61875	1.06875	5.55	0.2	Cost not reduced at wwr_height1+dwwr_height1.
+255	176	11	1	4.65275418664143E10	86.875	0.6	1.075	5.55	0.2	Cost not reduced at depth+ddepth.
+255	176	12	1	4.65103730877818E10	86.875	0.6	1.0625	5.55	0.2	Cost not reduced at depth-ddepth.
+255	176	13	1	4.65095062720338E10	86.875	0.6	1.06875	5.54375	0.2	Cost not reduced at lbybratio_length-dlbybratio_length.
+255	176	14	1	4.65099502414513E10	86.875	0.6	1.06875	5.55625	0.2	Cost not reduced at lbybratio_length+dlbybratio_length.
+244	176	15	1	4.65093443124492E10	86.875	0.6	1.06875	5.55	0.2	Iteration step did not reduce cost. Maximum number of step reductions reached.
+244	176	16	1	4.65093443124492E10	86.875	0.6	1.06875	5.55	0.2	Minimum point.
