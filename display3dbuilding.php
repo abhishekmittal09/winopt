@@ -8,153 +8,192 @@ extract($_POST);
 
 $working_directory_location_parametric = "./working_directory/parametric/$unique_counter/";
 
-$azimuth1=array();
-$energy1=array();
-$wwr1=array();
-$ratio1=array();
-$shgc1=array();
-$depth1=array();
-$u_factor1=array();
-$vlt1=array();
-$count=0;
-$file=fopen($working_directory_location_parametric."finalvalues.txt","r");
-$flag=0;
-if($file == NULL){
+// $azimuth1=array();
+// $energy1=array();
+// $wwr1=array();
+// $ratio1=array();
+// $shgc1=array();
+// $depth1=array();
+// $u_factor1=array();
+// $vlt1=array();
+// $count=0;
+// $file=fopen($working_directory_location_parametric."finalvalues.txt","r");
+// $flag=0;
+// if($file == NULL){
 
-}
-else{
-     while(!feof($file))
-     {
-         $no=0;
-         $a= fgets($file);
-         $len=strlen($a);
-         if($len==0 or $len==1)
-         {
-            break;
-         }
-         $piece=explode(" ",$a);
-         $energy1[$count]=$piece[0];
-         $azimuth1[$count]=$piece[1];
-         $wwr1[$count]=$piece[2];
-         $depth1[$count]=$piece[3];
-         $ratio1[$count]=$piece[4];
-         $shgc1[$count]=$piece[5];
-         $u_factor1[$count]=$piece[6];
-         $vlt1[$count]=$piece[7];
-         $count=$count+1;
-      }
+// }
+// else{
+//      while(!feof($file))
+//      {
+//          $no=0;
+//          $a= fgets($file);
+//          $len=strlen($a);
+//          if($len==0 or $len==1)
+//          {
+//             break;
+//          }
+//          $piece=explode(" ",$a);
+//          $energy1[$count]=$piece[0];
+//          $azimuth1[$count]=$piece[1];
+//          $wwr1[$count]=$piece[2];
+//          $depth1[$count]=$piece[3];
+//          $ratio1[$count]=$piece[4];
+//          $shgc1[$count]=$piece[5];
+//          $u_factor1[$count]=$piece[6];
+//          $vlt1[$count]=$piece[7];
+//          $count=$count+1;
+//       }
 
-      //sorting the values
-      $x1=0;
-      $y1=0;
-      while($x1 < $count)
-      {
-        $y1=0;
-        while($y1 < $count)
-        {
-          if($energy1[$x1] < $energy1[$y1])
-          {
-            $temp1=$energy1[$x1];
-            $energy1[$x1]=$energy1[$y1];
-            $energy1[$y1]=$temp1;
+//       //sorting the values
+//       $x1=0;
+//       $y1=0;
+//       while($x1 < $count)
+//       {
+//         $y1=0;
+//         while($y1 < $count)
+//         {
+//           if($energy1[$x1] < $energy1[$y1])
+//           {
+//             $temp1=$energy1[$x1];
+//             $energy1[$x1]=$energy1[$y1];
+//             $energy1[$y1]=$temp1;
 
 
-            $temp1=$azimuth1[$x1];
-            $azimuth1[$x1]=$azimuth1[$y1];
-            $azimuth1[$y1]=$temp1;
+//             $temp1=$azimuth1[$x1];
+//             $azimuth1[$x1]=$azimuth1[$y1];
+//             $azimuth1[$y1]=$temp1;
 
-            $temp1=$wwr1[$x1];
-            $wwr1[$x1]=$wwr1[$y1];
-            $wwr1[$y1]=$temp1;
+//             $temp1=$wwr1[$x1];
+//             $wwr1[$x1]=$wwr1[$y1];
+//             $wwr1[$y1]=$temp1;
 
-            $temp1=$depth1[$x1];
-            $depth1[$x1]=$depth1[$y1];
-            $depth1[$y1]=$temp1;
+//             $temp1=$depth1[$x1];
+//             $depth1[$x1]=$depth1[$y1];
+//             $depth1[$y1]=$temp1;
 
-            $temp1=$ratio1[$x1];
-            $ratio1[$x1]=$ratio1[$y1];
-            $ratio1[$y1]=$temp1;
+//             $temp1=$ratio1[$x1];
+//             $ratio1[$x1]=$ratio1[$y1];
+//             $ratio1[$y1]=$temp1;
 
-            $temp1=$shgc1[$x1];
-            $shgc1[$x1]=$shgc1[$y1];
-            $shgc1[$y1]=$temp1;
+//             $temp1=$shgc1[$x1];
+//             $shgc1[$x1]=$shgc1[$y1];
+//             $shgc1[$y1]=$temp1;
 
-            $temp1=$u_factor1[$x1];
-            $u_factor1[$x1]=$u_factor1[$y1];
-            $u_factor1[$y1]=$temp1;
+//             $temp1=$u_factor1[$x1];
+//             $u_factor1[$x1]=$u_factor1[$y1];
+//             $u_factor1[$y1]=$temp1;
 
-            $temp1=$vlt1[$x1];
-            $vlt1[$x1]=$vlt1[$y1];
-            $vlt1[$y1]=$temp1;
+//             $temp1=$vlt1[$x1];
+//             $vlt1[$x1]=$vlt1[$y1];
+//             $vlt1[$y1]=$temp1;
 
-          }
-          $y1=$y1+1;
-        }
-        $x1=$x1+1;
-      }
-}
+//           }
+//           $y1=$y1+1;
+//         }
+//         $x1=$x1+1;
+//       }
+// }
 
-$fp1=fopen($working_directory_location_parametric."results250_3.js","w");
-if(!$fp1){
+// $fp1=fopen($working_directory_location_parametric."results250_3.js","w");
+// if(!$fp1){
 
-     echo "unable to open file";
-}
+//      echo "unable to open file";
+// }
 
-$str="var data = [
-";
+// $str="var data = [
+// ";
 
-$foldsize=($count/10);
-if($foldsize<=0){
-$foldsize=1;
-}
-for($i=0;$i<$count;$i++){
-     $str=$str."{'group':".(int)($i/$foldsize);
-     $str=$str.",'azimuth':$azimuth1[$i]";
-             $str=$str.",'wwr':$wwr1[$i]";
-             $str=$str.",'overhang':$depth1[$i]";
-             $str=$str.",'aspectRatio':$ratio1[$i]";
-             $str=$str.",'shgc':$shgc1[$i]";
-             $str=$str.",'energy':$energy1[$i]";
-     if($i==$count-1){
-     $str=$str."}
-";
-     }
-     else{
-     $str=$str."},
-";
+// $foldsize=($count/10);
+// if($foldsize<=0){
+// $foldsize=1;
+// }
+// for($i=0;$i<$count;$i++){
+//      $str=$str."{'group':".(int)($i/$foldsize);
+//      $str=$str.",'azimuth':$azimuth1[$i]";
+//              $str=$str.",'wwr':$wwr1[$i]";
+//              $str=$str.",'overhang':$depth1[$i]";
+//              $str=$str.",'aspectRatio':$ratio1[$i]";
+//              $str=$str.",'shgc':$shgc1[$i]";
+//              $str=$str.",'energy':$energy1[$i]";
+//      if($i==$count-1){
+//      $str=$str."}
+// ";
+//      }
+//      else{
+//      $str=$str."},
+// ";
 
-     }
-}
-$str=$str."];";
-fwrite($fp1,$str);
-fclose($fp1);
+//      }
+// }
+// $str=$str."];";
+// fwrite($fp1,$str);
+// fclose($fp1);
 
 ?>
 
 
 <html>
 <head>
-	 <script type="text/javascript" src="./graph/Cango3D-7v00.js"></script>
+   <script type="text/javascript" src="./graph/angular.min.js"></script>
+   <script type="text/javascript" src="./graph/Cango3D-7v00.js"></script>
 	 <script type="text/javascript" src="./graph/jquery.js"></script>
 	 <script type="text/javascript" src="./graph/jquery-ui.js"></script>
-     <script type="text/javascript" src="<?php echo $working_directory_location_parametric; ?>results250_3.js"></script>
-	<link rel="stylesheet" href="./css/jquery-ui.css">
+   <script type="text/javascript" src="<?php echo $working_directory_location_parametric; ?>results250_3.js"></script>
+   <link rel="stylesheet" href="./css/jquery-ui.css">
+   <link rel="stylesheet" href="./css/pure-min.css">
+   <link rel="stylesheet" href="./css/side-menu-old-ie.css">
+   <link rel="stylesheet" href="./css/side-menu.css">
+   <link rel="stylesheet" href="./css/1.11.5.css">
+   <link rel="stylesheet" href="./css/d.css">
+
 <style type="text/css">
+  #slider-vertical {
+    background: -webkit-linear-gradient(red, green); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(red, green); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(red, green); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(red, green); /* Standard syntax (must be last) */    
+  }
+
   #canvasTable {
      border-collapse: collapse;
   }
+
   canvas{
     height: 200px;
   }
+
+  body{
+  }
+  .sliderDiv {
+    width: 80%;
+    left: 10%;
+    margin: 2%;
+  }
+  h3{
+    margin: 0px;
+  }
+
+  .slider-label-left{
+    position: relative;
+    top: 20px;
+  }
+
+  .slider-label-right{
+    float: right;
+    position: relative;
+  }
+
 </style>
 </head>
-<body>
-
-
-	<table border="1" style="width:100%;" id="canvasTable" cellpadding="0" cellspacing="0">
+<body ng-app="">
+<div class="hero-titles" style="text-align:center">
+  <h1 class="hero-site" style="font-size: 3em">EDOT</h1>
+</div>
+	<table border="1" style="width:100%;" id="canvasTable" cellpadding="0" cellspacing="0"
+    data-ng-init="ufactors=['1.5','3.72','1.5','5.7','3.3']">
 		<tbody>
 			<tr>
-				<td>
+				<td id="firstTd">
 					<h3>Plan</h3>
 					<canvas id="cvs1"></canvas><br>			
 					<input id="zoomcvs1" type="range" name="points" min="10" max="100" value="70">
@@ -164,7 +203,7 @@ fclose($fp1);
 					<canvas id="cvs2"></canvas><br>								
 					<input id="zoomcvs2" type="range" name="points" min="10" max="100" value="70">
 				</td>
-				<td rowspan="2">
+				<td id="energyTd" rowspan="2">
 					<h3>Max Energy</h3>
 					<div id="slider-vertical" style="height:100%;left:20px"></div>
 					<h3>Min Energy</h3>
@@ -174,75 +213,293 @@ fclose($fp1);
 				<td>
 					<h3>3D View</h3>
 					<canvas id="cvs3"></canvas><br>
-					<input id="zoomcvs3" type="range" name="points" min="10" max="100" value="70">
+					<input id="zoomcvs3" type="range" name="points" min="10" max="100" value="30">
 				</td>
 				<td>
 					<h3>Glass Properties</h3>
-					<canvas id="cvs4"></canvas><br>								
-          <input id="zoomcvs4" type="range" name="points" min="10" max="100" value="70">
+          <div>
+  					<canvas id="cvs4" style="float:left"></canvas>								
+            <table border="1">
+              <tbody>
+                <tr>
+                  <td>U-Factor</td>
+                  <td id="curufactor"></td>
+                </tr>
+                <tr>
+                  <td>SHGC</td>
+                  <td id="curshgc"></td>
+                </tr>
+                <tr>
+                  <td>VLT</td>
+                  <td id="curvlt"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <input id="zoomcvs4" type="range" name="points" min="10" max="100" value="50" hidden>
 				</td>			
 			</tr>
 			<tr></tr>
-		</tbody>
-	</table>
+    <tr>
+      <td>
+          Azimuth
+          <div id="slider-azimuth" class="sliderDiv">
+            <div class="slider-label-left">0</div>
+            <div class="slider-label-right">360</div>
+          </div>
+      </td>
+      <td style="text-align:center">
+        Glass Type
+        <select id="glassType" onchange="filterData('glassType', this.value)">
+          <option value="0" selected="selected">None</option>
+          <option value="0.25">U factor: 1.5; SHGC: 0.25; VLT:0.50</option>
+          <option value="0.28">U factor: 3.72; SHGC: 0.28; VLT: 0.27</option>
+          <option value="0.20">U factor: 1.5; SHGC: 0.20; VLT: 0.35</option>
+          <option value="0.67">U factor: 5.7; SHGC: 0.67; VLT: 0.67</option>
+          <option value="0.85">U factor: 3.3; SHGC: 0.85; VLT: 0.85</option>
+        </select>
+      </td>
+      <td rowspan="3"></td>
+    </tr>
+    <tr>
+      <td>Aspect Ratio<div id="slider-aspectratio" class="sliderDiv">
+        <div class="slider-label-left">0</div>
+        <div class="slider-label-right">10</div>        
+      </div></td>
+      <td>Overhang<div id="slider-overhang" class="sliderDiv">
+        <div class="slider-label-left">0</div>
+        <div class="slider-label-right">10</div>        
+      </div></td>
+    </tr>
+    <tr>
+      <td>WWR<div id="slider-wwr" class="sliderDiv">
+        <div class="slider-label-left">5</div>
+        <div class="slider-label-right">95</div>        
+      </div></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 	<script type="text/javascript">
 
-  //$("canvas").css($(td).width());
-	$("#slider-vertical").css("height", $("#canvasTable").height()-50);
+  $("canvas").width($("#firstTd").width());
+  $("#cvs4").width($("#firstTd").width()/2);
+	$("#slider-vertical").css("height", $("#energyTd").height()-100);
 
-	var initval=Math.floor(data.length/2);
-	var energyIndex = initval;
-	$(function() {
-		$( "#slider-vertical" ).slider({
-			orientation: "vertical",
-			range: "min",
-			min: 0,
-			max: data.length-1,
-			value: initval,
-			slide: function( event, ui ) {
-				energyIndex = ui.value;
-        drawCube4("cvs4", data[energyIndex]);
-				drawCube3("cvs3", data[energyIndex]);
-				drawCube2("cvs2", data[energyIndex]);
-				drawCube1("cvs1", data[energyIndex]);
-				console.log(data[energyIndex]);
-			}
-		});
-		console.log(energyIndex);
-	});
-	</script>
-	<script type="text/javascript">
+  $( "#slider-azimuth" ).slider({
+    orientation: "horizontal",
+    range: true,
+    min: 0,
+    max: 360,
+    values: [0, 360],
+    slide: function( event, ui ) {
+      console.log(ui);
+      filterData("azimuth", ui.values);
+      $($("#slider-azimuth").children()[0]).html(ui.values[0]);
+      $($("#slider-azimuth").children()[1]).html(ui.values[1]);
+    }
+  });
+  $( "#slider-aspectratio" ).slider({
+    orientation: "horizontal",
+    range: true,
+    min: 0,
+    max: 10,
+    values: [0, 10],
+    slide: function( event, ui ) {
+      console.log(ui);
+      filterData("aspectRatio", ui.values);
+      $($("#slider-aspectratio").children()[0]).html(ui.values[0]);
+      $($("#slider-aspectratio").children()[1]).html(ui.values[1]);
+    }
+  });
+  $( "#slider-wwr" ).slider({
+    orientation: "horizontal",
+    range: true,
+    min: 5,
+    max: 95,
+    values: [5, 95],
+    slide: function( event, ui ) {
+      console.log(ui);
+      filterData("wwr", ui.values);
+      $($("#slider-wwr").children()[0]).html(ui.values[0]);
+      $($("#slider-wwr").children()[1]).html(ui.values[1]);
+    }
+  });
+  $( "#slider-overhang" ).slider({
+    orientation: "horizontal",
+    range: true,
+    min: 0,
+    max: 10,
+    values: [0, 10],
+    slide: function( event, ui ) {
+      console.log(ui);
+      filterData("overhang", ui.values);
+      $($("#slider-overhang").children()[0]).html(ui.values[0]);
+      $($("#slider-overhang").children()[1]).html(ui.values[1]);
+    }
+  });
+
+  function updateshgc(shgc){
+    var ufactor, vlt;
+    if(shgc===0.25){
+      ufactor=1.5;
+      vlt=0.50;
+    }
+    if(shgc===0.28){
+      ufactor=3.72;
+      vlt=0.27;
+    }
+    if(shgc===0.67){
+      ufactor=5.7;
+      vlt=0.67;
+    }
+    if(shgc===0.20){
+      ufactor=1.5;
+      vlt=0.35;
+    }
+    if(shgc===0.85){
+      ufactor=3.3;
+      vlt=0.85;
+    }
+    $("#curshgc").html(shgc);
+    $("#curvlt").html(vlt);
+    $("#curufactor").html(ufactor);
+  }
 
 	var totalArea = "<?php echo 50; ?>";
 
-	//$( "#energyRange" ).attr("max", data.length);
+  function init(data){
+    if(data.length===0){
+      return ;
+    }
+    var initval=Math.floor(data.length/2);
+    var energyIndex = initval;
+    console.log(data);
+    console.log(data.length/2);
+    console.log("energyIndex " + energyIndex);
 
-	$( "#zoomcvs1" ).change(function() {
-		drawCube1("cvs1", data[energyIndex]);
-	});
-	$( "#zoomcvs2" ).change(function() {
-		drawCube2("cvs2", data[energyIndex]);
-	});
-  $( "#zoomcvs3" ).change(function() {
-    drawCube3("cvs3", data[energyIndex]);
-  });
-  $( "#zoomcvs4" ).change(function() {
+    $( "#slider-vertical" ).slider({
+      orientation: "vertical",
+      range: false,
+      min: 0,
+      max: data.length-1,
+      value: initval,
+      slide: function( event, ui ) {
+        energyIndex = ui.value;
+        drawCube4("cvs4", data[energyIndex]);
+        drawCube3("cvs3", data[energyIndex]);
+        drawCube2("cvs2", data[energyIndex]);
+        drawCube1("cvs1", data[energyIndex]);
+        updateshgc(data[energyIndex].shgc);
+        console.log(data[energyIndex]);
+      }
+    });
+
+    updateshgc(data[energyIndex].shgc);
+
+  	$( "#zoomcvs1" ).change(function() {
+  		drawCube1("cvs1", data[energyIndex]);
+  	});
+  	$( "#zoomcvs2" ).change(function() {
+  		drawCube2("cvs2", data[energyIndex]);
+  	});
+    $( "#zoomcvs3" ).change(function() {
+      drawCube3("cvs3", data[energyIndex]);
+    });
+    $( "#zoomcvs4" ).change(function() {
+      drawCube4("cvs4", data[energyIndex]);
+    });
+
     drawCube4("cvs4", data[energyIndex]);
-  });
+    drawCube3("cvs3", data[energyIndex]);
+  	drawCube2("cvs2", data[energyIndex]);
+  	drawCube1("cvs1", data[energyIndex]);
+  }
 
-	// $( "#energyRange" ).change(function() {
-	// 	energyIndex = $( "#energyRange" ).val();
-	// 	drawCube3("cvs3", data[energyIndex]);
-	// 	drawCube2("cvs2", data[energyIndex]);
-	// 	drawCube1("cvs1", data[energyIndex]);
-	// 	console.log(data[energyIndex]);
-	// });
+  storeData=data;
+  init(data);
 
-  drawCube4("cvs4", data[energyIndex]);
-  drawCube3("cvs3", data[energyIndex]);
-	drawCube2("cvs2", data[energyIndex]);
-	drawCube1("cvs1", data[energyIndex]);
+  var filterInfo = {};
+
+  function filterData(param, val){
+    if(param==="glassType"){
+      if(typeof val === "string"){
+        val=parseFloat(val);
+      }
+    }
+    filterInfo[param] = val;
+    applyFiltering(filterInfo);
+  }
+
+  function applyFiltering(filterInfo){
+    console.log("filtering Info");
+    console.log(filterInfo);
+    console.log("filtering");
+    data=storeData;
+    var tempdata=storeData;
+    if(filterInfo.glassType){
+        tempdata=data;
+        data=[];
+        var val=filterInfo.glassType;
+        for (var i = tempdata.length - 1; i >= 0; i--) {
+          // console.log(typeof tempdata[i].shgc + typeof val);
+          // console.log(tempdata[i].shgc + " " + val);
+          if(val===0){
+            data.push(tempdata[i]);
+          }
+          else if(tempdata[i].shgc===val){
+            data.push(tempdata[i]);
+          }
+        }
+      }
+      if(filterInfo.azimuth){
+        tempdata=data;
+        data=[];
+        var val=filterInfo.azimuth;
+        // console.log("azimuth vals are " + val[0] + " " + val[1]);
+        for (var i = tempdata.length - 1; i >= 0; i--) {
+          if(tempdata[i].azimuth>=val[0] && tempdata[i].azimuth<=val[1]){
+            data.push(tempdata[i]);
+          }
+        };
+      }
+      if(filterInfo.aspectRatio){
+        tempdata=data;
+        data=[];
+        var val=filterInfo.aspectRatio;
+        // console.log("azimuth vals are " + val[0] + " " + val[1]);
+        for (var i = tempdata.length - 1; i >= 0; i--) {
+          if(tempdata[i].aspectRatio>=val[0] && tempdata[i].aspectRatio<=val[1]){
+            data.push(tempdata[i]);
+          }
+        };
+      }
+      if(filterInfo.wwr){
+        tempdata=data;
+        data=[];
+        var val=filterInfo.wwr;
+        // console.log("azimuth vals are " + val[0] + " " + val[1]);
+        for (var i = tempdata.length - 1; i >= 0; i--) {
+          if(tempdata[i].wwr>=val[0] && tempdata[i].wwr<=val[1]){
+            data.push(tempdata[i]);
+          }
+        };
+      }
+      if(filterInfo.overhang){
+        tempdata=data;
+        data=[];
+        var val=filterInfo.overhang;
+        // console.log("azimuth vals are " + val[0] + " " + val[1]);
+        for (var i = tempdata.length - 1; i >= 0; i--) {
+          if(tempdata[i].overhang>=val[0] && tempdata[i].overhang<=val[1]){
+            data.push(tempdata[i]);
+          }
+        };
+      }
+      console.log("sizeof data " + data.length);
+      init(data);
+    }
 
     function drawCube1(cvsID, data)
     {//topview
@@ -367,7 +624,7 @@ fclose($fp1);
 
       //cube = buildRectShape(g, colors, 10000, 30, [20, 10, 90, 50], 2, 10, 30);
       cube = buildRectShape(g, colors, totalArea, data.azimuth, [data.wwr, data.wwr, data.wwr, data.wwr],
-      						data.aspectRatio, data.overhang, 3);
+      						data.aspectRatio, data.overhang, 3, true);
       
       cube.scale($( "#zoomcvs2" ).val()/5);
       //cube = buildCubemanual(g, 100, colors, [0,0,0]);
@@ -514,7 +771,7 @@ fclose($fp1);
     }
 
     //here order of wwr is (north, east, south, west)
-	function buildRectShape(g, colors, totalArea, azimuth, wwr, aspectRatio, overhangDepth, height) // pass width and array of 6 colors
+	function buildRectShape(g, colors, totalArea, azimuth, wwr, aspectRatio, overhangDepth, height, floor) // pass width and array of 6 colors
 	{
 
 		var length=Math.sqrt(aspectRatio*totalArea);
@@ -543,37 +800,37 @@ fclose($fp1);
 			walls[i] = [];
 		};
 		//side walls
-		walls[0][0] = [0, 0, 0];
-		walls[0][1] = [length, 0, 0];
+		walls[0][0] = [0, 0, 0];//proper
+		walls[0][1] = [0, height, 0];
 		walls[0][2] = [length, height, 0];
-		walls[0][3] = [0, height, 0];
+		walls[0][3] = [length, 0, 0];
 
-		walls[1][0] = [length, 0, 0];
+		walls[1][0] = [length, 0, 0];//proper
 		walls[1][1] = [length, height, 0];
 		walls[1][2] = [length, height, breadth];
 		walls[1][3] = [length, 0, breadth];
 
-		walls[2][0] = [0, 0, breadth];
-		walls[2][1] = [0, height, breadth];
+		walls[2][0] = [0, 0, breadth];//proper
+		walls[2][1] = [length, 0, breadth];
 		walls[2][2] = [length, height, breadth];
-		walls[2][3] = [length, 0, breadth];
+		walls[2][3] = [0, height, breadth];
 
-		walls[3][0] = [0, 0, 0];
-		walls[3][1] = [0, height, 0];
+		walls[3][0] = [0, 0, 0];//proper
+		walls[3][1] = [0, 0, breadth];
 		walls[3][2] = [0, height, breadth];
-		walls[3][3] = [0, 0, breadth];
+		walls[3][3] = [0, height, 0];
 
-		//floor
+		//floor proper
 		walls[4][0] = [0, 0, 0];
 		walls[4][1] = [length, 0, 0];
 		walls[4][2] = [length, 0, breadth];
 		walls[4][3] = [0, 0, breadth];
 
-		//ceiling
+		//ceiling proper
 		walls[5][0] = [0, height, 0];
-		walls[5][1] = [length, height, 0];
+		walls[5][1] = [0, height, breadth];
 		walls[5][2] = [length, height, breadth];
-		walls[5][3] = [0, height, breadth];
+		walls[5][3] = [length, height, 0];
 
 		//overhang wall1
 		walls[6][0] = [0, wwr_startz[0], 0];
@@ -618,7 +875,16 @@ fclose($fp1);
 		walls[13][2] = [0-smallinc, wwr_startz[3]-wwr_height[3], 0];
 		walls[13][3] = [0-smallinc, wwr_startz[3]-wwr_height[3], breadth];
 
-		console.log(walls);
+    if(floor===true){
+      totalwalls++;
+      walls[totalwalls]=[];
+      flen=10;
+      fbred=10;
+      walls[14][0] = [-flen, -smallinc,  -flen];
+      walls[14][1] = [ flen, -smallinc,  -flen];
+      walls[14][2] = [ flen, -smallinc,   flen];
+      walls[14][3] = [-flen, -smallinc, flen];
+    }
 
 	  	var sq=[];
 	    var colorNum = 4;
@@ -635,8 +901,7 @@ fclose($fp1);
 		  	sq[i] = ['M',walls[i][0][0], walls[i][0][1], walls[i][0][2], 'L',walls[i][1][0],walls[i][1][1],walls[i][1][2],
 		  	walls[i][2][0], walls[i][2][1], walls[i][2][2], walls[i][3][0], walls[i][3][1], walls[i][3][2], 'z'];
 		    side = g.compileShape3D(sq[i], colors[colorNum]);
-		   	//side.backHidden = true;
-		    faces.addObj(side);
+        faces.addObj(side);
 	  	};
 
 	  return faces;
