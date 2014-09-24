@@ -242,7 +242,7 @@ $working_directory_location_parametric = "./working_directory/parametric/$unique
 			<tr></tr>
     <tr>
       <td>
-          Azimuth
+          Azimuth (degrees)
           <div id="slider-azimuth" class="sliderDiv">
             <div class="slider-label-left">0</div>
             <div class="slider-label-right">360</div>
@@ -266,13 +266,13 @@ $working_directory_location_parametric = "./working_directory/parametric/$unique
         <div class="slider-label-left">0</div>
         <div class="slider-label-right">10</div>        
       </div></td>
-      <td>Overhang<div id="slider-overhang" class="sliderDiv">
+      <td>Overhang (meter)<div id="slider-overhang" class="sliderDiv">
         <div class="slider-label-left">0</div>
         <div class="slider-label-right">10</div>        
       </div></td>
     </tr>
     <tr>
-      <td>WWR<div id="slider-wwr" class="sliderDiv">
+      <td>WWR (%)<div id="slider-wwr" class="sliderDiv">
         <div class="slider-label-left">5</div>
         <div class="slider-label-right">95</div>        
       </div></td>
