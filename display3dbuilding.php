@@ -284,6 +284,99 @@ $working_directory_location_parametric = "./working_directory/parametric/$unique
 
 	<script type="text/javascript">
 
+  minValArray = [];
+  maxValArray = [];
+  azimuthVals = [];
+  wwrVals = [];
+  aspectVals = [];
+  overhangVals = [];
+
+  function min(a,b){
+    if(a<b)
+      return a;
+    return b;
+  }
+  function max(a,b){
+    if(a>b)
+      return a;
+    return b;
+  }
+
+  function locateMin(data){
+    minValArray = data[0];
+    maxValArray = data[0];
+    for (var i = data.length - 1; i >= 0; i--) {
+      minValArray.azimuth = min(minValArray.azimuth, data[i].azimuth);
+      minValArray.wwr = min(minValArray.wwr, data[i].wwr);
+      minValArray.overhang = min(minValArray.overhang, data[i].overhang);
+      minValArray.aspectRatio = min(minValArray.aspectRatio, data[i].aspectRatio);
+      minValArray.energy = min(minValArray.energy, data[i].energy);
+
+      maxValArray.azimuth = max(maxValArray.azimuth, data[i].azimuth);
+      maxValArray.wwr = max(maxValArray.wwr, data[i].wwr);
+      maxValArray.overhang = max(maxValArray.overhang, data[i].overhang);
+      maxValArray.aspectRatio = max(maxValArray.aspectRatio, data[i].aspectRatio);
+      maxValArray.energy = max(maxValArray.energy, data[i].energy);
+    };
+  }
+
+  function findDistinct(data){
+    for (var i = data.length - 1; i >= 0; i--) {
+      var flag=0;
+      for (var j = azimuthVals.length - 1; j >= 0; j--) {
+        if(azimuthVals[j]===data[i].azimuth){
+          flag=1;
+          break;
+        }
+      };
+      if(flag===0){
+        azimuthVals.push(data[i].azimuth);
+      }
+      flag=0;
+
+      for (var j = wwrVals.length - 1; j >= 0; j--) {
+        if(wwrVals[j]===data[i].wwr){
+          flag=1;
+          break;
+        }
+      };
+      if(flag===0){
+        wwrVals.push(data[i].wwr);
+      }
+      flag=0;
+
+      for (var j = aspectVals.length - 1; j >= 0; j--) {
+        if(aspectVals[j]===data[i].aspectRatio){
+          flag=1;
+          break;
+        }
+      };
+      if(flag===0){
+        aspectVals.push(data[i].aspectRatio);
+      }
+
+      flag=0;
+      for (var j = overhangVals.length - 1; j >= 0; j--) {
+        if(overhangVals[j]===data[i].overhang){
+          flag=1;
+          break;
+        }
+      };
+      if(flag===0){
+        overhangVals.push(data[i].overhang);
+      }
+      flag=0;
+    };
+    azimuthVals.sort(function(a, b){return a-b});
+    wwrVals.sort(function(a, b){return a-b});
+    overhangVals.sort(function(a, b){return a-b});
+    aspectVals.sort(function(a, b){return a-b});
+  }
+
+  storeData=data;
+  locateMin(storeData);
+  findDistinct(storeData);
+
   $("canvas").width($("#firstTd").width());
   $("#cvs4").width($("#firstTd").width()/2);
 	$("#slider-vertical").css("height", $("#energyTd").height()-100);
@@ -292,54 +385,62 @@ $working_directory_location_parametric = "./working_directory/parametric/$unique
     orientation: "horizontal",
     range: true,
     min: 0,
-    max: 360,
-    values: [0, 360],
+    max: 4,
+    values: [0, 4],
     slide: function( event, ui ) {
       console.log(ui);
-      filterData("azimuth", ui.values);
-      $($("#slider-azimuth").children()[0]).html(ui.values[0]);
-      $($("#slider-azimuth").children()[1]).html(ui.values[1]);
+      filterData("azimuth", [ azimuthVals[ui.values[0]], azimuthVals[ui.values[1]] ]);
+      $($("#slider-azimuth").children()[0]).html(azimuthVals[ui.values[0]]);
+      $($("#slider-azimuth").children()[1]).html(azimuthVals[ui.values[1]]);
     }
   });
+  $($("#slider-azimuth").children()[0]).html(azimuthVals[0]);
+  $($("#slider-azimuth").children()[1]).html(azimuthVals[4]);
   $( "#slider-aspectratio" ).slider({
     orientation: "horizontal",
     range: true,
     min: 0,
-    max: 10,
-    values: [0, 10],
+    max: 4,
+    values: [0, 4],
     slide: function( event, ui ) {
       console.log(ui);
-      filterData("aspectRatio", ui.values);
-      $($("#slider-aspectratio").children()[0]).html(ui.values[0]);
-      $($("#slider-aspectratio").children()[1]).html(ui.values[1]);
+      filterData("aspectRatio", [ aspectVals[ui.values[0]], aspectVals[ui.values[1]] ]);
+      $($("#slider-aspectratio").children()[0]).html(aspectVals[ui.values[0]]);
+      $($("#slider-aspectratio").children()[1]).html(aspectVals[ui.values[1]]);
     }
   });
+  $($("#slider-aspectratio").children()[0]).html(aspectVals[0]);
+  $($("#slider-aspectratio").children()[1]).html(aspectVals[1]);
   $( "#slider-wwr" ).slider({
     orientation: "horizontal",
     range: true,
-    min: 5,
-    max: 95,
-    values: [5, 95],
+    min: 0,
+    max: 4,
+    values: [0, 4],
     slide: function( event, ui ) {
       console.log(ui);
-      filterData("wwr", ui.values);
-      $($("#slider-wwr").children()[0]).html(ui.values[0]);
-      $($("#slider-wwr").children()[1]).html(ui.values[1]);
+      filterData("wwr", [ wwrVals[ui.values[0]], wwrVals[ui.values[1]] ]);
+      $($("#slider-wwr").children()[0]).html(wwrVals[ui.values[0]]);
+      $($("#slider-wwr").children()[1]).html(wwrVals[ui.values[1]]);
     }
   });
+  $($("#slider-wwr").children()[0]).html(wwrVals[0]);
+  $($("#slider-wwr").children()[1]).html(wwrVals[4]);
   $( "#slider-overhang" ).slider({
     orientation: "horizontal",
     range: true,
     min: 0,
-    max: 10,
-    values: [0, 10],
+    max: 4,
+    values: [0, 4],
     slide: function( event, ui ) {
       console.log(ui);
-      filterData("overhang", ui.values);
-      $($("#slider-overhang").children()[0]).html(ui.values[0]);
-      $($("#slider-overhang").children()[1]).html(ui.values[1]);
+      filterData("overhang", [ overhangVals[ui.values[0]], overhangVals[ui.values[1]] ]);
+      $($("#slider-overhang").children()[0]).html(overhangVals[ui.values[0]]);
+      $($("#slider-overhang").children()[1]).html(overhangVals[ui.values[1]]);
     }
   });
+  $($("#slider-overhang").children()[0]).html(overhangVals[0]);
+  $($("#slider-overhang").children()[1]).html(overhangVals[4]);
 
   function updateshgc(shgc){
     var ufactor, vlt;
@@ -394,9 +495,10 @@ $working_directory_location_parametric = "./working_directory/parametric/$unique
         drawCube1("cvs1", data[energyIndex]);
         updateshgc(data[energyIndex].shgc);
         console.log(data[energyIndex]);
+        $($("#slider-vertical").children()[0]).html("<span style=\"left:20px;position:relative;\">"+data[energyIndex].energy.toFixed(1)+"</span>");
       }
     });
-
+    $($("#slider-vertical").children()[0]).html("<span style=\"left:20px;position:relative;\">"+data[energyIndex].energy.toFixed(1)+"</span>");
     updateshgc(data[energyIndex].shgc);
 
   	$( "#zoomcvs1" ).change(function() {
@@ -424,7 +526,6 @@ $working_directory_location_parametric = "./working_directory/parametric/$unique
     );
   }
 
-  storeData=data;
   init(data);
 
   var filterInfo = {};
@@ -535,18 +636,9 @@ $working_directory_location_parametric = "./working_directory/parametric/$unique
 
         savMouse = mousePos;    // save these as reference for next drag
         // axis to rotate lever is the normal to plane defined by the 3 points
-        u = calcNormal(this.dwgOrg, dragPt, csrPt);
-        // calc angle between dragPt and csrPt (amount of rotation needed about axis 'u')
-        theta = calcIncAngle(this.dwgOrg, dragPt, csrPt);    // degrees
-        // apply this drag rotation to 'cube' Group3D
-        //cube.transform.rotate(u.x, u.y, u.z, theta);
-        if(u.y>0){
-        	u.y=1;
-        }
-        else{
-        	u.y=-1;
-        }
-        cube.transform.rotate(0, u.y, 0, theta); //rotates only in the x-z direction
+
+        cube.translate(mousePos.x, 0, 0);
+
         // redraw with rotation applied
         g.renderFrame(movedCube);
       }
