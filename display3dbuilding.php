@@ -276,7 +276,8 @@ $working_directory_location_parametric = "./working_directory/parametric/$unique
         <div class="slider-label-left">5</div>
         <div class="slider-label-right">95</div>        
       </div></td>
-      <td></td>
+      <td id="initInputInfo" style="text-align:center">
+      </td>
     </tr>
   </tbody>
 </table>
@@ -415,6 +416,12 @@ $working_directory_location_parametric = "./working_directory/parametric/$unique
     drawCube3("cvs3", data[energyIndex]);
   	drawCube2("cvs2", data[energyIndex]);
   	drawCube1("cvs1", data[energyIndex]);
+    $("#initInputInfo").html(
+      "Azimuth : " + data[energyIndex].azimuth + " degrees" + "<br>" +
+      "WWR : " + data[energyIndex].wwr + " %" + "<br>" +
+      "Overhang : " + data[energyIndex].overhang + " m" + "<br>" +
+      "Aspect Ratio : " + data[energyIndex].aspectRatio + "<br>"
+    );
   }
 
   storeData=data;
