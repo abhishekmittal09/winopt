@@ -466,7 +466,7 @@ fclose($fp1);
     }
     $("#curshgc").html(shgc);
     $("#curvlt").html(vlt);
-    $("#curufactor").html(ufactor);
+    $("#curufactor").html(ufactor+" Btu/Hr-sqft-&deg;F");
   }
 
 	var totalArea = "<?php echo 50; ?>";
