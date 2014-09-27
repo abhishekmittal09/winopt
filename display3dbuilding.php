@@ -204,7 +204,7 @@ fclose($fp1);
 					<input id="zoomcvs2" type="range" name="points" min="10" max="100" value="70">
 				</td>
 				<td id="energyTd" rowspan="2">
-					<h3>Max Energy</h3>
+					<h3>Max Energy (kWh)</h3>
 					<div id="slider-vertical" style="height:100%;left:20px"></div>
 					<h3>Min Energy</h3>
 				</td>
@@ -466,7 +466,7 @@ fclose($fp1);
     }
     $("#curshgc").html(shgc);
     $("#curvlt").html(vlt);
-    $("#curufactor").html(ufactor+" Btu/Hr-sqft-&deg;F");
+    $("#curufactor").html(ufactor+" W/m<sup>2</sup>-K");
   }
 
 	var totalArea = "<?php echo 50; ?>";
