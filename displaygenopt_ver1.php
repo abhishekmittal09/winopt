@@ -3,6 +3,10 @@
 $unique_counter = "a6f0eb35-00a0-de35-e541-2295ad61a265";
 
 extract($_GET);
+extract($_POST);
+
+echo "in uid ".$unique_counter."<br>";
+
 /*------------------------------- Set up database --------------------------------------------------*/
 include ('configdb.php');
 $out_uuid=$unique_counter;	
@@ -15,8 +19,7 @@ if ($row) // Simulation match found
    	$out_uuid=$row['output_uuid'];
 }
 
-extract($_GET);
-extract($_POST);
+echo "out uid ".$out_uuid."<br>";
 
 $working_directory = "./working_directory/$out_uuid/";
 

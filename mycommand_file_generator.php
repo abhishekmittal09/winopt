@@ -58,6 +58,13 @@ else
 /*------------------------------- Generate mysql Query for full match of inputs -------------------------*/
 function generateFullMatchQuery(){
 
+    global $unique_counter, $location, $total_length, $total_breadth, $total_area, $hvactype;
+    global $azi_value, $azi_ini_value, $azi_min_value, $azi_max_value, $azi_step_value;
+    global $wwr_value, $diff_wwr, $wwr_ini_value, $wwr_min_value, $wwr_max_value, $wwr_step_value;
+    global $depth_value, $depth_ini_value, $depth_max_value, $depth_min_value, $depth_step_value;
+    global $lbybratio_value, $lbybratio_min_value, $lbybratio_max_value, $lbybratio_ini_value, $lbybratio_ini_value;
+    global $windowtype1, $windowtype2, $windowtype3, $windowtype4;
+
     $query="SELECT * FROM Simulations WHERE location=\"$location1\" and length=$total_length and breadth=$total_breadth and area=$total_area and ac_system=$hvactype".
 
         "and aa_fixed=$azi_value and aa_var_ini=$azi_ini_value and aa_var_min=$azi_min_value and aa_var_max=$azi_max_value and aa_var_step=$azi_step_value". 
@@ -76,7 +83,7 @@ function generateFullMatchQuery(){
 }
 
 /*------------------------------- Generate mysql Query for Output_Reference table -------------------------*/
-function generateOuputReferenceQuery($out_uuid){
+function generateOuputReferenceQuery($unique_counter, $out_uuid){
     $query="insert into Output_Reference (input_uuid, output_uuid) values (\"$unique_counter\",\"$out_uuid\");";
     return $query;
 }
@@ -84,6 +91,14 @@ function generateOuputReferenceQuery($out_uuid){
 
 /*------------------------------- Generate mysql Query for inserting into Simulations table -------------------------*/
 function generateInsertSimulationsQuery(){
+
+    global $unique_counter, $location, $total_length, $total_breadth, $total_area, $hvactype;
+    global $azi_value, $azi_ini_value, $azi_min_value, $azi_max_value, $azi_step_value;
+    global $wwr_value, $diff_wwr, $wwr_ini_value, $wwr_min_value, $wwr_max_value, $wwr_step_value;
+    global $depth_value, $depth_ini_value, $depth_max_value, $depth_min_value, $depth_step_value;
+    global $lbybratio_value, $lbybratio_min_value, $lbybratio_max_value, $lbybratio_ini_value, $lbybratio_ini_value;
+    global $windowtype1, $windowtype2, $windowtype3, $windowtype4;
+
     $keys="insert into Simulations (uuid, location, length, breadth, area, ac_system";
     $values =" (\"$unique_counter\",\"$location1\",$total_length,$total_breadth,$total_area,$hvactype";
 
@@ -160,30 +175,32 @@ else
     if ($row) // Simulation match found
     {
         $out_uuid=$row['uuid'];
-        $query=generateOuputReferenceQuery($out_uuid);
+        $query=generateOuputReferenceQuery($unique_counter, $out_uuid);
         $result = mysqli_query($con,$query);
 
         if(! $result )
         {
-            die('Could not enter data: ' . mysql_error());
+            echo 'Could not enter data id: ' . mysql_error();
         }
         return 0;
     }
     else // Simulation match not found, insert simulations details into database
     {
         $out_uuid=$unique_counter;
-        $query=generateOuputReferenceQuery($out_uuid);
+        $query=generateOuputReferenceQuery($unique_counter, $out_uuid);
+        echo $query;
         $result = mysqli_query($con,$query);
         if(! $result )
         {
-            die('Could not enter data: ' . mysql_error());
+            echo 'Could not enter data id: ' . mysql_error();
         }
 
         $query=generateInsertSimulationsQuery();
+        echo $query;
         $result = mysqli_query($con,$query);
         if(! $result )
         {
-            die('Could not enter data: ' . mysql_error());
+            echo 'Could not enter data: ' . mysql_error();
         }
 
     }
