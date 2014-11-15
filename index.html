@@ -28,9 +28,13 @@
 			font-size: x-large;
 			}
 			html, body {
-			margin: 0;
-			padding: 0;
+				margin: 0;
+				padding: 0;
 			}
+			.contrast {
+				-webkit-filter: contrast(160%);
+			}
+
 		</style>
 
       <link rel="stylesheet" href="./css/pure-min.css">
@@ -49,9 +53,10 @@
 		<script type="text/javascript" src="./graph/winopt.js"></script>
 
 	</head>
+
 	<body style="font-family:Arial ;">
 		<div id="id0" style="height:850px;margin-top: -20px;">
-		<div id="id1" style="background-color: #014051;height:100%;width:1300px;float:left;padding: 10px;">
+		<div id="id1" style="background-color: #014051;width:1300px;float:left;padding: 10px;">
 			<table style="width: 100%; text-align: left; margin-right: auto;">
 				<tbody>
 					<tr>
@@ -101,10 +106,10 @@
 															<td>
 																Area to be covered (sq. meters)<input id="total_area" type="text" name="total_area" value="50">
 															</td>
-															</td>
+														</div>
 													</tr>
 												</table>
-											</td>
+												</td>
 										</tr>
 										<tr>
 											<td style="color:white;font-size:20px">
@@ -282,7 +287,7 @@
 										</table>
 										<br>
 										<div id="depthvariable" style="display: none;">
-										<table style="width: 100%;">
+										<table style="width: Overhang100%;">
 										<tbody>
 										<tr>
 										<td>Initial Value </td>
@@ -327,7 +332,7 @@
 										<!--put td here -->
 										</tr>
 										<tr>
-										<td colspan="5"> <br></td>
+										<td colspan="5"><br></td>
 										</tr>
 										<tr style="height:260px;">
 										<td style="vertical-align: top; background-color: #bf1f4b; color: white;">
@@ -458,7 +463,7 @@
 										<table style="width: 100%; background-color: #a101a8; height: 35px;">
 										<tbody>
 										<tr>
-										<td class="a6" style="text-align: center;">OptimizationParameter<br></td>
+										<td class="a6" style="text-align: center;">Optimization Parameter<br></td>
 										</tr>
 										</tbody>
 										</table>
@@ -503,7 +508,7 @@
 									</tbody>
 								</table>
 							</td>
-							<td style="vertical-align: top;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							<td style="position:relative; top: 100px;"><a href="#id2"><img src="./images/right.png" class="contrast"></a></td>
 						</tr>
 						<tr>
 						<td><br></td>
@@ -910,7 +915,7 @@
 										</tbody>
 									</table>
 								</td>
-								<td style="vertical-align: top;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							<td style="position:relative; top: 100px;"><a href="#id3"><img src="./images/right.png" class="contrast"></a></td>
 							</tr>
 							<tr>
 								<td><br></td>
@@ -931,11 +936,20 @@
 				</form>
 			</div>
 			<a href="#id3" style="float:left;margin-top:30px">third</a>
-			<div id="id3" style="height:100%;width:1300px;float:left;margin-top: 20px;"><iframe id="iframe2" src="./displaygenopt_ver1.php?unique_counter=yoyo&amp;var_quantities=11111&amp;total_area=50" style="position:relative;left:10%;width:80%;height:100%"></iframe></div>
+			<div id="id3" style="height:100%;width:1300px;float:left;margin-top: 20px;">
+				<iframe id="iframe2" src="./displaygenopt_ver1.php?unique_counter=yoyo&amp;var_quantities=11111&amp;total_area=50" style="position:relative;left:10%;width:80%;height:100%"></iframe>
+				<div style="position:relative; top: 50%; height:100%; float: right;"><a href="#id4"><img src="./images/right.png" class="contrast"></a></div>
+			</div>
 			<a href="#id4" style="float:left;margin-top:30px">fourth</a>
-			<div id="id4" style="height:100%;width:1300px;float:left;margin-top: 20px;"><iframe id="iframe1" src="./displayparametric.php?unique_counter=a6f0eb35-00a0-de35-e541-2295ad61a265/" style="position:relative;left:10%;width:80%;height:100%"></iframe></div>
+			<div id="id4" style="height:100%;width:1300px;float:left;margin-top: 20px;">
+				<iframe id="iframe1" src="./displayparametric.php?unique_counter=a6f0eb35-00a0-de35-e541-2295ad61a265/" style="position:relative;left:10%;width:80%;height:100%"></iframe>
+				<div style="position:relative; top: 50%; height:100%; float: right;"><a href="#id5"><img src="./images/right.png" class="contrast"></a></div>
+			</div>
 			<a href="#id5" style="float:left;margin-top:30px">fifth</a>
-			<div id="id5" style="height:100%;width:1300px;float:left;margin-top: 20px;"><iframe id="iframe1" src="./display3dbuilding.php?unique_counter=a6f0eb35-00a0-de35-e541-2295ad61a265/" style="position:relative;left:5%;width:90%;height:100%"></iframe></div>
+			<div id="id5" style="height:100%;width:1300px;float:left;margin-top: 20px;">
+				<div style="position:relative; top: 50%; height:100%; float: left;"><a href="#id4"><img src="./images/left.png" class="contrast"></a></div>
+				<iframe id="iframe1" src="./display3dbuilding.php?unique_counter=a6f0eb35-00a0-de35-e541-2295ad61a265/" style="position:relative;left:5%;width:90%;height:100%"></iframe>
+			</div>
 			<a href="#id1" style="float:left;margin-top:30px">first</a>
 			<!--  final div ends -->
 		</div>
