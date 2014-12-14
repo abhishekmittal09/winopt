@@ -5,6 +5,7 @@ $unique_counter = "a6f0eb35-00a0-de35-e541-2295ad61a265";
 extract($_GET);
 extract($_POST);
 
+echo $unique_counter."<br>";
 $working_directory = "./working_directory/$unique_counter/";
 
 ?>
