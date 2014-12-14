@@ -328,7 +328,7 @@ $working_directory = "./working_directory/$unique_counter/";
          	if($var_quantities[4]=='1'){
          		$str=$str.",'SHGC':$item6[$i]";
          	}
-         	$str=$str.",'Energy (KWh)':$item1[$i]";
+         	$str=$str.",'Energy (kWh)':$item1[$i]";
          	if($i==$count-1){
          		$str=$str."}
          		";

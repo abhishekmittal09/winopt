@@ -205,7 +205,7 @@ $working_directory_location_parametric = "./working_directory/parametric/$unique
                          $str=$str.",'Overhang Depth (m)':$depth1[$i]";
                          $str=$str.",'Aspect Ratio':$ratio1[$i]";
                          $str=$str.",'SHGC':$shgc1[$i]";
-                         $str=$str.",'Energy (KWh)':$energy1[$i]";
+                         $str=$str.",'Energy (kWh)':$energy1[$i]";
                  if($i==$count-1){
                  $str=$str."}
          ";
