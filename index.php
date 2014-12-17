@@ -2,6 +2,7 @@
 
 $unique_counter="a6f0eb35-00a0-de35-e541-2295ad61a265";
 $unique_counter_gen="yoyo";
+$var_quantities="11111";
 extract($_GET);
 
 ?>
@@ -944,7 +945,7 @@ extract($_GET);
 			</div>
 			<a href="#id3" style="float:left;margin-top:30px">third</a>
 			<div id="id3" style="height:100%;width:1300px;float:left;margin-top: 20px;">
-				<iframe id="iframe2" src="./displaygenopt_ver1.php?unique_counter=<?php echo $unique_counter_gen; ?>&amp;var_quantities=11111&amp;total_area=50" style="position:relative;left:10%;width:80%;height:100%"></iframe>
+				<iframe id="iframe2" src="./displaygenopt_ver1.php?unique_counter=<?php echo $unique_counter_gen; ?>&amp;var_quantities=<?php echo $var_quantities; ?>&amp;total_area=50" style="position:relative;left:10%;width:80%;height:100%"></iframe>
 				<div style="position:relative; top: 50%; height:100%; float: right;"><a href="#id4"><img src="./images/right.png" class="contrast"></a></div>
 			</div>
 			<a href="#id4" style="float:left;margin-top:30px">fourth</a>

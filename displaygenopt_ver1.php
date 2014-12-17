@@ -1,11 +1,13 @@
 <?php 
 
 $unique_counter = "a6f0eb35-00a0-de35-e541-2295ad61a265";
+$var_quantities = "11111";
 
 extract($_GET);
 extract($_POST);
 
 echo $unique_counter."<br>";
+echo $var_quantities."<br>";
 $working_directory = "./working_directory/$unique_counter/";
 
 ?>
