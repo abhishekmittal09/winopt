@@ -106,10 +106,10 @@ extract($_GET);
 														</td>
 														<div id="newadd">
 															<td>
-																Plot Length (meters)<input type="text" name="total_length" value="10">
+																Plot Length (meter)<input type="text" name="total_length" value="10">
 															</td>
 															<td>
-																Plot Width (meters)<input type="text" name="total_breadth" value="10">
+																Plot Width (meter)<input type="text" name="total_breadth" value="10">
 															</td>
 															<td>
 																Building Area (square meter)<input id="total_area" type="text" name="total_area" value="50">
@@ -277,7 +277,7 @@ extract($_GET);
 										<tbody>
 										<tr>
 										<td class="a2" style="width: 100%; text-align: center;">Overhang
-										Depth (meters)
+										Depth (meter)
 										</td>
 										</tr>
 										</tbody>
@@ -587,9 +587,9 @@ extract($_GET);
 																</select>
 															</td>
 															<div id="pnewadd">
-																<td>Plot Length (meters) <input type="text" name="ptotal_length" value="10">
+																<td>Plot Length (meter) <input type="text" name="ptotal_length" value="10">
 																</td>
-																<td>Plot Width (meters) <input type="text" name="ptotal_breadth" value="10">
+																<td>Plot Width (meter) <input type="text" name="ptotal_breadth" value="10">
 																</td>
 																<td>
 															Building Area (square meter)<input type="text" name="ptotal_area" value="50">
@@ -708,7 +708,7 @@ extract($_GET);
 														<tbody>
 															<tr>
 																<td class="a2" style="width: 100%; text-align: center;">Overhang
-																	Depth (meters)
+																	Depth (meter)
 																</td>
 															</tr>
 														</tbody>
