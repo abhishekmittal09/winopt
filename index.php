@@ -106,13 +106,13 @@ extract($_GET);
 														</td>
 														<div id="newadd">
 															<td>
-																Total Length (meters)<input type="text" name="total_length" value="10">
+																Plot Length (meters)<input type="text" name="total_length" value="10">
 															</td>
 															<td>
-																Total Breadth (meters)<input type="text" name="total_breadth" value="10">
+																Plot Width (meters)<input type="text" name="total_breadth" value="10">
 															</td>
 															<td>
-																Area to be covered (sq. meters)<input id="total_area" type="text" name="total_area" value="50">
+																Building Area (square meter)<input id="total_area" type="text" name="total_area" value="50">
 															</td>
 														</div>
 													</tr>
@@ -206,7 +206,7 @@ extract($_GET);
 										<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto; background-color:#5737b2;">
 										<tbody>
 										<tr>
-										<td class="a2" style="width: 100%; text-align: center;">WWR</td>
+										<td class="a2" style="width: 100%; text-align: center;">Window to Wall Ratio (%)</td>
 										</tr>
 										</tbody>
 										</table>
@@ -375,7 +375,7 @@ extract($_GET);
 										</tr>
 										<tr>
 										<td>Minimum Value </td>
-										<td><input name="lbybratio_min_value" value="0.5" step="any" type="number"></td>
+										<td><input name="lbybratio_min_value" value="1" step="any" type="number"></td>
 										</tr>
 										<tr>
 										<td>Maximum Value </td>
@@ -471,7 +471,7 @@ extract($_GET);
 										<table style="width: 100%; background-color: #a101a8; height: 35px;">
 										<tbody>
 										<tr>
-										<td class="a6" style="text-align: center;">Optimization Parameter<br></td>
+										<td class="a6" style="text-align: center;">Optimize<br></td>
 										</tr>
 										</tbody>
 										</table>
@@ -587,12 +587,12 @@ extract($_GET);
 																</select>
 															</td>
 															<div id="pnewadd">
-																<td>Total Length (meters) <input type="text" name="ptotal_length" value="10">
+																<td>Plot Length (meters) <input type="text" name="ptotal_length" value="10">
 																</td>
-																<td>Total Breadth (meters) <input type="text" name="ptotal_breadth" value="10">
+																<td>Plot Width (meters) <input type="text" name="ptotal_breadth" value="10">
 																</td>
 																<td>
-																	Area to be Covered (sq. meters)<input type="text" name="ptotal_area" value="50">
+															Building Area (square meter)<input type="text" name="ptotal_area" value="50">
 																</td>
 															</div>
 														</tr>
@@ -663,7 +663,7 @@ extract($_GET);
 													<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto; background-color:#5737b2;">
 														<tbody>
 															<tr>
-																<td class="a2" style="width: 100%; text-align: center;vertical-align: top;">WWR</td>
+																<td class="a2" style="width: 100%; text-align: center;vertical-align: top;">Window to Wall Ratio (%)</td>
 															</tr>
 														</tbody>
 													</table>
@@ -876,8 +876,7 @@ extract($_GET);
 													<table style="width: 100%; background-color: #a101a8; height: 35px;">
 														<tbody>
 															<tr>
-																<td class="a6" style="text-align: center;">Optimization
-																	Parameter<br>
+																<td class="a6" style="text-align: center;">Optimize<br>
 																</td>
 															</tr>
 														</tbody>
