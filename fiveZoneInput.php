@@ -15,18 +15,25 @@
 
 	include_once("./requiredGraphFiles.php");
 
+	$unique_counter="3689b1cd-48e1-35d4-45a6-7ce8bf53a646";//for parametric simulation results
+
 ?>
 
 
 <style type="text/css">
 	
 	.item {
+		min-width: 200px;
 		border: 1px solid;
 		border-radius: 10px;
 		margin: 2%;
 	}
 
 	#parametricform label{
+		float: right;
+	}
+
+	#genoptform label{
 		float: right;
 	}
 
@@ -52,8 +59,10 @@
             <a class="pure-menu-heading" href="#main">Top</a>
 
             <ul>
-                <li><a href="#parainput">Input</a></li>
-                <li><a href="#paravisualization">Visualization</a></li>
+                <li><a href="#edotinput">eDOT Input</a></li>
+                <li><a href="#edotvisualization">eDOT Visualization</a></li>
+                <li><a href="#parainput">Parametric Input</a></li>
+                <li><a href="#paravisualization">Parametric Visualization</a></li>
 
 <!--                 <li class="menu-item-divided pure-menu-selected">
                     <a href="#">Services</a>
@@ -65,11 +74,32 @@
 
     <div id="main">
         <div class="header" style="font-size:0.8em">
-            <h1>Winopt</h1>
+            <h1>eDOT (5 Zone Model)</h1>
         </div>
 
-        <div id="parainput" class="" style="font-size:0.9em">
 
+        <div id="edotinput">
+	    	<div class="header">
+	        	<h2>GenOpt Input</h2>
+	        </div>
+        	<form id="genoptform" class="pure-form" action="" method="POST" style="font-size:0.9em">
+	        <?php
+	        	include_once("./fiveZoneGenOpt.php");
+	        ?>
+	        </form>
+		</div>
+
+        <div id="edotvisualization">
+	    	<div class="header">
+	        	<h2>GenOpt Visualization</h2>
+	        </div>
+        </div>
+
+
+        <div id="parainput" class="" style="font-size:0.9em">
+        	<div class="header">
+	        	<h2>Parametric Input</h2>
+	        </div>
         	<form id="parametricform" class="pure-form" action="" method="POST">
 				<div class="item">
 					<h3 class="center">Azimuth</h3>
@@ -175,7 +205,8 @@
             <div class="pure-g">
 
 	            <div class="pure-u-1-1">
-	            	
+
+					<iframe id="iframe1" src="./fiveZoneFiles/displayparametric.php?unique_counter=<?php echo $unique_counter; ?>/" style="position:relative;left:10%;width:80%;height:800px"></iframe>
 
 	            </div>
 
@@ -199,6 +230,14 @@
 	var $parametricform = $('#parametricform');
 	// init
 	$parametricform.isotope({
+	  // options
+	  itemSelector: '.item',
+	  layoutMode: 'fitRows'
+	});
+
+	var $genoptform = $('#genoptform');
+	// init
+	$genoptform.isotope({
 	  // options
 	  itemSelector: '.item',
 	  layoutMode: 'fitRows'

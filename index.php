@@ -945,16 +945,16 @@ extract($_GET);
 			<a href="#id3" style="float:left;margin-top:30px">third</a>
 			<div id="id3" style="height:100%;width:1300px;float:left;margin-top: 20px;">
 				<iframe id="iframe2" src="./displaygenopt_ver1.php?unique_counter=<?php echo $unique_counter_gen; ?>&amp;var_quantities=<?php echo $var_quantities; ?>&amp;total_area=50" style="position:relative;left:10%;width:80%;height:100%"></iframe>
-				<div style="position:relative; top: 50%; height:100%; float: right;"><a href="#id4"><img src="./images/right.png" class="contrast"></a></div>
+				<div style="position:relative; height:100%; float: right;"><a href="#id4" style="position: relative; top:50%;"><img src="./images/right.png" class="contrast"></a></div>
 			</div>
 			<a href="#id4" style="float:left;margin-top:30px">fourth</a>
 			<div id="id4" style="height:100%;width:1300px;float:left;margin-top: 20px;">
 				<iframe id="iframe1" src="./displayparametric.php?unique_counter=<?php echo $unique_counter; ?>/" style="position:relative;left:10%;width:80%;height:100%"></iframe>
-				<div style="position:relative; top: 50%; height:100%; float: right;"><a href="#id5"><img src="./images/right.png" class="contrast"></a></div>
+				<div style="position:relative; height:100%; float: right;"><a href="#id5" style="position: relative; top:50%;"><img src="./images/right.png" class="contrast"></a></div>
 			</div>
 			<a href="#id5" style="float:left;margin-top:30px">fifth</a>
 			<div id="id5" style="height:100%;width:1300px;float:left;margin-top: 20px;">
-				<div style="position:relative; top: 50%; height:100%; float: left;"><a href="#id4"><img src="./images/left.png" class="contrast"></a></div>
+				<div style="position:relative; height:100%; float: left;"><a href="#id4" style="position: relative; top:50%;"><img src="./images/left.png" class="contrast"></a></div>
 				<iframe id="iframe1" src="./display3dbuilding.php?unique_counter=<?php echo $unique_counter; ?>/" style="position:relative;left:5%;width:90%;height:100%"></iframe>
 			</div>
 			<!--  final div ends -->
