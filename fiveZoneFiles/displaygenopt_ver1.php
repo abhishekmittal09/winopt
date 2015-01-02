@@ -1,7 +1,7 @@
 <?php 
 
-$unique_counter = "fiveGen";
-$var_quantities = "10000";
+$unique_counter = "a6f0eb35-00a0-de35-e541-2295ad61a265";
+$var_quantities = "11111";
 
 extract($_GET);
 extract($_POST);
@@ -70,7 +70,6 @@ $working_directory = "./working_directory/$unique_counter/";
          font: .7em verdana, arial, helvetica, ms sans serif;
          }
       </style>
-      <script type="text/javascript" src="./graph/xp_progress.js"></script>
    </head>
    <body>
       <?php

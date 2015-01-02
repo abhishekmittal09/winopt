@@ -16,14 +16,15 @@
 	include_once("./requiredGraphFiles.php");
 
 	$unique_counter="3689b1cd-48e1-35d4-45a6-7ce8bf53a646";//for parametric simulation results
-
+	$unique_counter_gen="fiveGen";
+	$var_quantities="100000";
 ?>
 
 
 <style type="text/css">
 	
 	.item {
-		min-width: 200px;
+		min-width: 240px;
 		border: 1px solid;
 		border-radius: 10px;
 		margin: 2%;
@@ -82,7 +83,7 @@
 	    	<div class="header">
 	        	<h2>GenOpt Input</h2>
 	        </div>
-        	<form id="genoptform" class="pure-form" action="" method="POST" style="font-size:0.9em">
+        	<form id="genoptform" class="pure-form" action="./fiveZoneFiles/mycommand_file_generator.php" method="POST" style="font-size:0.9em">
 	        <?php
 	        	include_once("./fiveZoneGenOpt.php");
 	        ?>
@@ -92,6 +93,7 @@
         <div id="edotvisualization">
 	    	<div class="header">
 	        	<h2>GenOpt Visualization</h2>
+				<iframe id="iframe2" src="./fiveZoneFiles/displaygenopt_ver1.php?unique_counter=<?php echo $unique_counter_gen; ?>&amp;var_quantities=<?php echo $var_quantities; ?>&amp;total_area=50" style="position:relative;width:80%;height:800px;"></iframe>
 	        </div>
         </div>
 
@@ -221,7 +223,7 @@
 </body>
 
 <script type="text/javascript" src="./graph/jquery.js"></script>
-<script type="text/javascript" src="./graph/fivezone.js"></script>
+<script type="text/javascript" src="./fiveZoneFiles/graph/fivezone.js"></script>
 <script src="./graph/ui.js"></script>
 <script src="./graph/isotope.min.js"></script>
 
