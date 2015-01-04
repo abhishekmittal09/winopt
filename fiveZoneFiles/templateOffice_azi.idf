@@ -5500,3 +5500,14 @@ Output:Meter,Water Heater:WaterSystems:Gas,RunPeriod;
 
 Output:Meter,Water:Facility,RunPeriod;
 
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:METER ===========
+
+Output:Meter,
+	    Electricity:Building,    !- Name
+	        Annual;                  !- Reporting Frequency
+
+		Output:Meter,
+		    ElectricityNet:Facility, !- Name
+		        Annual;                  !- Reporting Frequency
+
+
