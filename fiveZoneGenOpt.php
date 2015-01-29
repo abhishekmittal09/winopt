@@ -20,22 +20,37 @@
 				
 				<div class="item">
 					<h3 class="center">WWR</h3>
+					<label style="float: left">
+						Fixed
+						 <input name="wwr_var_fix" value="fixed" onclick="hide('wwrvar')" checked="checked" type="radio">
+					</label>
 					<label>
-						Initial Value
-						<input name="wwr_ini_value" value="40" min="10.0" max="90.0" step="any" type="number">
+						Variable
+						<input name="wwr_var_fix" value="variable" onclick="hide('wwrfix')" type="radio">
 					</label><br>
-					<label>
-						Minimum Value
-						<input name="wwr_min_value" value="20" min="10.0" max="90.0" step="any" type="number">
-					</label><br>
-					<label>
-						Maximum Value
-						<input name="wwr_max_value" value="80" min="10.0" max="90.0" step="any" type="number">
-					</label><br>
-					<label>
-						Step Value
-						<input name="wwr_step_value" value="10" min="10.0" max="90.0" step="any" type="number">
-					</label><br>
+					<div id="wwrfixed">
+						<label>
+							Value<input name="wwr_value" value="90" min="10.0" max="90.0" step="any" type="number"><br>
+						</label><br>
+					</div>
+					<div id="wwrvariable" style="display:none;">
+						<label>
+							Initial Value
+							<input name="wwr_ini_value" value="40" min="10.0" max="90.0" step="any" type="number">
+						</label><br>
+						<label>
+							Minimum Value
+							<input name="wwr_min_value" value="20" min="10.0" max="90.0" step="any" type="number">
+						</label><br>
+						<label>
+							Maximum Value
+							<input name="wwr_max_value" value="80" min="10.0" max="90.0" step="any" type="number">
+						</label><br>
+						<label>
+							Step Value
+							<input name="wwr_step_value" value="10" min="10.0" max="90.0" step="any" type="number">
+						</label><br>
+					</div>
 				</div>
 				
 				<div class="item">
@@ -80,6 +95,6 @@
 						<input name="lbybratio_step_value" value="0.5" step="any" type="number">
 					</label><br>
 				</div>
-				<div class="item" style="width:95%;text-align:center">
+				<div class="item" style="min-height:0px;width:95%;text-align:center">
 					<input type="submit">
 				</div>

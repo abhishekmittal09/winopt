@@ -16,8 +16,8 @@
 	include_once("./requiredGraphFiles.php");
 
 	$unique_counter="3689b1cd-48e1-35d4-45a6-7ce8bf53a646";//for parametric simulation results
-	$unique_counter_gen="fiveGen";
-	$var_quantities="100000";
+	$unique_counter_gen="fiveGenasp3";
+	$var_quantities="12110";
 ?>
 
 
@@ -28,6 +28,7 @@
 		border: 1px solid;
 		border-radius: 10px;
 		margin: 2%;
+		min-height: 200px;
 	}
 
 	#parametricform label{
@@ -42,7 +43,16 @@
 		text-align: center;
 	}
 
+	.header h2 {
+		color: black;
+	}
+
 </style>
+
+<script type="text/javascript" src="./graph/jquery.js"></script>
+<script type="text/javascript" src="./fiveZoneFiles/graph/fivezone.js"></script>
+<script src="./graph/ui.js"></script>
+<script src="./graph/isotope.min.js"></script>
 
 </head>
 
@@ -64,6 +74,7 @@
                 <li><a href="#edotvisualization">eDOT Visualization</a></li>
                 <li><a href="#parainput">Parametric Input</a></li>
                 <li><a href="#paravisualization">Parametric Visualization</a></li>
+                <li><a href="#oldsimulation">Previous Simulations</a></li>
 
 <!--                 <li class="menu-item-divided pure-menu-selected">
                     <a href="#">Services</a>
@@ -93,16 +104,16 @@
         <div id="edotvisualization">
 	    	<div class="header">
 	        	<h2>GenOpt Visualization</h2>
-				<iframe id="iframe2" src="./fiveZoneFiles/displaygenopt_ver1.php?unique_counter=<?php echo $unique_counter_gen; ?>&amp;var_quantities=<?php echo $var_quantities; ?>&amp;total_area=50" style="position:relative;width:80%;height:800px;"></iframe>
+				<iframe id="iframe2" src="./fiveZoneFiles/displaygenopt_ver1.php?unique_counter=<?php echo $unique_counter_gen; ?>&amp;var_quantities=<?php echo $var_quantities; ?>&amp;total_area=1500" style="position:relative;width:80%;height:800px;"></iframe>
 	        </div>
         </div>
 
 
-        <div id="parainput" class="" style="font-size:0.9em">
+        <div id="parainput" class="">
         	<div class="header">
 	        	<h2>Parametric Input</h2>
 	        </div>
-        	<form id="parametricform" class="pure-form" action="" method="POST">
+        	<form id="parametricform" class="pure-form" action="" method="POST"  style="font-size:0.9em">
 				<div class="item">
 					<h3 class="center">Azimuth</h3>
 					<label>
@@ -198,12 +209,15 @@
 						<input name="lbybratio[]" value="1.2" min="0.1" max="2.0" step="any" type="number">
 					</label><br>
 				</div>
-				<div class="item" style="width:95%;text-align:center">
+				<div class="item" style="min-height:0px;width:95%;text-align:center">
 					<input type="submit">
 				</div>
 			</form>
 
-            <h2 id="paravisualization" class="content-subhead"></h2>
+        	<div id="paravisualization" class="header">
+	        	<h2>Parametric Simulation Results</h2>
+	        </div>
+
             <div class="pure-g">
 
 	            <div class="pure-u-1-1">
@@ -212,20 +226,36 @@
 
 	            </div>
 
-
             </div>
 
+        	<div id="oldsimulation" class="header">
+	        	<h2>View Previous Simulations</h2>
+	        </div>
+            <div class="content">
+            	<br>
+            	Please Enter the UID of the simulation <input type="text" name="unique_counter_old">
+            </div>
+           	<?php
+           	if (isset($unique_counter_old)) {
+           	?>
+	            <div class="pure-g">
+
+		            <div class="pure-u-1-1">
+
+						<iframe id="iframe2" src="./fiveZoneFiles/displaygenopt_ver1.php?unique_counter=<?php echo $unique_counter_old; ?>&amp;var_quantities=<?php echo $var_quantities; ?>&amp;total_area=1500" style="position:relative;width:80%;height:800px;"></iframe>
+
+		            </div>
+
+	            </div>
+	        <?php
+	    	}
+            ?>
         </div>
     </div>
 </div>
 
 	
 </body>
-
-<script type="text/javascript" src="./graph/jquery.js"></script>
-<script type="text/javascript" src="./fiveZoneFiles/graph/fivezone.js"></script>
-<script src="./graph/ui.js"></script>
-<script src="./graph/isotope.min.js"></script>
 
 <script type="text/javascript">
 

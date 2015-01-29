@@ -3,15 +3,34 @@
 //value of wwr and aspect ratio have not been used directly to make the idf files and hence changes to wwr and aspect ratio are reqd to be made in displaygenopt_ver1
 
 session_start();
+
+//area calculations
+$l=50;
+$b=30;
+$total_area = $l*$b;
+$t=6;
+$h=4;
+$t_root=$t/(sqrt(2));
+$total_length=100;
+$total_breadth=100;
+
+$lbybratio_var_fix="variable";
+$unique_counter="fiveGenasp3";
+$var_quantities="12110";
+
+$azi_var_fix="variable";
+
+$wwr_var_fix="variable";
+$diff_wwr=1;
+
+$depth_var_fix="variable";
+$height_of_window=4;//fixing the height of the window to 3; according the given model
+
 extract($_GET);
 extract($_POST);
 
-$unique_counter="fiveGen";
-$var_quantities="10000";
-$azi_var_fix="variable";
-
 echo "unique counter is $unique_counter and var var_quantities is $var_quantities<br>";
-if(!isset($unique_counter) || !isset($var_quantities)){
+if(!isset($unique_counter)){
 	exit(0);
 }
 
@@ -23,20 +42,9 @@ $working_dir="./working_directory/$unique_counter";//stores the name of the work
 
 /*---------------------- store data of template file for every user in a variable--------------------*/
 
-	$file="templateOffice_azi.idf";
+	$file="templateOffice.idf";
 	$file1 = fopen($file, "r") or die("can't open template file for reading");
 	$template_file_data = fread($file1, filesize($file));//stores the data of template file in a variable
-	fclose($file1);
-
-/*---------------------- make a copy of idf file for every user--------------------*/
-
-	$file="./tutorial.idf";
-	$file1 = fopen($file, "r") or die("can't open template file for reading");
-	$theData = fread($file1, filesize($file));
-	fclose($file1);
-	$file="tutorial.idf";
-	$file1 = fopen("$working_dir/$file", "w") or die("can't open template for writing");
-	fwrite($file1,$theData);
 	fclose($file1);
 
 /*---------------------- make a copy of ini file for every user--------------------*/
@@ -87,7 +95,7 @@ $working_dir="./working_directory/$unique_counter";//stores the name of the work
 	/*------------azimuth angle calculations------------*/
 	if($azi_var_fix==="variable"){
   		$variable_string="  Parameter{ // solar, visible, and thermal transmittance of shading device
-  Name    = azimuth_angle;
+  Name    = azimuthAngle;
   Min     = $azi_min_value;
   Ini     = $azi_ini_value;
   Max     = $azi_max_value;
@@ -97,7 +105,7 @@ $working_dir="./working_directory/$unique_counter";//stores the name of the work
 	$var_quantities=$var_quantities.'1';
 	}
 	elseif($azi_var_fix==="fixed") {
-		$template_file_data = str_replace(array('%azimuth_angle%'),array($azi_value),$template_file_data);
+		$template_file_data = str_replace(array('%azimuthAngle%'),array($azi_value),$template_file_data);
 		//echo "<br><br>$template_file_data<br><br>";
 		echo "azi is fixed";
 		echo "<br>";
@@ -105,200 +113,281 @@ $working_dir="./working_directory/$unique_counter";//stores the name of the work
 	}
 
 	/*--------wwr calculations------------*/
-// 	$diff_wwr=0;
-// 	if (isset($_POST['diff_wwr'])) {
-// 		echo "checked!";
-// 		$diff_wwr=1;
-// 	}
-// 	else{
-// 		$diff_wwr=0;
-// 		echo "not checked";
-// 	}
+	if (isset($diff_wwr)) {
+		echo "checked!";
+		$diff_wwr=1;
+	}
+	else{
+		$diff_wwr=0;
+		echo "not checked";
+	}
 
-// 	$height_of_window=3;//fixing the height of the window to 3; according the given model
-// 	if($wwr_var_fix==="variable"){
+	if($wwr_var_fix==="variable"){
 
-// 		$height_of_window=3;//fixing the height of the window to 3; according the given model
-// 		$ratio_min_value=$wwr_min_value/100*$height_of_window;
-// 		$ratio_ini_value=$wwr_ini_value/100*$height_of_window;
-// 		$ratio_max_value=$wwr_max_value/100*$height_of_window;
-// 		$ratio_step_value=$wwr_step_value/100*$height_of_window;
-// 		$half_window_height=$height_of_window/2;
+		$ratio_min_value=$wwr_min_value/100*$height_of_window;
+		$ratio_ini_value=$wwr_ini_value/100*$height_of_window;
+		$ratio_max_value=$wwr_max_value/100*$height_of_window;
+		$ratio_step_value=$wwr_step_value/100*$height_of_window;
+		$half_window_height=$height_of_window/2;
 
-// 		if($diff_wwr==0){
-// 			$template_file_data = str_replace(array("%wwr_startz2%","%wwr_height2%","%wwr_startz3%","%wwr_height3%","%wwr_startz4%","%wwr_height4%"),array("%wwr_startz1%","%wwr_height1%","%wwr_startz1%","%wwr_height1%","%wwr_startz1%","%wwr_height1%"),$template_file_data);
-// 		$variable_string=$variable_string."  Parameter{ // solar, visible, and thermal transmittance of shading device
-//   Name    = wwr_height1;
-//   Min     = $ratio_min_value;
-//   Ini     = $ratio_ini_value;
-//   Max     = $ratio_max_value;
-//   Step    = $ratio_step_value;
-//   }
-// ";
+		if($diff_wwr==0){
+			$template_file_data = str_replace(array("%winheightstart_2%","%winheightend_2%","%winheightstart_3%","%winheightend_3%","%winheightstart_4%","%winheightend_4%"),array("%winheightstart_1%","%winheightend_1%","%winheightstart_1%","%winheightend_1%","%winheightstart_1%","%winheightend_1%"),$template_file_data);
+		$variable_string=$variable_string."  Parameter{ // solar, visible, and thermal transmittance of shading device
+  Name    = wwr_height1;
+  Min     = $ratio_min_value;
+  Ini     = $ratio_ini_value;
+  Max     = $ratio_max_value;
+  Step    = $ratio_step_value;
+  }
+";
 
-// 	$variable_string=$variable_string."  Function{
-//   Name    = wwr_startz1;
-//   Function=\"subtract($half_window_height,multiply(%wwr_height1%,0.5))\";
-//   }
-// ";		
+	$variable_string=$variable_string."  Function{
+  Name    = winheightstart_1;
+  Function=\"subtract($half_window_height,multiply(%wwr_height1%,0.5))\";
+  }
+";		
 
-// 		$var_quantities=$var_quantities.'1';
+	$variable_string=$variable_string."  Function{
+  Name    = winheightend_1;
+  Function=\"add($half_window_height,multiply(%wwr_height1%,0.5))\";
+  }
+";		
 
-// 	}
+		$var_quantities=$var_quantities.'1';
 
-// 		else if($diff_wwr==1){
-// 		$variable_string=$variable_string."  Parameter{ // solar, visible, and thermal transmittance of shading device
-//   Name    = wwr_height1;
-//   Min     = $ratio_min_value;
-//   Ini     = $ratio_ini_value;
-//   Max     = $ratio_max_value;
-//   Step    = $ratio_step_value;
-//   }
-// ";
+	}
 
-// 	$variable_string=$variable_string."  Function{
-//   Name    = wwr_startz1;
-//   Function=\"subtract($half_window_height,multiply(%wwr_height1%,0.5))\";
-//   }
-// ";
-// 		$variable_string=$variable_string."  Parameter{ // solar, visible, and thermal transmittance of shading device
-//   Name    = wwr_height2;
-//   Min     = $ratio_min_value;
-//   Ini     = $ratio_ini_value;
-//   Max     = $ratio_max_value;
-//   Step    = $ratio_step_value;
-//   }
-// ";
+		else if($diff_wwr==1){
+		$variable_string=$variable_string."  Parameter{ // solar, visible, and thermal transmittance of shading device
+  Name    = wwr_height1;
+  Min     = $ratio_min_value;
+  Ini     = $ratio_ini_value;
+  Max     = $ratio_max_value;
+  Step    = $ratio_step_value;
+  }
+";
 
-// 	$variable_string=$variable_string."  Function{
-//   Name    = wwr_startz2;
-//   Function=\"subtract($half_window_height,multiply(%wwr_height2%,0.5))\";
-//   }
-// ";
-// 		$variable_string=$variable_string."  Parameter{ // solar, visible, and thermal transmittance of shading device
-//   Name    = wwr_height3;
-//   Min     = $ratio_min_value;
-//   Ini     = $ratio_ini_value;
-//   Max     = $ratio_max_value;
-//   Step    = $ratio_step_value;
-//   }
-// ";
+	$variable_string=$variable_string."  Function{
+  Name    = winheightstart_1;
+  Function=\"subtract($half_window_height,multiply(%wwr_height1%,0.5))\";
+  }
+";
 
-// 	$variable_string=$variable_string."  Function{
-//   Name    = wwr_startz3;
-//   Function=\"subtract($half_window_height,multiply(%wwr_height3%,0.5))\";
-//   }
-// ";
-// 		$variable_string=$variable_string."  Parameter{ // solar, visible, and thermal transmittance of shading device
-//   Name    = wwr_height4;
-//   Min     = $ratio_min_value;
-//   Ini     = $ratio_ini_value;
-//   Max     = $ratio_max_value;
-//   Step    = $ratio_step_value;
-//   }
-// ";
+	$variable_string=$variable_string."  Function{
+  Name    = winheightend_1;
+  Function=\"add($half_window_height,multiply(%wwr_height1%,0.5))\";
+  }
+";		
 
-// 	$variable_string=$variable_string."  Function{
-//   Name    = wwr_startz4;
-//   Function=\"subtract($half_window_height,multiply(%wwr_height4%,0.5))\";
-//   }
-// ";
+		$variable_string=$variable_string."  Parameter{ // solar, visible, and thermal transmittance of shading device
+  Name    = wwr_height2;
+  Min     = $ratio_min_value;
+  Ini     = $ratio_ini_value;
+  Max     = $ratio_max_value;
+  Step    = $ratio_step_value;
+  }
+";
 
-// 	$var_quantities=$var_quantities.'2';
+	$variable_string=$variable_string."  Function{
+  Name    = winheightstart_2;
+  Function=\"subtract($half_window_height,multiply(%wwr_height2%,0.5))\";
+  }
+";
+
+	$variable_string=$variable_string."  Function{
+  Name    = winheightend_2;
+  Function=\"add($half_window_height,multiply(%wwr_height2%,0.5))\";
+  }
+";		
+
+		$variable_string=$variable_string."  Parameter{ // solar, visible, and thermal transmittance of shading device
+  Name    = wwr_height3;
+  Min     = $ratio_min_value;
+  Ini     = $ratio_ini_value;
+  Max     = $ratio_max_value;
+  Step    = $ratio_step_value;
+  }
+";
+
+	$variable_string=$variable_string."  Function{
+  Name    = winheightstart_3;
+  Function=\"subtract($half_window_height,multiply(%wwr_height3%,0.5))\";
+  }
+";
+
+	$variable_string=$variable_string."  Function{
+  Name    = winheightend_3;
+  Function=\"add($half_window_height,multiply(%wwr_height3%,0.5))\";
+  }
+";		
+		$variable_string=$variable_string."  Parameter{ // solar, visible, and thermal transmittance of shading device
+  Name    = wwr_height4;
+  Min     = $ratio_min_value;
+  Ini     = $ratio_ini_value;
+  Max     = $ratio_max_value;
+  Step    = $ratio_step_value;
+  }
+";
+
+	$variable_string=$variable_string."  Function{
+  Name    = winheightstart_4;
+  Function=\"subtract($half_window_height,multiply(%wwr_height4%,0.5))\";
+  }
+";
+
+	$variable_string=$variable_string."  Function{
+  Name    = winheightend_4;
+  Function=\"add($half_window_height,multiply(%wwr_height4%,0.5))\";
+  }
+";		
+
+	$var_quantities=$var_quantities.'2';
 
 
-// }
-// 	}
-// 	elseif($wwr_var_fix==="fixed"){
-// 		echo "wwr is fixed <br>";
+	}
 
-// 		$wwr_height=$wwr_value/100*$height_of_window;
-// 		$wwr_startz=$height_of_window/2-$wwr_height/2;
+}//end if 130
 
-// 		$template_file_data = str_replace(array('%wwr_height1%','%wwr_startz1%','%wwr_height2%','%wwr_startz2%','%wwr_height3%','%wwr_startz3%','%wwr_height4%','%wwr_startz4%'),array($wwr_height,$wwr_startz,$wwr_height,$wwr_startz,$wwr_height,$wwr_startz,$wwr_height,$wwr_startz),$template_file_data);
-// 		echo "<br><br>$template_file_data<br><br>";
 
-// 		$var_quantities=$var_quantities.'0';
-// 	}
+	elseif($wwr_var_fix==="fixed"){
+		echo "wwr is fixed <br>";
+
+		$wwr_height=$wwr_value/100*$height_of_window;
+		$wwr_start=$height_of_window/2-$wwr_height/2;
+		$wwr_end=$height_of_window/2+$wwr_height/2;
+
+		$template_file_data = str_replace(array('%winheightstart_1%','%winheightstart_2%','%winheightstart_3%','winheightstart_4%','%winheightend_1%','%winheightend_2%','%winheightend_3%','%winheightend_4%'),array($wwr_start,$wwr_start,$wwr_start,$wwr_start,$wwr_end,$wwr_end,$wwr_end,$wwr_end),$template_file_data);
+		echo "<br><br>$template_file_data<br><br>";
+
+		$var_quantities=$var_quantities.'0';
+	}
 
 
 
 /*----------------overhang_depth_calculations-------------*/
-// 	if($depth_var_fix==="variable"){
-// 		$variable_string=$variable_string."  Parameter{ // solar, visible, and thermal transmittance of shading device
-//   Name    = depth;
-//   Min     = $depth_min_value;
-//   Ini     = $depth_ini_value;
-//   Max     = $depth_max_value;
-//   Step    = $depth_step_value;
-//   }
-// ";
-// 	$var_quantities=$var_quantities.'1';
-// 	}
-// 	elseif($depth_var_fix==="fixed"){
-// 		$template_file_data = str_replace(array("%depth%"),array($depth_value),$template_file_data);
-// 		echo "depth is fixed <br>";
-// 		$var_quantities=$var_quantities.'0';
-// 	}
+	if($depth_var_fix==="variable"){
+		$variable_string=$variable_string."  Parameter{ // solar, visible, and thermal transmittance of shading device
+  Name    = overhangHeight;
+  Min     = $depth_min_value;
+  Ini     = $depth_ini_value;
+  Max     = $depth_max_value;
+  Step    = $depth_step_value;
+  }
+";
+		$variable_string=$variable_string."  Function{
+		  Name    = overhangPlusRoot;
+		  Function=\"add(%overhangHeight%, $t_root)\";
+		  }
+		  ";
+	$var_quantities=$var_quantities.'1';
+	}
+	elseif($depth_var_fix==="fixed"){
+		$template_file_data = str_replace(array("%depth%"),array($depth_value),$template_file_data);
+		echo "depth is fixed <br>";
+		$var_quantities=$var_quantities.'0';
+	}
+
 	
-// /*----------------length/breadth_ratio_calculations-------------*/
-// 	if($lbybratio_var_fix==="variable"){
+/*----------------length/breadth_ratio_calculations-------------*/
+	$template_file_data = str_replace(array("%h%","%root%"),array($h,$t_root),$template_file_data);
+
+	if($lbybratio_var_fix==="variable"){
 		
-// 		//checking the minimum value
-// 		$lbybratio_length_min_value=$total_area/$total_breadth;
-// 		if(sqrt($total_area*$lbybratio_min_value)<$lbybratio_length_min_value);
-// 		else{
-// 			$lbybratio_length_min_value=sqrt($total_area*$lbybratio_min_value);
-// 		}
+		//checking the minimum value
+		$lbybratio_length_min_value=$total_area/$total_breadth;
+		if(sqrt($total_area*$lbybratio_min_value)<$lbybratio_length_min_value);
+		else{
+			$lbybratio_length_min_value=sqrt($total_area*$lbybratio_min_value);
+		}
 
-// 		//checking the initial value
-// 		$lbybratio_length_ini_value=sqrt($total_area*$lbybratio_ini_value);
-// 		if($lbybratio_length_ini_value<$lbybratio_length_min_value){
-// 			$lbybratio_length_ini_value=$lbybratio_length_min_value;
-// 		}
-// 		else if($lbybratio_length_ini_value>$lbybratio_length_max_value){
-// 			$lbybratio_length_ini_value=$lbybratio_length_max_value;
-// 		}
-// 		if($lbybratio_length_ini_value>=$lbybratio_length_min_value && $lbybratio_length_ini_value<=$lbybratio_length_max_value);
-// 		else{
-// 			$lbybratio_length_ini_value=$lbybratio_length_min_value;
-// 		}
+		//checking the initial value
+		$lbybratio_length_ini_value=sqrt($total_area*$lbybratio_ini_value);
+		if($lbybratio_length_ini_value<$lbybratio_length_min_value){
+			$lbybratio_length_ini_value=$lbybratio_length_min_value;
+		}
+		else if($lbybratio_length_ini_value>$lbybratio_length_max_value){
+			$lbybratio_length_ini_value=$lbybratio_length_max_value;
+		}
+		if($lbybratio_length_ini_value>=$lbybratio_length_min_value && $lbybratio_length_ini_value<=$lbybratio_length_max_value);
+		else{
+			$lbybratio_length_ini_value=$lbybratio_length_min_value;
+		}
 
-// 		//checking the maximum value
-// 		$lbybratio_length_max_value=$total_length;
-// 		if(sqrt($total_area*$lbybratio_max_value)>$lbybratio_length_max_value);
-// 		else{
-// 			$lbybratio_length_max_value=sqrt($total_area*$lbybratio_max_value);
-// 		}
-// 		$lbybratio_length_step_value=$lbybratio_step_value;
-// 		echo "min len is ".$lbybratio_length_min_value;
-// 		echo "max len is ".$lbybratio_length_max_value;
-// 		echo "ini len is ".$lbybratio_length_ini_value;
-// 		$variable_string=$variable_string."  Parameter{ // solar, visible, and thermal transmittance of shading device
-//   Name    = lbybratio_length;
-//   Min     = $lbybratio_length_min_value;
-//   Ini     = $lbybratio_length_ini_value;
-//   Max     = $lbybratio_length_max_value;
-//   Step    = $lbybratio_length_step_value;
-//   }
-// ";
-// 	$variable_string=$variable_string."  Function{
-//   Name    = lbybratio_breadth;
-//   Function=\"divide($total_area,%lbybratio_length%)\";
-//   }
-// ";
+		//checking the maximum value
+		$lbybratio_length_max_value=$total_length;
+		if(sqrt($total_area*$lbybratio_max_value)>$lbybratio_length_max_value);
+		else{
+			$lbybratio_length_max_value=sqrt($total_area*$lbybratio_max_value);
+		}
+		$lbybratio_length_step_value=$lbybratio_step_value;
 
-// 		$var_quantities=$var_quantities.'1';
-// 	}
-// 	elseif($lbybratio_var_fix==="fixed"){
+		echo "<br>";
+		echo "min len is ".$lbybratio_length_min_value;
+		echo "<br>";
+		echo "max len is ".$lbybratio_length_max_value;
+		echo "<br>";
+		echo "ini len is ".$lbybratio_length_ini_value;
+		echo "<br>";
 
-// 		$lbybratio_length_value=sqrt($total_area*$lbybratio_value);
-// 		$lbybratio_breadth_value=$total_area/$lbybratio_length_value;
-// 		$template_file_data = str_replace(array("%lbybratio_length%","%lbybratio_breadth%"),array($lbybratio_length_value,$lbybratio_breadth_value),$template_file_data);
-// 		echo "length/breadth ratio is fixed <br>";
-// 		$var_quantities=$var_quantities.'0';
+		$variable_string=$variable_string."  Parameter{ // solar, visible, and thermal transmittance of shading device
+  Name    = l;
+  Min     = $lbybratio_length_min_value;
+  Ini     = $lbybratio_length_ini_value;
+  Max     = $lbybratio_length_max_value;
+  Step    = $lbybratio_length_step_value;
+  }
+";
 
-// 	}
+	$variable_string=$variable_string."  Function{
+  Name    = b;
+  Function=\"divide($total_area,%l%)\";
+  }
+";
+	$variable_string=$variable_string."  Function{
+  Name    = lminusroot;
+  Function=\"subtract(%l%,$t_root)\";
+  }
+";
+	$variable_string=$variable_string."  Function{
+  Name    = bminusroot;
+  Function=\"divide(%b%,$t_root)\";
+  }
+";
+	$variable_string=$variable_string."  Function{
+  Name    = lminustworoot;
+  Function=\"subtract(%l%, multiply(2, $t_root))\";
+  }
+";
+
+	$variable_string=$variable_string."  Function{
+  Name    = bminustworoot;
+  Function=\"subtract(%b%, multiply(2, $t_root))\";
+  }
+";
+
+	$variable_string=$variable_string."  Function{
+  Name    = lminuspointzerofive;
+  Function=\"subtract(%l%, 0.05)\";
+  }
+";
+
+	$variable_string=$variable_string."  Function{
+  Name    = bminuspointzerofive;
+  Function=\"subtract(%b%, 0.05)\";
+  }
+";
+
+		$var_quantities=$var_quantities.'1';
+	}
+	elseif($lbybratio_var_fix==="fixed"){
+
+		$lbybratio_length_value=sqrt($total_area*$lbybratio_value);
+		$lbybratio_breadth_value=$total_area/$lbybratio_length_value;
+		$template_file_data = str_replace(array("%lbybratio_length%","%lbybratio_breadth%"),array($lbybratio_length_value,$lbybratio_breadth_value),$template_file_data);
+		echo "length/breadth ratio is fixed <br>";
+		$var_quantities=$var_quantities.'0';
+
+	}
 
 	/* Putting the required HAVC into the building */
 

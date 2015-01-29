@@ -190,7 +190,7 @@ GlobalGeometryRules,
 
 Building,
   Office,  !- Name 
-  %azimuthAngle%,  !- North Axis 
+  %azimuth_angle%,  !- North Axis 
   City,  !- Terrain 
   0.0400,  !- Loads Convergence Tolerance Value 
   0.2000,  !- Temperature Convergence Tolerance Value 

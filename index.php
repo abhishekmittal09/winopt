@@ -214,9 +214,9 @@ extract($_GET);
 										<table style="width: 100%;">
 										<tbody>
 										<tr>
-										<td> <input name="wwr_var_fix" value="fixed" onclick="hide('4')"
+										<td> <input name="wwr_var_fix" value="fixed" onclick="hide('wwrvar')"
 											checked="checked" type="radio">Fixed</td>
-										<td> <input name="wwr_var_fix" value="variable" onclick="hide('3')"
+										<td> <input name="wwr_var_fix" value="variable" onclick="hide('wwrfix')"
 											type="radio">Variable</td>
 										</tr>
 										</tbody>

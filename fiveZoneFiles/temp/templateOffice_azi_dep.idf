@@ -190,7 +190,7 @@ GlobalGeometryRules,
 
 Building,
   Office,  !- Name 
-  %azimuthAngle%,  !- North Axis 
+  %azimuth_angle%,  !- North Axis 
   City,  !- Terrain 
   0.0400,  !- Loads Convergence Tolerance Value 
   0.2000,  !- Temperature Convergence Tolerance Value 
@@ -1951,10 +1951,10 @@ FenestrationSurface:Detailed,
   ,  !- Frame and Divider Name 
   1.0000,  !- Multiplier 
   4,  !- Number of Vertices 
-  0.0500,  0.0000,  %winheightend_1%,  !- X1, Y1, Z1 
-  0.0500,  0.0000,  %winheightstart_1%,  !- X2, Y2, Z2 
-  27.336127875258,  0.0000,  %winheightstart_1%,  !- X3, Y3, Z3 
-  27.336127875258,  0.0000,  %winheightend_1%;  !- X4, Y4, Z4 
+  0.0500,  0.0000,  2.3,  !- X1, Y1, Z1 
+  0.0500,  0.0000,  1.7,  !- X2, Y2, Z2 
+  27.336127875258,  0.0000,  1.7,  !- X3, Y3, Z3 
+  27.336127875258,  0.0000,  2.3;  !- X4, Y4, Z4 
 
 Shading:Zone:Detailed,
   ZN_1_FLR_1_SEC_1_Wall_1:shading_south_1,  !- Name 
@@ -2491,10 +2491,10 @@ FenestrationSurface:Detailed,
   ,  !- Frame and Divider Name 
   1.0000,  !- Multiplier 
   4,  !- Number of Vertices 
-  0.0000,  0.0500,  %winheightend_2%,  !- X1, Y1, Z1 
-  0.0000,  0.0500,  %winheightstart_2%,  !- X2, Y2, Z2 
-  0.0000,  54.722255750517,  %winheightstart_2%,  !- X3, Y3, Z3 
-  0.0000,  54.722255750517,  %winheightend_2%;  !- X4, Y4, Z4 
+  0.0000,  0.0500,  2.3,  !- X1, Y1, Z1 
+  0.0000,  0.0500,  1.7,  !- X2, Y2, Z2 
+  0.0000,  54.722255750517,  1.7,  !- X3, Y3, Z3 
+  0.0000,  54.722255750517,  2.3;  !- X4, Y4, Z4 
 
 Shading:Zone:Detailed,
   ZN_1_FLR_1_SEC_2_Wall_1:shading_east_1,  !- Name 
@@ -3063,10 +3063,10 @@ FenestrationSurface:Detailed,
   ,  !- Frame and Divider Name 
   1.0000,  !- Multiplier 
   4,  !- Number of Vertices 
-  23.143487188139,  4.2426406871193,  %winheightend_3%,  !- X1, Y1, Z1 
-  23.143487188139,  4.2426406871193,  %winheightstart_3%,  !- X2, Y2, Z2 
-  -4.2426406871193,  4.2426406871193,  %winheightstart_3%,  !- X3, Y3, Z3 
-  -4.2426406871193,  4.2426406871193,  %winheightend_3%;  !- X4, Y4, Z4 
+  23.143487188139,  4.2426406871193,  2.3,  !- X1, Y1, Z1 
+  23.143487188139,  4.2426406871193,  1.7,  !- X2, Y2, Z2 
+  -4.2426406871193,  4.2426406871193,  1.7,  !- X3, Y3, Z3 
+  -4.2426406871193,  4.2426406871193,  2.3;  !- X4, Y4, Z4 
 
 Shading:Zone:Detailed,
   ZN_1_FLR_1_SEC_3_Wall_3:shading_north_1,  !- Name 
@@ -3619,10 +3619,10 @@ FenestrationSurface:Detailed,
   ,  !- Frame and Divider Name 
   1.0000,  !- Multiplier 
   4,  !- Number of Vertices 
-  0.0000,  54.722255750517,  %winheightend_4%,  !- X1, Y1, Z1 
-  0.0000,  54.722255750517,  %winheightstart_4%,  !- X2, Y2, Z2 
-  0.0000,  0.0500,  %winheightstart_4%,  !- X3, Y3, Z3 
-  0.0000,  0.0500,  %winheightend_4%;  !- X4, Y4, Z4 
+  0.0000,  54.722255750517,  2.3,  !- X1, Y1, Z1 
+  0.0000,  54.722255750517,  1.7,  !- X2, Y2, Z2 
+  0.0000,  0.0500,  1.7,  !- X3, Y3, Z3 
+  0.0000,  0.0500,  2.3;  !- X4, Y4, Z4 
 
 Shading:Zone:Detailed,
   ZN_1_FLR_1_SEC_4_Wall_4:shading_west_1,  !- Name 
