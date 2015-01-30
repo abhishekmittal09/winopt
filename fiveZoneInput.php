@@ -16,7 +16,7 @@
 	include_once("./requiredGraphFiles.php");
 
 	$unique_counter="3689b1cd-48e1-35d4-45a6-7ce8bf53a646";//for parametric simulation results
-	$unique_counter_gen="fiveGenasp3";
+	$unique_counter_gen="test2";
 	$var_quantities="12110";
 ?>
 

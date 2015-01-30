@@ -15,7 +15,7 @@ $total_length=100;
 $total_breadth=100;
 
 $lbybratio_var_fix="variable";
-$unique_counter="fiveGenasp3";
+$unique_counter="test2";
 $var_quantities="12110";
 
 $azi_var_fix="variable";
@@ -492,7 +492,7 @@ $working_dir="./working_directory/$unique_counter";//stores the name of the work
 
 	
 	/*-------------------window type calculations-----------------*/
-// 	$var_quantities=$var_quantities.'1';//since window is always a varialble
+ 	$var_quantities=$var_quantities.'0';//since windowtype is not yet set
 
 // 	$flagshgc=0;
 //  	$shgcvalueset='"';
@@ -607,10 +607,16 @@ Algorithm{
 	$file1 = fopen("$working_dir/command.txt","w") or die("can't open command.txt for writing");
 	fwrite($file1, $variable_string);
 	fclose($file1);
-	echo "variable string is ".$var_quantities."<br>";
+
+
+	//stores any important info in the file
+	$file1 = fopen("$working_dir/info","w") or die("can't open info for writing");
+	fwrite($file1, $var_quantities."\n");
+	fwrite($file1, $total_area."\n");
+	fclose($file1);
+
 	//echo("<meta http-equiv=\"refresh\" content=\"0;URL=./mycallserver.php?unique_counter=".$unique_counter."&var_quantities=".$var_quantities."\">");	
 
-echo "hola";
 
 $host="localhost";
 $port =5436;  //port number
