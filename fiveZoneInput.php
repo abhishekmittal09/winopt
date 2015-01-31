@@ -209,7 +209,7 @@
 						<input name="lbybratio[]" value="1.2" min="0.1" max="2.0" step="any" type="number">
 					</label><br>
 				</div>
-				<div class="item" style="min-height:0px;width:95%;text-align:center">
+				<div class="item" style="min-height:0px;width:93%;text-align:center">
 					<input type="submit">
 				</div>
 			</form>

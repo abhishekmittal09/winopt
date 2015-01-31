@@ -144,6 +144,6 @@
 						</label><br>
 					</div>
 				</div>
-				<div class="item" style="min-height:0px;width:95%;text-align:center">
+				<div class="item" style="min-height:0px;width:93%;text-align:center">
 					<input type="submit">
 				</div>
