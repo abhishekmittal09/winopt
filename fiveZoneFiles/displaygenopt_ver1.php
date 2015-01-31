@@ -1,31 +1,34 @@
 <?php 
 
-$unique_counter = "a6f0eb35-00a0-de35-e541-2295ad61a265";
-$var_quantities = "11111";
+$unique_counter = "fiveGenwwrdiff";
+$var_quantities = "12100";
 $total_area=1500;
 
 extract($_GET);
 extract($_POST);
 
-echo $unique_counter."<br>";
-echo $var_quantities."<br>";
 $working_directory = "./working_directory/$unique_counter/";
 
 $file="info";
 $file1 = fopen("$working_directory/$file", "r");
 if($file1){
-    $file="$working_directory/$file";
+    $file="$working_directory$file";
+    // $template_file_data = fread($file1, filesize($file));
+    // echo "<br>".$template_file_data."<br>";
     if(($line = fgets($file1)) !== false) {//first line var quantities
         $var_quantities=$line;
     }
     if(($line = fgets($file1)) !== false) {//first line var quantities
-        echo "second line";
         $total_area=$line;
     }
     fclose($file1);
-    echo "data is ".$var_quantities."<br>";
-    echo "area is ".$total_area."<br>";
+    // echo "data is ".$var_quantities."<br>";
+    // echo "area is ".$total_area."<br>";
 }
+
+echo $unique_counter."<br>";
+echo $var_quantities."<br>";
+
 ?>
 
 
@@ -89,7 +92,6 @@ if($file1){
    </head>
    <body>
       <?php
-         extract($_GET);
          
          $sumofvarq=2;
          if($var_quantities[0]=='1'){

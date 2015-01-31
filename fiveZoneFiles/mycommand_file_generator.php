@@ -15,7 +15,7 @@ $total_length=100;
 $total_breadth=100;
 
 $lbybratio_var_fix="variable";
-$unique_counter="test2";
+$unique_counter="test";
 $var_quantities="12110";
 
 $azi_var_fix="variable";
@@ -28,6 +28,8 @@ $height_of_window=4;//fixing the height of the window to 3; according the given 
 
 extract($_GET);
 extract($_POST);
+
+print_r($_POST);
 
 echo "unique counter is $unique_counter and var var_quantities is $var_quantities<br>";
 if(!isset($unique_counter)){
@@ -256,8 +258,7 @@ $working_dir="./working_directory/$unique_counter";//stores the name of the work
 		$wwr_start=$height_of_window/2-$wwr_height/2;
 		$wwr_end=$height_of_window/2+$wwr_height/2;
 
-		$template_file_data = str_replace(array('%winheightstart_1%','%winheightstart_2%','%winheightstart_3%','winheightstart_4%','%winheightend_1%','%winheightend_2%','%winheightend_3%','%winheightend_4%'),array($wwr_start,$wwr_start,$wwr_start,$wwr_start,$wwr_end,$wwr_end,$wwr_end,$wwr_end),$template_file_data);
-		echo "<br><br>$template_file_data<br><br>";
+		$template_file_data = str_replace(array('%winheightstart_1%','%winheightstart_2%','%winheightstart_3%','%winheightstart_4%','%winheightend_1%','%winheightend_2%','%winheightend_3%','%winheightend_4%'),array($wwr_start,$wwr_start,$wwr_start,$wwr_start,$wwr_end,$wwr_end,$wwr_end,$wwr_end),$template_file_data);
 
 		$var_quantities=$var_quantities.'0';
 	}
@@ -282,7 +283,7 @@ $working_dir="./working_directory/$unique_counter";//stores the name of the work
 	$var_quantities=$var_quantities.'1';
 	}
 	elseif($depth_var_fix==="fixed"){
-		$template_file_data = str_replace(array("%depth%"),array($depth_value),$template_file_data);
+		$template_file_data = str_replace(array("%overhangHeight%", "%overhangPlusRoot%"),array($depth_value, $depth_value+$t_root),$template_file_data);
 		echo "depth is fixed <br>";
 		$var_quantities=$var_quantities.'0';
 	}
@@ -383,7 +384,7 @@ $working_dir="./working_directory/$unique_counter";//stores the name of the work
 
 		$lbybratio_length_value=sqrt($total_area*$lbybratio_value);
 		$lbybratio_breadth_value=$total_area/$lbybratio_length_value;
-		$template_file_data = str_replace(array("%lbybratio_length%","%lbybratio_breadth%"),array($lbybratio_length_value,$lbybratio_breadth_value),$template_file_data);
+		$template_file_data = str_replace(array("%l%","%b%", "%lminusroot%", "%bminusroot%", "%lminustworoot%", "%bminustworoot%", "%lminuspointzerofive%", "%bminuspointzerofive%"),array($lbybratio_length_value,$lbybratio_breadth_value, $lbybratio_length_value - $t_root, $lbybratio_breadth_value - $t_root, $lbybratio_length_value - 2*$t_root, $lbybratio_breadth_value - 2*$t_root, $lbybratio_length_value - 0.05, $lbybratio_breadth_value - 0.05),$template_file_data);
 		echo "length/breadth ratio is fixed <br>";
 		$var_quantities=$var_quantities.'0';
 

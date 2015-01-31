@@ -74,7 +74,6 @@ $working_directory = "./working_directory/$unique_counter/";
    </head>
    <body>
       <?php
-         extract($_GET);
          
          $sumofvarq=2;
          if($var_quantities[0]=='1'){

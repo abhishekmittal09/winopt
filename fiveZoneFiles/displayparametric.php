@@ -8,6 +8,7 @@ $unique_counter = "3689b1cd-48e1-35d4-45a6-7ce8bf53a646";
 extract($_GET);
 extract($_POST);
 
+echo $unique_counter;
 $working_directory_location_parametric = "./working_directory/parametric/$unique_counter/";
 
 ?>

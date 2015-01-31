@@ -16,8 +16,8 @@
 	include_once("./requiredGraphFiles.php");
 
 	$unique_counter="3689b1cd-48e1-35d4-45a6-7ce8bf53a646";//for parametric simulation results
-	$unique_counter_gen="test2";
-	$var_quantities="12110";
+	$unique_counter_gen="5e8a3816-74b2-a515-807e-cfc580782f66";
+	$var_quantities="12100";
 ?>
 
 
@@ -28,7 +28,7 @@
 		border: 1px solid;
 		border-radius: 10px;
 		margin: 2%;
-		min-height: 200px;
+		min-height: 210px;
 	}
 
 	#parametricform label{
@@ -94,7 +94,7 @@
 	    	<div class="header">
 	        	<h2>GenOpt Input</h2>
 	        </div>
-        	<form id="genoptform" class="pure-form" action="./fiveZoneFiles/mycommand_file_generator.php" method="POST" style="font-size:0.9em">
+        	<form id="genoptform" class="pure-form" method="POST" style="font-size:0.9em">
 	        <?php
 	        	include_once("./fiveZoneGenOpt.php");
 	        ?>
@@ -104,7 +104,7 @@
         <div id="edotvisualization">
 	    	<div class="header">
 	        	<h2>GenOpt Visualization</h2>
-				<iframe id="iframe2" src="./fiveZoneFiles/displaygenopt_ver1.php?unique_counter=<?php echo $unique_counter_gen; ?>&amp;var_quantities=<?php echo $var_quantities; ?>&amp;total_area=1500" style="position:relative;width:80%;height:800px;"></iframe>
+				<iframe id="iframe2" src="./fiveZoneFiles/displaygenopt_ver1.php?unique_counter=<?php echo $unique_counter_gen; ?>" style="position:relative;width:80%;height:800px;"></iframe>
 	        </div>
         </div>
 
@@ -113,7 +113,7 @@
         	<div class="header">
 	        	<h2>Parametric Input</h2>
 	        </div>
-        	<form id="parametricform" class="pure-form" action="" method="POST"  style="font-size:0.9em">
+        	<form id="parametricform" class="pure-form" method="POST" style="font-size:0.9em">
 				<div class="item">
 					<h3 class="center">Azimuth</h3>
 					<label>
