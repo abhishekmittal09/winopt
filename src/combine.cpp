@@ -33,10 +33,23 @@ int main(int argc,char **argv){
 	double temp;
 	char c;
 	char s[10000];
-	while(fscanf(fp1,"%lf",&temp)!=EOF){
+	int inputcount=1;
+	int energycount=1;
+	map<int, double> energyvalues;
+	map<int, char *> inputvalues;
+	while(fscanf(fp1,"%d %lf",&energycount,&temp)!=EOF){
+		energyvalues[energycount]=temp;
+
 		fscanf(fp2,"%[^\n]%c",s,&c);
-		fprintf(fp3, "%lf %s\n",temp,s );
+		inputvalues[inputcount]=s;
+		inputcount++;
+
 		//printf("%lf %s\n",temp,s );
+	}
+
+	for (int i = 0; i < inputcount-1; ++i)
+	{
+		fprintf(fp3, "%lf %s\n", energyvalues[i+1], inputvalues[i+1] );
 	}
 	fclose(fp1);
 	fclose(fp2);

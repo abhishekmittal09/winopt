@@ -28,7 +28,7 @@
 		border: 1px solid;
 		border-radius: 10px;
 		margin: 2%;
-		min-height: 210px;
+		min-height: 230px;
 	}
 
 	#parametricform label{
@@ -53,6 +53,7 @@
 <script type="text/javascript" src="./fiveZoneFiles/graph/fivezone.js"></script>
 <script src="./graph/ui.js"></script>
 <script src="./graph/isotope.min.js"></script>
+<script src="./graph/masonry.pkgd.min.js"></script>
 
 </head>
 
@@ -209,7 +210,7 @@
 						<input name="lbybratio[]" value="1.2" min="0.1" max="2.0" step="any" type="number">
 					</label><br>
 				</div>
-				<div class="item" style="min-height:0px;width:93%;text-align:center">
+				<div class="item" style="min-height:0px;width:96%;text-align:center">
 					<input type="submit">
 				</div>
 			</form>
@@ -259,21 +260,8 @@
 
 <script type="text/javascript">
 
-	var $parametricform = $('#parametricform');
-	// init
-	$parametricform.isotope({
-	  // options
-	  itemSelector: '.item',
-	  layoutMode: 'fitRows'
-	});
-
-	var $genoptform = $('#genoptform');
-	// init
-	$genoptform.isotope({
-	  // options
-	  itemSelector: '.item',
-	  layoutMode: 'fitRows'
-	});
+	$('#parametricform').masonry({ itemSelector: '.item', isFitWidth: true });
+	$('#genoptformdiv').masonry({ itemSelector: '.item', isFitWidth: true });
 	
 	$(document).ready(function() {
 

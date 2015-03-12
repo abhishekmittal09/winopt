@@ -17,8 +17,14 @@ $t_root=$t/(sqrt(2));
 $unique_counter="12345";
 $working_dir = $working_directory_location_parametric.$unique_counter;
 
-
 //value of wwr and aspect ratio has been used directly to make the idf files and hence no changes to wwr and aspect ratio are reqd to be made in displayparametric
+
+/*
+"batch" means more than one simulation is allowed.
+"single" means only single simulation is allowed.
+*/
+$simulationType = "single";//accepted values, "batch" or "single" or "array"
+$numberSimulations = 1;//tells the number of simulations to be performed.
 
 $au_factor= array(1.5,1.5,3.72,5.7,3.3);
 $ashgc= array(0.20,0.25,0.28,0.67,0.85);
@@ -52,12 +58,6 @@ $aazimuth = $azi;
 $awwr = $wwr;
 $adepth= $depth;
 $aratio = $lbybratio;
-
-print_r($azi);
-print_r($awwr);
-print_r($adepth);
-print_r($aratio);
-
 
 /* Putting the required HAVC into the building */
 
@@ -239,7 +239,8 @@ for($x=0;$x<sizeof($aazimuth);$x++)
 					$template_file_data = str_replace(
 						array('%overhangHeight%', '%overhangPlusRoot%'),
 						array($overhangHeight, $overhangPlusRoot),
-						$template_file_data);
+						$template_file_data
+                    );
 					//overhang end
 
 					//ufactor start

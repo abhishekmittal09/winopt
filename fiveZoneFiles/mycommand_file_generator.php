@@ -24,12 +24,25 @@ $wwr_var_fix="variable";
 $diff_wwr=1;
 
 $depth_var_fix="variable";
-$height_of_window=4;//fixing the height of the window to 3; according the given model
+the given model
 
 extract($_GET);
 extract($_POST);
 
 print_r($_POST);
+
+if(isset($building_thickness)){
+	$t=$building_thickness;
+	$t_root=$t/(sqrt(2));
+}
+
+if(isset($building_height)){
+	$h=$building_height;
+}
+
+$height_of_window=$h;//fixing the height of the window to 3; according 
+
+
 
 echo "unique counter is $unique_counter and var var_quantities is $var_quantities<br>";
 if(!isset($unique_counter)){

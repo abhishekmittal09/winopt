@@ -36,6 +36,34 @@ void sigchld_handler (int signum)
 	}
 }
 
+int numFromArray(char *c){
+	int num=0;
+	int place=1;
+	int len=0;
+	for (int i = 0; c[i]!='\0'; ++i)
+	{
+		len++;
+	}
+	for (int i = len-1; i >= 0; i--)
+	{
+		num=num+(c[i]-48)*place;
+		place=place*10;
+	}
+	return num;
+}
+
+//checks if the array is integer array
+bool checkIntArray(char *s){
+	for (int i = 0; s[i] != '\0'; ++i)
+	{
+		if(s[i]>='0' && s[i]<='9');
+		else{
+			return false;
+		}
+	}
+	return true;
+}
+
 int main(int argc,char *argv[]) {
 
 	string touchfile(argv[1]);
@@ -45,13 +73,16 @@ int main(int argc,char *argv[]) {
 	int n = thread::hardware_concurrency();//finds the no. of processors in the system
 	printf("No of processors in the system are :- %d, therefore those many processes are going to get executed in parallel\n",n );
 	pid_t pid;
-	int worktodo=3125;//tells how many files to process
+	int worktodo=1;//tells how many files to process
+	if(argc==4 && checkIntArray(argv[3])){
+		worktodo=numFromArray(argv[3]);
+	}
 	int count=0;//tells how many child processes have been made till now
 	int curr_running=0;
 	int max_allowed=n;
 	while(count<worktodo)
 	{
-		while(curr_running<max_allowed){
+		while(curr_running<max_allowed && count<worktodo){
 			printf("count is %d\n",count );
 			if((pid=fork())<0)
 			{

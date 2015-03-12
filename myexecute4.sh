@@ -2,7 +2,7 @@ echo $1/$3.idf # $1 for name location of file, $2 is for the whether file and $3
 mkdir $1/$3
 mv $1/$3.idf $1/$3
 runenergyplus $1/$3/$3.idf $PWD/weatherdata/$2
-./parsar $1/$3/Output/$3Table.html $1
+./parsar $1/$3/Output/$3Table.html $1 $3
 echo "next command"
 echo $3
 echo "combining"

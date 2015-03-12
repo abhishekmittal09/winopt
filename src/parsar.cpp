@@ -72,7 +72,7 @@ int main(int argc,char **argv){
 										strcat(output,"finalenergyvalues.txt");
 										printf("%s\n",output );
 										fp3=fopen(output,"a+");
-										fprintf(fp3,"%lf\n",reqd*277.777777);
+										fprintf(fp3,"%s %lf\n",argv[3],reqd*277.777777);
 										fclose(fp3);
 										fclose(fp);
 										break;
