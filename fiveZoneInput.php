@@ -113,8 +113,19 @@
         <div id="parainput" class="">
         	<div class="header">
 	        	<h2>Parametric Input</h2>
-	        </div>
-        	<form id="parametricform" class="pure-form" method="POST" style="font-size:0.9em">
+		</div>
+    	   	<form id="parametricform" class="pure-form" method="POST" style="font-size:0.9em">
+				<div class="item">
+ 						Select Your Location <select name="location2">
+                                                        <option value="1">New Delhi</option>
+                                                        <option value="2" selected="selected">Hyderabad</option>
+                                                        <option value="3">Kolkata</option>
+                                                        <option value="4">Banglore</option>
+                                                </select><br>
+</div>
+
+
+
 				<div class="item">
 					<h3 class="center">Azimuth</h3>
 					<label>
@@ -210,6 +221,8 @@
 						<input name="lbybratio[]" value="1.2" min="0.1" max="5.0" step="any" type="number">
 					</label><br>
 				</div>
+
+
 				<div class="item" style="min-height:0px;width:96%;text-align:center">
 					<input type="submit">
 				</div>
