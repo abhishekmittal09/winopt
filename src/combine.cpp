@@ -32,16 +32,15 @@ int main(int argc,char **argv){
 	fp3=fopen(argv[3],"w");
 	double temp;
 	char c;
-	char s[10000];
 	int inputcount=1;
 	int energycount=1;
 	map<int, double> energyvalues;
-	map<int, char *> inputvalues;
+	char inputvalues[10000][200];
 	while(fscanf(fp1,"%d %lf",&energycount,&temp)!=EOF){
 		energyvalues[energycount]=temp;
-
+		char s[10000];
 		fscanf(fp2,"%[^\n]%c",s,&c);
-		inputvalues[inputcount]=s;
+		strcpy(inputvalues[inputcount] , s);
 		inputcount++;
 
 		//printf("%lf %s\n",temp,s );

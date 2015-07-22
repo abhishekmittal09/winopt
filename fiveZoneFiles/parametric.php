@@ -36,7 +36,7 @@ $depth=array(0.3,0.5,0.8,1.2,1.5);
 $lbybratio=array(0.6,1.0,1.3,1.5,1.8);
 
 $hvactype2=6;
-$location2=2;
+$location2=1;
 
 extract($_POST);
 extract($_GET);
@@ -59,6 +59,7 @@ $awwr = $wwr;
 $adepth= $depth;
 $aratio = $lbybratio;
 
+$numberSimulations = sizeof($aazimuth)*sizeof($awwr)*sizeof($adepth)*sizeof($aratio)*sizeof($ashgc);
 /* Putting the required HAVC into the building */
 
 
@@ -269,7 +270,7 @@ fwrite($filesave,$filecontent);
 fclose($filesave);
 
 
-$cityname="Hyderabad.epw";
+$cityname="New_Delhi.epw";
 if($location2==1){
 	$cityname="New_Delhi.epw";
 }
@@ -298,7 +299,7 @@ if (!$fp)
 }
 else
 {
-	$str="p".$php_file_location.$working_dir." ".$cityname;
+	$str="p".$php_file_location.$working_dir." ".$cityname." ".$numberSimulations;
         fputs ($fp, $str);
         $msg="";
         $msg=fgets($fp,17);
