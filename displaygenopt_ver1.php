@@ -6,8 +6,8 @@ $var_quantities = "10000";
 extract($_GET);
 extract($_POST);
 
-echo $unique_counter."<br>";
-echo $var_quantities."<br>";
+#echo $unique_counter."<br>";
+#echo $var_quantities."<br>";
 $working_directory = "./working_directory/$unique_counter/";
 
 ?>
