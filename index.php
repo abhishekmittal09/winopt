@@ -566,7 +566,11 @@ extract($_GET);
 						<tbody>
 							<tr>
 								<td> &nbsp; &nbsp; &nbsp; &nbsp; </td>
-								<td>
+								<td> &nbsp; &nbsp; &nbsp; &nbsp; </td>
+								<td> &nbsp; &nbsp; &nbsp; &nbsp; </td>
+								<td> &nbsp; &nbsp; &nbsp; &nbsp; </td>
+								<td> &nbsp; &nbsp; &nbsp; &nbsp; </td>
+								<td >
 									<table style="width: 100%; vertical-align: top;">
 										<tbody>
 											<tr>
@@ -615,6 +619,9 @@ extract($_GET);
 												</select>												
 												</td>
 												<td colspan="4"></td>
+											</tr>
+											<tr>
+												<td colspan="5"> <br></td>
 											</tr>
 
 											<tr>
@@ -926,7 +933,12 @@ extract($_GET);
 										</tbody>
 									</table>
 								</td>
-							<td style="position:relative; top: 100px;"><a href="#id3"><img src="./images/right.png" class="contrast"></a></td>
+							<td style="position:relative; top: 100px;"><a href="#id3"><img src="./images/right.png" class="contrast"></td>
+							<td style="position:relative; top: 100px;"><a href="#id3"></td>
+							<td style="position:relative; top: 100px;"><a href="#id3"></td>
+							<td style="position:relative; top: 100px;"><a href="#id3"></td>
+							<td style="position:relative; top: 100px;"><a href="#id3"></a></td>
+
 							</tr>
 							<tr>
 								<td><br></td>
