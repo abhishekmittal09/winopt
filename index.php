@@ -44,7 +44,7 @@ extract($_GET);
 			}
 
 		</style>
-
+		<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'> <!--abhilash-->
       <link rel="stylesheet" href="./css/pure-min.css">
 
 <!--[if lte IE 8]>
@@ -62,16 +62,16 @@ extract($_GET);
 
 	</head>
 
-	<body style="font-family:Arial ;">
+	<body style="font-family: 'Dosis', sans-serif;">
 		<div id="id0" style="height:850px;margin-top: -20px;">
-		<div id="id1" style="background-color: #014051;width:1300px;float:left;padding: 10px;">
+		<div id="id1" style="background-color: #191919;width:1300px;float:left;padding: 10px;">
 			<table style="width: 100%; text-align: left; margin-right: auto;">
 				<tbody>
 					<tr>
-						<td style="width: 100%; margin-top: -5px; text-align: center; vertical-align: middle; background-color: black;">
-							<h1 class="a0" style="height: 26px; background-color: black;">eDOT -
+						<td style="width: 100%; margin-top: -5px; text-align: left; vertical-align: middle; background-color: #191919;">
+							<h1 class="a0" style="height: 26px; background-color: #191919; padding-left: 32px;">eDOT -
 								Early Design Optimization Tool 
-							</h1>
+							</h1><br>
 						</td>
 					</tr>
 				</tbody>
@@ -136,8 +136,8 @@ extract($_GET);
 										</tr>
 										<tr><td colspan="5"><br></td></tr>
 										<tr  style="height:260px; ">
-										<td style="vertical-align: top; background-color: #0099ac; color: white;">
-										<table style="width: 100%;text-align: left; margin-left: auto; margin-right: auto; background-color:#0099ac">
+										<td style="vertical-align: top; background-color: #CD0000; color: white;">
+										<table style="width: 100%;text-align: left; margin-left: auto; margin-right: auto; background-color:#CD0000">
 										<tbody>
 										<tr style="vertical-align: top;">
 										<td class="a2" style="width: 100%; text-align: center; vertical-align: top;">Azimuth
@@ -150,7 +150,7 @@ extract($_GET);
 										<table style="width: 100%;">
 										<tbody>
 										<tr>
-										<td> <input name="azi_var_fix" value="fixed" onclick="hide('2')"
+										<td style='padding:0px 0px 0px 10px'> <input name="azi_var_fix" value="fixed" onclick="hide('2')"
 											type="radio">Fixed </td>
 										<td> <input name="azi_var_fix" value="variable" onclick="hide('1')"
 											checked="checked" type="radio">
@@ -161,25 +161,25 @@ extract($_GET);
 										</table>
 										<br>
 										<div id="azivariable">
-										<table style="width: 100%;">
+										<table style="width: 100%;" >
 										<tbody>
 										<tr>
-										<td>Initial Value </td>
+										<td style='padding:0px 0px 0px 10px'>Initial Value </td>
 										<td><input name="azi_ini_value" value="90" min="0.0"
 											max="360.0" step="any" type="number"></td>
 										</tr>
 										<tr>
-										<td>Minimum Value </td>
+										<td style='padding:0px 0px 0px 10px'>Minimum Value </td>
 										<td><input name="azi_min_value" value="0" min="0.0"
 											max="360.0" step="any" type="number"></td>
 										</tr>
 										<tr>
-										<td>Maximum Value</td>
+										<td style='padding:0px 0px 0px 10px'>Maximum Value</td>
 										<td><input name="azi_max_value" value="180" min="0.0"
 											max="360.0" step="any" type="number"></td>
 										</tr>
 										<tr>
-										<td>Step Value </td>
+										<td style='padding:0px 0px 0px 10px'>Step Value </td>
 										<td><input name="azi_step_value" value="90" type="number"></td>
 										</tr>
 										</tbody>
@@ -202,8 +202,8 @@ extract($_GET);
 										</div>
 										</td>
 										<td style="width: 41px;"><br></td>
-										<td style="vertical-align: top; background-color: #5737b2; color: white;">
-										<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto; background-color:#5737b2;">
+										<td style="vertical-align: top; background-color: #008000; color: white;">
+										<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto; background-color:#008000;">
 										<tbody>
 										<tr>
 										<td class="a2" style="width: 100%; text-align: center;">Window to Wall Ratio (%)</td>
@@ -214,7 +214,7 @@ extract($_GET);
 										<table style="width: 100%;">
 										<tbody>
 										<tr>
-										<td> <input name="wwr_var_fix" value="fixed" onclick="hide('4')"
+										<td style='padding:0px 0px 0px 10px'> <input name="wwr_var_fix" value="fixed" onclick="hide('4')"
 											checked="checked" type="radio">Fixed</td>
 										<td> <input name="wwr_var_fix" value="variable" onclick="hide('3')"
 											type="radio">Variable</td>
@@ -226,27 +226,27 @@ extract($_GET);
 										<table style="width: 100%;">
 										<tbody>
 										<tr>
-										<td colspan="2"><input name="diff_wwr" id="diff_wwr" style="" checked="checked" type="checkbox" onclick="changediffwwr()">
+										<td colspan="2"  style='padding:0px 0px 0px 10px'><input name="diff_wwr" id="diff_wwr" style="" checked="checked" type="checkbox" onclick="changediffwwr()">
 										Have Different WWR for each wall
 										</td>
 										</tr>
 										<tr>
-										<td>Initial Value </td>
+										<td style='padding:0px 0px 0px 10px'>Initial Value </td>
 										<td><input name="wwr_ini_value" value="40" min="10.0"
 											max="90.0" step="any" type="number"></td>
 										</tr>
 										<tr>
-										<td>Minimum Value </td>
+										<td style='padding:0px 0px 0px 10px'>Minimum Value </td>
 										<td><input name="wwr_min_value" value="20" min="10.0"
 											max="90.0" step="any" type="number"></td>
 										</tr>
 										<tr>
-										<td>Maximum Value</td>
+										<td style='padding:0px 0px 0px 10px'>Maximum Value</td>
 										<td><input name="wwr_max_value" value="80" min="10.0"
 											max="90.0" step="any" type="number"></td>
 										</tr>
 										<tr>
-										<td>Step Value </td>
+										<td style='padding:0px 0px 0px 10px'>Step Value </td>
 										<td><input name="wwr_step_value" value="10" min="10.0"
 											max="90.0" step="any" type="number"></td>
 										</tr>
@@ -258,7 +258,7 @@ extract($_GET);
 										<table style="width:100%">
 										<tbody>
 										<tr>
-										<td>
+										<td style='padding:0px 0px 0px 10px'>
 										Value
 										</td>
 										<td>
@@ -272,8 +272,8 @@ extract($_GET);
 										<br>
 										</td>
 										<td style="width: 40px;"><br></td>
-										<td style="vertical-align: top; background-color: #da542e; color: white;">
-										<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto; background-color:#da542e">
+										<td style="vertical-align: top; background-color: #6A6A6A; color: white;">
+										<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto; background-color:#6A6A6A">
 										<tbody>
 										<tr>
 										<td class="a2" style="width: 100%; text-align: center;">Overhang
@@ -286,7 +286,7 @@ extract($_GET);
 										<table style="width: 100%;">
 										<tbody>
 										<tr>
-										<td><input name="depth_var_fix" value="fixed" onclick="hide('6')"
+										<td style='padding:0px 0px 0px 10px'><input name="depth_var_fix" value="fixed" onclick="hide('6')"
 											checked="checked" type="radio">Fixed</td>
 										<td> <input name="depth_var_fix" value="variable" onclick="hide('5')"
 											type="radio">Variable</td>
@@ -298,22 +298,22 @@ extract($_GET);
 										<table style="width: Overhang100%;">
 										<tbody>
 										<tr>
-										<td>Initial Value </td>
+										<td style='padding:0px 0px 0px 10px'>Initial Value </td>
 										<td><input name="depth_ini_value" value="0.5" min="0.1"
 											max="3.0" step="any" type="number"></td>
 										</tr>
 										<tr>
-										<td>Minimum Value </td>
+										<td style='padding:0px 0px 0px 10px'>Minimum Value </td>
 										<td><input name="depth_min_value" value="0.2" min="0.1"
 											max="3.0" step="any" type="number"></td>
 										</tr>
 										<tr>
-										<td>Maximum Value</td>
+										<td style='padding:0px 0px 0px 10px'>Maximum Value</td>
 										<td><input name="depth_max_value" value="1" min="0.1"
 											max="3.0" step="any" type="number"></td>
 										</tr>
 										<tr>
-										<td>Step Value </td>
+										<td style='padding:0px 0px 0px 10px'>Step Value </td>
 										<td><input name="depth_step_value" value="0.1" min="0.1"
 											max="3.0" step="any" type="number"></td>
 										</tr>
@@ -324,7 +324,7 @@ extract($_GET);
 										<table style="width:100%">
 										<tbody>
 										<tr>
-										<td>
+										<td style='padding:0px 0px 0px 10px'>
 										Value
 										</td>
 										<td>
@@ -343,8 +343,8 @@ extract($_GET);
 										<td colspan="5"><br></td>
 										</tr>
 										<tr style="height:260px;">
-										<td style="vertical-align: top; background-color: #bf1f4b; color: white;">
-										<table style="width: 100% ; background-color:#bf1f4b;">
+										<td style="vertical-align: top; background-color: #0000FF; color: white;">
+										<table style="width: 100% ; background-color:#0000FF;">
 										<tbody>
 										<tr>
 										<td style="width: 100%; text-align: center;vertical-align: top;"
@@ -356,9 +356,9 @@ extract($_GET);
 										<table style="width: 100%;">
 										<tbody>
 										<tr>
-										<td> <input name="lbybratio_var_fix" value="fixed"
+										<td style='padding:0px 0px 0px 10px'> <input name="lbybratio_var_fix" value="fixed"
 											onclick="hide('8')" type="radio">Fixed</td>
-										<td> <input name="lbybratio_var_fix" value="variable"
+										<td style='padding:0px 0px 0px 10px'> <input name="lbybratio_var_fix" value="variable"
 											onclick="hide('7')" checked="checked" type="radio">
 										Variable
 										</td>
@@ -370,19 +370,19 @@ extract($_GET);
 										<table style="width: 100%;">
 										<tbody>
 										<tr>
-										<td>Initial Value</td>
+										<td style='padding:0px 0px 0px 10px'>Initial Value</td>
 										<td><input name="lbybratio_ini_value" value="1" step="any" type="number"></td>
 										</tr>
 										<tr>
-										<td>Minimum Value </td>
+										<td style='padding:0px 0px 0px 10px'>Minimum Value </td>
 										<td><input name="lbybratio_min_value" value="1" step="any" type="number"></td>
 										</tr>
 										<tr>
-										<td>Maximum Value </td>
+										<td style='padding:0px 0px 0px 10px'>Maximum Value </td>
 										<td><input name="lbybratio_max_value" value="2" step="any" type="number"></td>
 										</tr>
 										<tr>
-										<td>Step Value </td>
+										<td style='padding:0px 0px 0px 10px'>Step Value </td>
 										<td><input name="lbybratio_step_value" value="0.5" step="any" type="number"></td>
 										</tr>
 										</tbody>
@@ -392,7 +392,7 @@ extract($_GET);
 										<table style="width:100%">
 										<tbody>
 										<tr>
-										<td>
+										<td style='padding:0px 0px 0px 10px'>
 										Value
 										</td>
 										<td>
@@ -404,8 +404,8 @@ extract($_GET);
 										</div>
 										</td>
 										<td> <br></td>
-										<td style="width: 25%; vertical-align: top; background-color: #009f00; color: white;">
-										<table style="width: 100%;background-color:#009f00">
+										<td style="width: 25%; vertical-align: top; background-color: #ff9900; color: white;">
+										<table style="width: 100%;background-color:#ff9900">
 										<tbody>
 										<tr>
 										<td style="width: 100%; text-align: center;" class="a4">Glass
@@ -418,7 +418,7 @@ extract($_GET);
 										<table style="width: 100%;">
 										<tbody>
 										<tr>
-										<td>
+										<td style='padding:0px 0px 0px 10px'>
 										<select id="windowtype1" name="windowtype1">
 										<option value="0">None</option>
 										<option value="1" selected="selected">U factor: 1.5; SHGC: 0.25; VLT:0.50</option>
@@ -429,7 +429,7 @@ extract($_GET);
 										</td>
 										</tr>
 										<tr>
-										<td>
+										<td style='padding:0px 0px 0px 10px'>
 										<select id="windowtype2" name="windowtype2">
 										<option value="0">None</option>
 										<option value="1">U factor: 1.5; SHGC: 0.25; VLT:0.50</option>
@@ -440,7 +440,7 @@ extract($_GET);
 										</td>
 										</tr>
 										<tr>
-										<td>
+										<td style='padding:0px 0px 0px 10px'>
 										<select id="windowtype3" name="windowtype3">
 										<option value="0">None</option>
 										<option value="1">U factor: 1.5; SHGC: 0.25; VLT:0.50</option>
@@ -451,7 +451,7 @@ extract($_GET);
 										</td>
 										</tr>
 										<tr>
-										<td>
+										<td style='padding:0px 0px 0px 10px'>
 										<select id="windowtype4" name="windowtype4">
 										<option value="0">None</option>
 										<option value="1">U factor: 1.5; SHGC: 0.25; VLT:0.50</option>
@@ -467,7 +467,8 @@ extract($_GET);
 										<br>
 										</td>
 										<td><br></td>
-										<td style="vertical-align: top; background-color: #a101a8; color: white;">
+										<td  style="vertical-align: top; background-color: #a101a8; color: white;"> 
+
 										<table style="width: 100%; background-color: #a101a8; height: 35px;">
 										<tbody>
 										<tr>
@@ -483,34 +484,36 @@ extract($_GET);
 										</tr>
 										<tr>
 										<td><br></td>
-										<td> <input name="optimisevar_var_fix" value="variable"
+										<td style='padding:0px 0px 0px 10px'> <input name="optimisevar_var_fix" value="variable"
 											onclick="hide('9')" checked="checked" type="radio">Operational
 										Energy
 										</td>
 										</tr>
 										<tr>
 										<td> <br></td>
-										<td style="height: 19px;"> <input name="optimisevar_var_fix"
+										<td  style='padding:0px 0px 0px 10px' style="height: 19px;"> <input name="optimisevar_var_fix"
 											value="fixed" onclick="hide('10')" type="radio">Life
 										Cycle Energy<br>
 										</td>
 										</tr>
 										<tr>
-										<td style="height: 19px;"><br></td>
-										<td> <input name="optimisevar_var_fix" value="fixed"
+										<td   style="height: 19px;"><br></td>
+										<td style='padding:0px 0px 0px 10px'> <input name="optimisevar_var_fix" value="fixed"
 											onclick="hide('10')" type="radio">Life Cycle
 										Cost<br>
 										</td>
 										</tr>
 										<tr>
 										<td> <br></td>
-										<td> <input name="optimisevar_var_fix" value="fixed"
+										<td style='padding:0px 0px 0px 10px'> <input name="optimisevar_var_fix" value="fixed"
 											onclick="hide('11')" type="radio">Operational
 										Cost<br>
 										</td>
 										</tr>
 										</tbody>
 										</table>
+
+
 										</td>
 										</tr>
 									</tbody>
@@ -525,7 +528,7 @@ extract($_GET);
 						</tr>
 					</tbody>
 				</table>
-				<table style="width: 100%;background-color: rgb(0, 51, 0);">
+				<table style="width: 100%;background-color: #191919;">
 				<tbody>
 				<tr style="width: 100%;">
 				<td style="color:white;width:3%">
@@ -544,14 +547,14 @@ extract($_GET);
 			</form>
 			</div>
 			<a href="#id2" style="float:left;margin-top:30px">second</a>
-			<div id="id2" style="background-color:#014051;height:100%;width:1300px;float:left;padding: 10px;">
+			<div id="id2" style="background-color:#191919;height:100%;width:1300px;float:left;padding: 10px;">
 				<table style="width: 100%; text-align: left; margin-right: auto;">
 					<tbody>
 						<tr style="height: 60%;">
-							<td style="width: 100%; margin-top: -5px; text-align: center; vertical-align: middle; background-color: black;">
-								<h1 class="a0" style="height: 26px; background-color: black;">eDOT -
+							<td style="width: 100%; margin-top: -5px; text-align: left; vertical-align: middle; background-color: #191919;">
+								<h1 class="a0" style="height: 26px; background-color: #191919; padding-left:23px;">eDOT -
 									Early Design Optimization Tool ( Parametric )
-								</h1>
+								</h1><br>
 							</td>
 						</tr>
 					</tbody>
@@ -613,9 +616,10 @@ extract($_GET);
 												</td>
 												<td colspan="4"></td>
 											</tr>
+
 											<tr>
-												<td style="vertical-align: top; background-color: #0099ac; color: white;">
-													<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto; background-color:#0099ac">
+												<td style="vertical-align: top; background-color: #cd0000; color: white;">
+													<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto; background-color:#cd0000">
 														<tbody>
 															<tr style="vertical-align: top;">
 																<td class="a2" style="width: 100%; text-align: center; vertical-align: top;">Azimuth
@@ -624,33 +628,33 @@ extract($_GET);
 															</tr>
 														</tbody>
 													</table>
-													<br>
+													
 													<br>
 													<div id="azivariable2">
 														<table style="width: 100%;">
 															<tbody>
 																<tr>
-																	<td>First Value </td>
+																	<td style='padding:0px 0px 0px 10px'>First Value </td>
 																	<td><input name="azi[]" value="90" min="0.0"
 																		max="360.0" step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Second Value </td>
+																	<td style='padding:0px 0px 0px 10px'>Second Value </td>
 																	<td><input name="azi[]" value="0" min="0.0"
 																		max="360.0" step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Third Value</td>
+																	<td style='padding:0px 0px 0px 10px'>Third Value</td>
 																	<td><input name="azi[]" value="180" min="0.0"
 																		max="360.0" step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Fourth Value</td>
+																	<td style='padding:0px 0px 0px 10px'>Fourth Value</td>
 																	<td><input name="azi[]" value="45" min="0.0"
 																		max="360.0" step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Fifth Value</td>
+																	<td style='padding:0px 0px 0px 10px'>Fifth Value</td>
 																	<td><input name="azi[]" value="135" min="0.0"
 																		max="360.0" step="any" type="number"></td>
 																</tr>
@@ -659,8 +663,8 @@ extract($_GET);
 													</div>
 												</td>
 												<td style="width: 41px;"><br></td>
-												<td style="vertical-align: top; background-color: #5737b2; color: white;">
-													<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto; background-color:#5737b2;">
+												<td style="vertical-align: top; background-color: #008000; color: white;">
+													<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto; background-color:#008000;">
 														<tbody>
 															<tr>
 																<td class="a2" style="width: 100%; text-align: center;vertical-align: top;">Window to Wall Ratio (%)</td>
@@ -669,31 +673,31 @@ extract($_GET);
 													</table>
 													<br>
 													<div id="wwrvariable2">
-														<br>
+														
 														<table style="width: 100%;">
 															<tbody>
 																<tr>
-																	<td>First Value </td>
+																	<td style='padding:0px 0px 0px 10px'>First Value </td>
 																	<td><input name="wwr[]" value="40" min="10.0"
 																		max="90.0" step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Second Value </td>
+																	<td style='padding:0px 0px 0px 10px'>Second Value </td>
 																	<td><input name="wwr[]" value="20" min="10.0"
 																		max="90.0" step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Third Value</td>
+																	<td style='padding:0px 0px 0px 10px'>Third Value</td>
 																	<td><input name="wwr[]" value="50" min="10.0"
 																		max="90.0" step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Fourth Value</td>
+																	<td style='padding:0px 0px 0px 10px'>Fourth Value</td>
 																	<td><input name="wwr[]" value="60" min="10.0"
 																		max="90.0" step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Fifth Value</td>
+																	<td style='padding:0px 0px 0px 10px'>Fifth Value</td>
 																	<td><input name="wwr[]" value="80" min="10.0"
 																		max="90.0" step="any" type="number"></td>
 																</tr>
@@ -703,8 +707,8 @@ extract($_GET);
 													<br>
 												</td>
 												<td style="width: 40px;"><br></td>
-												<td style="vertical-align: top; background-color: #da542e; color: white;">
-													<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto; background-color:#da542e">
+												<td style="vertical-align: top; background-color: #6a6a6a; color: white;">
+													<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto; background-color:#6a6a6a;">
 														<tbody>
 															<tr>
 																<td class="a2" style="width: 100%; text-align: center;">Overhang
@@ -713,33 +717,33 @@ extract($_GET);
 															</tr>
 														</tbody>
 													</table>
-													<br>
+													
 													<br>
 													<div id="depthvariable2">
 														<table style="width: 100%;">
 															<tbody>
 																<tr>
-																	<td>First Value </td>
+																	<td style='padding:0px 0px 0px 10px'>First Value </td>
 																	<td><input name="depth[]" value="0.3"
 																		min="0.1" max="3.0" step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Second Value </td>
+																	<td style='padding:0px 0px 0px 10px'>Second Value </td>
 																	<td><input name="depth[]" value="0.5"
 																		min="0.1" max="3.0" step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Third Value</td>
+																	<td style='padding:0px 0px 0px 10px'>Third Value</td>
 																	<td><input name="depth[]" value="0.8" min="0.1"
 																		max="3.0" step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Fourth Value</td>
+																	<td style='padding:0px 0px 0px 10px'>Fourth Value</td>
 																	<td><input name="depth[]" value="1.2" min="0.1"
 																		max="3.0" step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Fifth Value</td>
+																	<td style='padding:0px 0px 0px 10px'>Fifth Value</td>
 																	<td><input name="depth[]" value="1.5" min="0.1"
 																		max="3.0" step="any" type="number"></td>
 																</tr>
@@ -754,8 +758,8 @@ extract($_GET);
 												<td colspan="5"> <br></td>
 											</tr>
 											<tr>
-												<td style="vertical-align: top; background-color:  #bf1f4b; color: white;">
-													<table style="width: 100% ; background-color: #bf1f4b;">
+												<td style="vertical-align: top; background-color:  #0000ff; color: white;">
+													<table style="width: 100% ; background-color: #0000ff;">
 														<tbody>
 															<tr>
 																<td style="width: 100%; text-align: center;vertical-align: top;"
@@ -763,33 +767,33 @@ extract($_GET);
 															</tr>
 														</tbody>
 													</table>
-													<br>
+													
 													<br>
 													<div id="lbybratiovariable2">
 														<table style="width: 100%;">
 															<tbody>
 																<tr>
-																	<td>First Value</td>
+																	<td style='padding:0px 0px 0px 10px'>First Value</td>
 																	<td><input name="lbybratio[]" value="0.6"
 																		step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Second Value </td>
+																	<td style='padding:0px 0px 0px 10px'>Second Value </td>
 																	<td><input name="lbybratio[]" value="1.0"
 																		step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Third Value </td>
+																	<td style='padding:0px 0px 0px 10px'>Third Value </td>
 																	<td><input name="lbybratio[]" value="1.3"
 																		step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Fourth Value </td>
+																	<td style='padding:0px 0px 0px 10px'>Fourth Value </td>
 																	<td><input name="lbybratio[]" value="1.5"
 																		step="any" type="number"></td>
 																</tr>
 																<tr>
-																	<td>Fifth Value </td>
+																	<td style='padding:0px 0px 0px 10px'>Fifth Value </td>
 																	<td><input name="lbybratio[]" value="1.8"
 																		step="any" type="number"></td>
 																</tr>
@@ -798,8 +802,8 @@ extract($_GET);
 													</div>
 												</td>
 												<td> <br></td>
-												<td style="width: 25%; vertical-align: top; background-color: #009f00; color: white;">
-													<table style="width: 100%;background-color:#009f00">
+												<td style="width: 25%; vertical-align: top; background-color: #ff9900; color: white;">
+													<table style="width: 100%;background-color:#ff9900">
 														<tbody>
 															<tr>
 																<td style="width: 100%; text-align: center;" id="a5">Glass
@@ -812,7 +816,7 @@ extract($_GET);
 													<table style="width: 100%;">
 														<tbody>
 															<tr>
-																<td>
+																<td style='padding:0px 0px 0px 10px'>
 																	<select id="windowtype21" name="windowtype21">
 																		<option value="1" selected="selected">U factor: 1.5; SHGC: 0.25; VLT:0.50</option>
 																		<option value="2">U factor: 3.72; SHGC: 0.28; VLT: 0.27</option>
@@ -823,7 +827,7 @@ extract($_GET);
 																</td>
 															</tr>
 															<tr>
-																<td>
+																<td style='padding:0px 0px 0px 10px'>
 																	<select id="windowtype22" name="windowtype22">
 																		<option value="1">U factor: 1.5; SHGC: 0.25; VLT:0.50</option>
 																		<option value="2" selected="selected">U factor: 3.72; SHGC: 0.28; VLT: 0.27</option>
@@ -834,7 +838,7 @@ extract($_GET);
 																</td>
 															</tr>
 															<tr>
-																<td>
+																<td style='padding:0px 0px 0px 10px'>
 																	<select id="windowtype23" name="windowtype23">
 																		<option value="1">U factor: 1.5; SHGC: 0.25; VLT:0.50</option>
 																		<option value="2">U factor: 3.72; SHGC: 0.28; VLT: 0.27</option>
@@ -845,7 +849,7 @@ extract($_GET);
 																</td>
 															</tr>
 															<tr>
-																<td>
+																<td style='padding:0px 0px 0px 10px'>
 																	<select id="windowtype24" name="windowtype24">
 																		<option value="1">U factor: 1.5; SHGC: 0.25; VLT:0.50</option>
 																		<option value="2">U factor: 3.72; SHGC: 0.28; VLT: 0.27</option>
@@ -856,7 +860,7 @@ extract($_GET);
 																</td>
 															</tr>
 															<tr>
-																<td>
+																<td style='padding:0px 0px 0px 10px'>
 																	<select id="windowtype25" name="windowtype25">
 																		<option value="1">U factor: 1.5; SHGC: 0.25; VLT:0.50</option>
 																		<option value="2">U factor: 3.72; SHGC: 0.28; VLT: 0.27</option>
@@ -869,10 +873,10 @@ extract($_GET);
 														</tbody>
 													</table>
 													<br>
-													<br>
+													
 												</td>
 												<td><br></td>
-												<td style="vertical-align: top; background-color: #a101a8;color: white;">
+												<!--<td style="vertical-align: top; background-color: #a101a8;color: white;">
 													<table style="width: 100%; background-color: #a101a8; height: 35px;">
 														<tbody>
 															<tr>
@@ -917,7 +921,7 @@ extract($_GET);
 															</tr>
 														</tbody>
 													</table>
-												</td>
+												</td>-->
 											</tr>
 										</tbody>
 									</table>
@@ -935,7 +939,7 @@ extract($_GET);
 					<table style="width: 100%;">
 						<tbody>
 							<tr>
-								<td style="background-color: rgb(0, 51, 0);text-align: center;"><input value="submit" type="submit">
+								<td style="background-color: #191919;text-align: center;"><input value="submit" type="submit">
 								</td>
 							</tr>
 						</tbody>
